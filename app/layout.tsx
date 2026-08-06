@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Cormorant_Garamond, Great_Vibes } from "next/font/google";
+import "./globals.css";
 import { weddingConfig } from "@/lib/config";
 import FloatingButtons from "@/components/common/FloatingButtons";
 
