@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: #eac25e;
+  color: #fff;
+}
+
+.glass {
+  @apply bg-white/50 backdrop-blur-xl border border-white/40 shadow-[0_8px_32px_rgba(163,127,44,0.15)];
+}
+
+.dark .glass {
+  @apply bg-black/30 border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)];
+}
+
+.section-heading {
+  @apply font-display text-3xl md:text-5xl text-gold-700 dark:text-gold-300 text-center;
+}
+
+.section-sub {
+  @apply font-script text-2xl md:text-3xl text-blush-400 text-center;
+}
+
+.gold-divider {
+  @apply mx-auto h-px w-24 bg-gradient-to-r from-transparent via-gold-400 to-transparent;
+}
+
+/* Skeleton shimmer for loading states */
+.skeleton {
+  @apply relative overflow-hidden bg-gold-100/60 dark:bg-white/5 rounded-xl;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2.5s linear infinite;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gold-300 rounded-full;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
