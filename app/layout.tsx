@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Cormorant_Garamond, Great_Vibes } from "next/font/google";
-import "./globals.css";
 import { weddingConfig } from "@/lib/config";
 import FloatingButtons from "@/components/common/FloatingButtons";
 
@@ -27,7 +26,7 @@ const siteUrl = weddingConfig.socialShare.url;
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: `${weddingConfig.wedding.title} | We're Getting Married`,
-  description: `Join ${weddingConfig.couple.brideName} & ${weddingConfig.couple.groomName} on ${weddingConfig.wedding.dateDisplay} at ${weddingConfig.wedding.venueName}.`,
+description: `Join ${weddingConfig.couple.brideName} & ${weddingConfig.couple.groomName} on ${weddingConfig.wedding.dateDisplay} at ${weddingConfig.wedding.brideHouse.houseName}.`,
   openGraph: {
     title: `${weddingConfig.wedding.title} | Wedding Invitation`,
     description: `You're invited to celebrate our wedding on ${weddingConfig.wedding.dateDisplay}.`,

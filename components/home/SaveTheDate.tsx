@@ -53,7 +53,7 @@ export default function SaveTheDate() {
           <Clock className="w-4 h-4" /> {weddingConfig.wedding.timeDisplay}
         </p>
         <p className="flex items-center justify-center gap-2 mt-1 text-gold-700 dark:text-gold-300">
-          <MapPin className="w-4 h-4" /> {weddingConfig.wedding.venueName}
+          <MapPin className="w-4 h-4" /> {weddingConfig.wedding.brideHouse.houseName}
         </p>
 
         {!time.isPast ? (

@@ -21,6 +21,9 @@ wedding: {
   dateISO: "2026-09-04T17:00:00+06:00",
   dateDisplay: "Friday, 04 September 2026",
   timeDisplay: "2:00 PM onwards",
+  venueLat: 23.611454, // Latitude of the wedding venue in Debidwar, Cumilla
+venueLng: 90.977287, // Longitude of the wedding venue in Debidwar, Cumilla
+
 
   brideHouse: {
     houseName: "Bhuiyan Bari",

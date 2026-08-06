@@ -23,7 +23,7 @@
       }
     ],
     "baseUrl": ".",
-    "ignoreDeprecations": "6.0", // Add this line
+    "ignoreDeprecations": "6.0", 
     "paths": {
       "@/*": [
         "./*"

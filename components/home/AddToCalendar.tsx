@@ -13,7 +13,7 @@ export default function AddToCalendar() {
     title: `${wedding.title} Wedding`,
     startISO: start,
     endISO: end,
-    location: wedding.venueName,
+    location: wedding.brideHouse.houseName,
     details: "Join us to celebrate our wedding day!",
   };
 
