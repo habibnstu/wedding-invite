@@ -13,11 +13,11 @@ export const weddingConfig = {
     groomNameBn: "হাবিবুর",
     bridePhoto: "/images/bride.jpg",
     groomPhoto: "/images/groom.jpg",
-    coupleHashtag: "#Somiya & Habibur",
+    coupleHashtag: "#Habibur & Somiya",
   },
 
 wedding: {
-  title: "Somiya & Habibur",
+  title: "Habibur  &  Somiya",
   dateISO: "2026-09-04T17:00:00+06:00",
   dateDisplay: "Friday, 04 September 2026",
   timeDisplay: "2:00 PM onwards",

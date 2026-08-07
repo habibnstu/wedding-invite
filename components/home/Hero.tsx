@@ -59,7 +59,7 @@ export default function Hero({ guestName }: { guestName: string }) {
         transition={{ duration: 0.9, delay: 0.4 }}
         className="font-display text-4xl md:text-7xl text-center text-gold-800 dark:text-gold-200"
       >
-        {couple.brideName} <span className="font-script text-blush-400 mx-2 md:mx-4">&amp;</span> {couple.groomName}
+        {couple.groomName} <span className="font-script text-blush-400 mx-2 md:mx-4">&amp;</span> {couple.brideName}
       </motion.h1>
 
       <motion.p
