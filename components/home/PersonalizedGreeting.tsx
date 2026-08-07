@@ -22,7 +22,7 @@ export default function PersonalizedGreeting({ guestName }: { guestName: string 
           Your presence will make our special day even more memorable.
         </p>
         <p className="mt-6 font-display text-lg text-gold-600 dark:text-gold-300">
-          {weddingConfig.couple.brideName} &amp; {weddingConfig.couple.groomName}
+          {weddingConfig.couple.groomName} &amp; {weddingConfig.couple.brideName}
         </p>
       </motion.div>
     </section>
