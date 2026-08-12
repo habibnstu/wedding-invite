@@ -34,7 +34,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "images.pexels.com",
+        hostname: "www.touristplaces.com.bd",
         port: "",
         pathname: "/**",
       },
