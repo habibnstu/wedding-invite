@@ -192,10 +192,12 @@ export default function Hero({ guestName }: { guestName: string }) {
             dark:text-cream-100
           "
         >
-          Dear{" "}
-          <span className="font-semibold">{guestName}</span>, it would be our
-          greatest honor to have you join us as we begin this beautiful journey
-          together. ✨
+         Dear{" "}
+            <span className="font-bold text-[#B8860B] underline decoration-[#D4AF37] decoration-2 underline-offset-4">
+              {guestName}
+            </span>
+            , it would be our greatest honor to have you join us as we begin this beautiful journey
+            together. ✨
         </p>
       </motion.div>
 

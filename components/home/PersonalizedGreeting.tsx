@@ -29,17 +29,22 @@ export default function PersonalizedGreeting({
         "
       >
         {/* Guest Name */}
-        <p
+            <p
           className="
-            font-script
-            text-2xl
-            sm:text-3xl
-            text-blush-400
-            mb-4
-            break-words
+              font-serif
+              text-2xl
+              sm:text-2xl
+              text-blush-400
+              mb-4
+              break-words
+              tracking-wide
           "
         >
-          Dear {guestName},
+          Dear{" "}
+          <span className="font-semibold text-[#B8860B] underline decoration-[#D4AF37] decoration-2 underline-offset-4">
+            {guestName}
+          </span>
+          ,
         </p>
 
         {/* Invitation Message */}
