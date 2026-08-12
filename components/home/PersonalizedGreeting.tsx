@@ -36,12 +36,11 @@ export default function PersonalizedGreeting({
               sm:text-2xl
               text-blush-400
               mb-4
-              break-words
-              tracking-wide
+              break-words   
           "
         >
           Dear{" "}
-          <span className="font-semibold text-[#B8860B] underline decoration-[#D4AF37] decoration-2 underline-offset-4">
+          <span className="font-semibold text-[#B8860B]">
             {guestName}
           </span>
           ,
