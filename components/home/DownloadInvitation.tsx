@@ -62,7 +62,14 @@ export default function DownloadInvitation({
 
       const imgData = canvas.toDataURL("image/png");
 
-      pdf.addImage(imgData, "PNG", 0, 0, 148, 210);
+      pdf.addImage(
+        imgData,
+        "PNG",
+        0,
+        0,
+        148,
+        210
+      );
 
       pdf.save("Wedding_Invitation.pdf");
     } finally {
@@ -71,59 +78,68 @@ export default function DownloadInvitation({
   };
 
   return (
-    <section className="py-20 px-4 bg-[#f7f3ec]">
-      <div className="max-w-xl mx-auto">
+    <section className="w-full overflow-hidden bg-[#f7f3ec] px-4 py-16 sm:py-20">
+      <div className="mx-auto w-full max-w-xl">
 
         {/* Invitation Preview */}
-        <div
-          ref={cardRef}
-          className="relative mx-auto shadow-2xl rounded-xl overflow-hidden bg-white"
-          style={{
-            width: "420px",
-            height: "594px",
-          }}
-        >
-          <img
-            src="/images/InvitationImage.png"
-            alt="Wedding Invitation"
-            className="w-full h-full object-cover"
-            crossOrigin="anonymous"
-          />
+        <div className="w-full overflow-x-auto pb-2">
+          <div
+            ref={cardRef}
+            className="relative mx-auto shrink-0 overflow-hidden rounded-xl bg-white shadow-2xl"
+            style={{
+              width: "420px",
+              height: "594px",
+            }}
+          >
+            <img
+              src="/images/InvitationImage.png"
+              alt="Wedding Invitation"
+              className="h-full w-full object-cover"
+              crossOrigin="anonymous"
+            />
 
-          {guestName && (
-            <div
-              className="absolute left-0 right-0 bottom-8 text-center"
-              style={{
-                color: "#6d4c1d",
-                fontSize: "18px",
-                fontFamily: "'Cormorant Garamond', serif",
-                fontWeight: 600,
-              }}
-            >
-              Dear {guestName}
-            </div>
-          )}
+            {guestName && (
+              <div
+                className="absolute bottom-8 left-0 right-0 px-4 text-center"
+                style={{
+                  color: "#6d4c1d",
+                  fontSize: "18px",
+                  fontFamily:
+                    "'Cormorant Garamond', serif",
+                  fontWeight: 600,
+                }}
+              >
+                Dear {guestName}
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Download Buttons */}
-        <div className="flex justify-center gap-4 mt-8">
+        <div className="mt-8 flex w-full flex-col justify-center gap-3 sm:flex-row sm:gap-4">
 
           <button
             onClick={downloadPNG}
             disabled={busy !== null}
-            className="flex items-center gap-2 rounded-full bg-yellow-700 text-white px-6 py-3 disabled:opacity-50"
+            className="flex w-full items-center justify-center gap-2 rounded-full bg-yellow-700 px-6 py-3 text-sm text-white transition-opacity disabled:opacity-50 sm:w-auto"
           >
             <FileImage size={18} />
-            {busy === "png" ? "Generating PNG..." : "Download PNG"}
+
+            {busy === "png"
+              ? "Generating PNG..."
+              : "Download PNG"}
           </button>
 
           <button
             onClick={downloadPDF}
             disabled={busy !== null}
-            className="flex items-center gap-2 rounded-full border border-yellow-700 text-yellow-700 px-6 py-3 disabled:opacity-50"
+            className="flex w-full items-center justify-center gap-2 rounded-full border border-yellow-700 px-6 py-3 text-sm text-yellow-700 transition-opacity disabled:opacity-50 sm:w-auto"
           >
             <FileText size={18} />
-            {busy === "pdf" ? "Generating PDF..." : "Download PDF"}
+
+            {busy === "pdf"
+              ? "Generating PDF..."
+              : "Download PDF"}
           </button>
 
         </div>

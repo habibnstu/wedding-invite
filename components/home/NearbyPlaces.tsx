@@ -290,7 +290,7 @@ export default function NearbyPlaces() {
               {title}
             </h4>
 
-            <p className="whitespace-pre-wrap text-sm leading-7 text-[#806d5d]">
+            <p className="whitespace-pre-wrap break-words text-sm leading-7 text-[#806d5d]">
               {content}
             </p>
           </div>
@@ -301,7 +301,7 @@ export default function NearbyPlaces() {
         return (
           <p
             key={`text-${idx}`}
-            className="mb-3 whitespace-pre-wrap text-sm leading-7 text-[#806d5d]"
+            className="mb-3 whitespace-pre-wrap break-words text-sm leading-7 text-[#806d5d]"
           >
             {section.trim()}
           </p>
@@ -348,7 +348,7 @@ export default function NearbyPlaces() {
   return (
     <section
       id="nearby"
-      className="relative overflow-hidden px-4 py-24 md:px-6"
+      className="relative overflow-hidden px-4 py-16 sm:py-20 md:px-6 md:py-24"
       style={{
         background:
           "linear-gradient(180deg, #fffaf5 0%, #f8eee5 50%, #fffaf5 100%)",
@@ -364,8 +364,9 @@ export default function NearbyPlaces() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl">
+
         {/* Header */}
-        <div className="mx-auto mb-14 max-w-3xl text-center">
+        <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12 md:mb-14">
           <motion.div
             initial={{
               opacity: 0,
@@ -378,11 +379,11 @@ export default function NearbyPlaces() {
             viewport={{
               once: true,
             }}
-            className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#d4af37]/20 bg-white/70 px-4 py-2 shadow-sm backdrop-blur-md"
+            className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#d4af37]/20 bg-white/70 px-3 py-1.5 shadow-sm backdrop-blur-md sm:mb-5 sm:px-4 sm:py-2"
           >
-            <Compass className="h-4 w-4 text-[#b18a25]" />
+            <Compass className="h-3.5 w-3.5 text-[#b18a25] sm:h-4 sm:w-4" />
 
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8a6d1d]">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-[#8a6d1d] sm:text-xs sm:tracking-[0.18em]">
               Explore Nearby
             </span>
           </motion.div>
@@ -402,7 +403,7 @@ export default function NearbyPlaces() {
             transition={{
               delay: 0.1,
             }}
-            className="font-display text-4xl leading-tight text-[#5b4636] md:text-5xl lg:text-6xl"
+            className="font-display text-3xl leading-tight text-[#5b4636] sm:text-4xl md:text-5xl lg:text-6xl"
           >
             Discover Beautiful
 
@@ -427,7 +428,7 @@ export default function NearbyPlaces() {
               delay: 0.2,
               duration: 0.7,
             }}
-            className="mx-auto my-6 h-px w-24 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent"
+            className="mx-auto my-5 h-px w-20 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent sm:my-6 sm:w-24"
           />
 
           <motion.p
@@ -445,7 +446,7 @@ export default function NearbyPlaces() {
             transition={{
               delay: 0.3,
             }}
-            className="mx-auto max-w-2xl text-sm leading-7 text-[#806d5d]"
+            className="mx-auto max-w-2xl px-2 text-sm leading-6 text-[#806d5d] sm:leading-7"
           >
             Take a little time to explore the cultural
             heritage, beautiful landmarks and hidden
@@ -454,7 +455,7 @@ export default function NearbyPlaces() {
         </div>
 
         {/* Places Grid */}
-        <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 sm:gap-7 lg:grid-cols-3">
           {weddingConfig.nearbyPlaces.map(
             (place: NearbyPlace, index: number) => {
               const imageUrl = getImageUrl(place);
@@ -512,9 +513,10 @@ export default function NearbyPlaces() {
                     openModal(place)
                   }
                 >
-                  <div className="relative overflow-hidden rounded-[26px] border border-[#d4af37]/15 bg-white shadow-[0_15px_50px_rgba(105,75,40,0.08)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_70px_rgba(105,75,40,0.16)]">
+                  <div className="relative overflow-hidden rounded-[22px] border border-[#d4af37]/15 bg-white shadow-[0_15px_50px_rgba(105,75,40,0.08)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_70px_rgba(105,75,40,0.16)] sm:rounded-[26px]">
+
                     {/* Image */}
-                    <div className="relative h-64 overflow-hidden">
+                    <div className="relative h-52 overflow-hidden sm:h-60 md:h-64">
                       <Image
                         src={imageUrl}
                         alt={
@@ -539,11 +541,11 @@ export default function NearbyPlaces() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
                       {/* Category */}
-                      <div className="absolute left-4 top-4">
+                      <div className="absolute left-3 top-3 sm:left-4 sm:top-4">
                         <span
-                          className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-[11px] font-semibold backdrop-blur-md ${categoryColor}`}
+                          className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-1.5 text-[10px] font-semibold backdrop-blur-md sm:gap-1.5 sm:px-3 sm:text-[11px] ${categoryColor}`}
                         >
-                          <CategoryIcon className="h-3.5 w-3.5" />
+                          <CategoryIcon className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
 
                           {place.category ||
                             "Attraction"}
@@ -552,9 +554,9 @@ export default function NearbyPlaces() {
 
                       {/* Distance */}
                       {distanceDisplay && (
-                        <div className="absolute right-4 top-4">
-                          <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-black/40 px-3 py-1.5 text-[11px] font-medium text-white backdrop-blur-md">
-                            <MapPin className="h-3.5 w-3.5" />
+                        <div className="absolute right-3 top-3 sm:right-4 sm:top-4">
+                          <span className="inline-flex items-center gap-1 rounded-full border border-white/20 bg-black/40 px-2.5 py-1.5 text-[10px] font-medium text-white backdrop-blur-md sm:gap-1.5 sm:px-3 sm:text-[11px]">
+                            <MapPin className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
 
                             {distanceDisplay}
                           </span>
@@ -562,15 +564,15 @@ export default function NearbyPlaces() {
                       )}
 
                       {/* Bottom Actions */}
-                      <div className="absolute bottom-4 left-4 right-4 flex translate-y-2 items-center justify-between opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                      <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between translate-y-0 opacity-100 transition-all duration-300 sm:bottom-4 sm:left-4 sm:right-4 sm:translate-y-2 sm:opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100">
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
                             openModal(place);
                           }}
-                          className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2.5 text-xs font-semibold text-[#604a36] shadow-xl transition hover:bg-[#fffaf5]"
+                          className="inline-flex items-center gap-1.5 rounded-full bg-white px-3.5 py-2 text-[11px] font-semibold text-[#604a36] shadow-xl transition hover:bg-[#fffaf5] sm:gap-2 sm:px-4 sm:py-2.5 sm:text-xs"
                         >
-                          <Info className="h-4 w-4" />
+                          <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
 
                           Explore
                         </button>
@@ -582,15 +584,15 @@ export default function NearbyPlaces() {
                           }}
                           className="rounded-full bg-white p-2.5 shadow-xl transition hover:scale-105"
                         >
-                          <Share2 className="h-4 w-4 text-[#a17c20]" />
+                          <Share2 className="h-3.5 w-3.5 text-[#a17c20] sm:h-4 sm:w-4" />
                         </button>
                       </div>
                     </div>
 
                     {/* Card Content */}
-                    <div className="p-5">
-                      <div className="mb-2 flex items-start justify-between gap-4">
-                        <h3 className="font-display text-xl leading-tight text-[#5b4636] transition-colors group-hover:text-[#b18a25]">
+                    <div className="p-4 sm:p-5">
+                      <div className="mb-2 flex items-start justify-between gap-3">
+                        <h3 className="min-w-0 font-display text-lg leading-tight text-[#5b4636] transition-colors group-hover:text-[#b18a25] sm:text-xl">
                           {place.name}
                         </h3>
 
@@ -610,12 +612,11 @@ export default function NearbyPlaces() {
                       {/* Description */}
                       <div className="mb-3">
                         <div className="text-sm leading-6 text-[#806d5d]">
-                          <p className="line-clamp-2">
+                          <p className="line-clamp-2 break-words">
                             {previewText}
                           </p>
                         </div>
 
-                        {/* Read More opens Modal */}
                         {hasLongDescription && (
                           <button
                             type="button"
@@ -633,7 +634,7 @@ export default function NearbyPlaces() {
                       </div>
 
                       {/* Meta */}
-                      <div className="flex flex-wrap items-center gap-3 text-xs text-[#9b806a]">
+                      <div className="flex flex-wrap items-center gap-2.5 text-xs text-[#9b806a] sm:gap-3">
                         {place.builtYear && (
                           <div className="flex items-center gap-1.5">
                             <Calendar className="h-3.5 w-3.5" />
@@ -652,7 +653,7 @@ export default function NearbyPlaces() {
                       </div>
 
                       {/* Progress */}
-                      <div className="mt-5 h-px w-full overflow-hidden bg-[#eadfce]">
+                      <div className="mt-4 h-px w-full overflow-hidden bg-[#eadfce] sm:mt-5">
                         <motion.div
                           initial={{
                             width: 0,
@@ -693,7 +694,7 @@ export default function NearbyPlaces() {
             exit={{
               opacity: 0,
             }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-3 backdrop-blur-md md:p-6"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-2 backdrop-blur-md sm:p-3 md:p-6"
             onClick={closeModal}
           >
             <motion.div
@@ -719,10 +720,10 @@ export default function NearbyPlaces() {
               onClick={(e) =>
                 e.stopPropagation()
               }
-              className="relative flex max-h-[92vh] w-full max-w-5xl flex-col overflow-hidden rounded-[28px] bg-[#fffaf5] shadow-2xl"
+              className="relative flex max-h-[96vh] w-full max-w-5xl flex-col overflow-hidden rounded-[20px] bg-[#fffaf5] shadow-2xl sm:max-h-[94vh] sm:rounded-[28px] md:max-h-[92vh]"
             >
               {/* Modal Image */}
-              <div className="relative h-60 shrink-0 md:h-80">
+              <div className="relative h-52 shrink-0 sm:h-60 md:h-80">
                 <Image
                   src={getImageUrl(
                     selectedPlace
@@ -743,15 +744,16 @@ export default function NearbyPlaces() {
                 {/* Close */}
                 <button
                   onClick={closeModal}
-                  className="absolute right-4 top-4 rounded-full border border-white/20 bg-black/30 p-2.5 text-white backdrop-blur-md transition hover:bg-black/50"
+                  aria-label="Close"
+                  className="absolute right-3 top-3 rounded-full border border-white/20 bg-black/30 p-2.5 text-white backdrop-blur-md transition hover:bg-black/50 sm:right-4 sm:top-4"
                 >
                   <X className="h-5 w-5" />
                 </button>
 
-                <div className="absolute bottom-6 left-5 right-5 md:left-8 md:right-8">
-                  <div className="mb-3 flex flex-wrap items-center gap-2">
+                <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-5 sm:right-5 md:left-8 md:right-8">
+                  <div className="mb-2 flex flex-wrap items-center gap-2 sm:mb-3">
                     <span
-                      className={`rounded-full border px-3 py-1.5 text-xs font-semibold backdrop-blur-md ${getCategoryColor(
+                      className={`rounded-full border px-2.5 py-1.5 text-[10px] font-semibold backdrop-blur-md sm:px-3 sm:text-xs ${getCategoryColor(
                         selectedPlace.category
                       )}`}
                     >
@@ -760,24 +762,25 @@ export default function NearbyPlaces() {
                     </span>
 
                     {selectedPlace.builtYear && (
-                      <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-black/30 px-3 py-1.5 text-xs text-white backdrop-blur-md">
-                        <Calendar className="h-3.5 w-3.5" />
+                      <span className="inline-flex items-center gap-1 rounded-full border border-white/20 bg-black/30 px-2.5 py-1.5 text-[10px] text-white backdrop-blur-md sm:gap-1.5 sm:px-3 sm:text-xs">
+                        <Calendar className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
 
                         {selectedPlace.builtYear}
                       </span>
                     )}
                   </div>
 
-                  <h3 className="font-display text-3xl leading-tight text-white md:text-5xl">
+                  <h3 className="font-display break-words text-2xl leading-tight text-white sm:text-3xl md:text-5xl">
                     {selectedPlace.name}
                   </h3>
                 </div>
               </div>
 
               {/* Modal Body */}
-              <div className="custom-scrollbar overflow-y-auto p-5 md:p-8">
+              <div className="custom-scrollbar min-h-0 overflow-y-auto p-4 sm:p-5 md:p-8">
+
                 {/* Quick Information */}
-                <div className="mb-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="mb-5 grid gap-3 sm:mb-7 sm:grid-cols-2 lg:grid-cols-4">
                   {selectedPlace.founderOrBuilder && (
                     <div className="rounded-2xl border border-[#d4af37]/10 bg-white p-4">
                       <Building2 className="mb-2 h-4 w-4 text-[#b18a25]" />
@@ -786,7 +789,7 @@ export default function NearbyPlaces() {
                         Built By
                       </p>
 
-                      <p className="text-sm font-medium text-[#604a36]">
+                      <p className="break-words text-sm font-medium text-[#604a36]">
                         {
                           selectedPlace.founderOrBuilder
                         }
@@ -802,7 +805,7 @@ export default function NearbyPlaces() {
                         Entry Fee
                       </p>
 
-                      <p className="text-sm font-medium text-[#604a36]">
+                      <p className="break-words text-sm font-medium text-[#604a36]">
                         {selectedPlace.entryFee}
                       </p>
                     </div>
@@ -816,7 +819,7 @@ export default function NearbyPlaces() {
                         Opening Hours
                       </p>
 
-                      <p className="text-sm font-medium text-[#604a36]">
+                      <p className="break-words text-sm font-medium text-[#604a36]">
                         {
                           selectedPlace.openingHours
                         }
@@ -832,7 +835,7 @@ export default function NearbyPlaces() {
                         Best Time
                       </p>
 
-                      <p className="text-sm font-medium text-[#604a36]">
+                      <p className="break-words text-sm font-medium text-[#604a36]">
                         {
                           selectedPlace.bestTimeToVisit
                         }
@@ -845,7 +848,7 @@ export default function NearbyPlaces() {
                 {getFullDescription(
                   selectedPlace
                 ) && (
-                  <div className="mb-4 rounded-2xl border border-[#d4af37]/10 bg-white p-5">
+                  <div className="mb-4 rounded-2xl border border-[#d4af37]/10 bg-white p-4 sm:p-5">
                     <SectionTitle
                       icon={
                         <Info className="h-4 w-4" />
@@ -865,7 +868,7 @@ export default function NearbyPlaces() {
 
                 {/* History */}
                 {selectedPlace.history && (
-                  <div className="mb-4 rounded-2xl border border-[#d4af37]/10 bg-white p-5">
+                  <div className="mb-4 rounded-2xl border border-[#d4af37]/10 bg-white p-4 sm:p-5">
                     <SectionTitle
                       icon={
                         <Building2 className="h-4 w-4" />
@@ -873,7 +876,7 @@ export default function NearbyPlaces() {
                       title="History"
                     />
 
-                    <p className="whitespace-pre-wrap text-sm leading-7 text-[#806d5d]">
+                    <p className="whitespace-pre-wrap break-words text-sm leading-7 text-[#806d5d]">
                       {selectedPlace.history}
                     </p>
                   </div>
@@ -884,7 +887,7 @@ export default function NearbyPlaces() {
                   selectedPlace.importance) && (
                   <div className="mb-4 grid gap-4 md:grid-cols-2">
                     {selectedPlace.architecturalStyle && (
-                      <div className="rounded-2xl border border-[#d4af37]/10 bg-white p-5">
+                      <div className="rounded-2xl border border-[#d4af37]/10 bg-white p-4 sm:p-5">
                         <SectionTitle
                           icon={
                             <Star className="h-4 w-4" />
@@ -892,7 +895,7 @@ export default function NearbyPlaces() {
                           title="Architecture"
                         />
 
-                        <p className="text-sm leading-7 text-[#806d5d]">
+                        <p className="break-words text-sm leading-7 text-[#806d5d]">
                           {
                             selectedPlace.architecturalStyle
                           }
@@ -901,7 +904,7 @@ export default function NearbyPlaces() {
                     )}
 
                     {selectedPlace.importance && (
-                      <div className="rounded-2xl border border-[#d4af37]/10 bg-white p-5">
+                      <div className="rounded-2xl border border-[#d4af37]/10 bg-white p-4 sm:p-5">
                         <SectionTitle
                           icon={
                             <Award className="h-4 w-4" />
@@ -909,7 +912,7 @@ export default function NearbyPlaces() {
                           title="Significance"
                         />
 
-                        <p className="text-sm leading-7 text-[#806d5d]">
+                        <p className="break-words text-sm leading-7 text-[#806d5d]">
                           {
                             selectedPlace.importance
                           }
@@ -923,7 +926,7 @@ export default function NearbyPlaces() {
                 {selectedPlace.visitorTips &&
                   selectedPlace.visitorTips.length >
                     0 && (
-                    <div className="mb-4 rounded-2xl border border-amber-200/50 bg-amber-50/50 p-5">
+                    <div className="mb-4 rounded-2xl border border-amber-200/50 bg-amber-50/50 p-4 sm:p-5">
                       <SectionTitle
                         icon={
                           <Lightbulb className="h-4 w-4" />
@@ -941,11 +944,13 @@ export default function NearbyPlaces() {
                               key={index}
                               className="flex gap-2 text-sm leading-6 text-[#806d5d]"
                             >
-                              <span className="mt-1 text-[#c49a35]">
+                              <span className="mt-1 shrink-0 text-[#c49a35]">
                                 •
                               </span>
 
-                              <span>{tip}</span>
+                              <span className="break-words">
+                                {tip}
+                              </span>
                             </li>
                           )
                         )}
@@ -957,7 +962,7 @@ export default function NearbyPlaces() {
                 {selectedPlace.interestingFacts &&
                   selectedPlace.interestingFacts
                     .length > 0 && (
-                    <div className="mb-4 rounded-2xl border border-rose-200/40 bg-rose-50/40 p-5">
+                    <div className="mb-4 rounded-2xl border border-rose-200/40 bg-rose-50/40 p-4 sm:p-5">
                       <SectionTitle
                         icon={
                           <Heart className="h-4 w-4" />
@@ -975,11 +980,13 @@ export default function NearbyPlaces() {
                               key={index}
                               className="flex gap-2 text-sm leading-6 text-[#806d5d]"
                             >
-                              <span className="mt-1 text-rose-400">
+                              <span className="mt-1 shrink-0 text-rose-400">
                                 ✦
                               </span>
 
-                              <span>{fact}</span>
+                              <span className="break-words">
+                                {fact}
+                              </span>
                             </li>
                           )
                         )}
@@ -1007,7 +1014,7 @@ export default function NearbyPlaces() {
                           ) => (
                             <span
                               key={index}
-                              className="rounded-full border border-[#d4af37]/20 bg-[#d4af37]/5 px-3 py-1.5 text-xs text-[#806d5d]"
+                              className="break-all rounded-full border border-[#d4af37]/20 bg-[#d4af37]/5 px-3 py-1.5 text-xs text-[#806d5d]"
                             >
                               #{keyword}
                             </span>
@@ -1018,8 +1025,9 @@ export default function NearbyPlaces() {
                   )}
 
                 {/* Action Buttons */}
-                <div className="border-t border-[#d4af37]/15 pt-6">
-                  <div className="flex flex-wrap gap-3">
+                <div className="border-t border-[#d4af37]/15 pt-5 sm:pt-6">
+                  <div className="grid grid-cols-1 gap-2.5 sm:flex sm:flex-wrap sm:gap-3">
+
                     {/* Google Maps */}
                     <a
                       href={getGoogleMapsUrl(
@@ -1027,7 +1035,7 @@ export default function NearbyPlaces() {
                       )}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full bg-[#b18a25] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#b18a25]/20 transition hover:-translate-y-0.5 hover:bg-[#96751d]"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#b18a25] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#b18a25]/20 transition hover:-translate-y-0.5 hover:bg-[#96751d] sm:w-auto"
                     >
                       <MapPin className="h-4 w-4" />
 
@@ -1043,7 +1051,7 @@ export default function NearbyPlaces() {
                       )}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-[#d4af37]/25 bg-white px-5 py-3 text-sm font-semibold text-[#604a36] transition hover:-translate-y-0.5 hover:bg-[#fff8ec]"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#d4af37]/25 bg-white px-5 py-3 text-sm font-semibold text-[#604a36] transition hover:-translate-y-0.5 hover:bg-[#fff8ec] sm:w-auto"
                     >
                       <Navigation className="h-4 w-4 text-[#b18a25]" />
 
@@ -1059,7 +1067,7 @@ export default function NearbyPlaces() {
                           selectedPlace
                         )
                       }
-                      className="inline-flex items-center gap-2 rounded-full border border-[#d4af37]/25 bg-white px-5 py-3 text-sm font-semibold text-[#604a36] transition hover:-translate-y-0.5 hover:bg-[#fff8ec]"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#d4af37]/25 bg-white px-5 py-3 text-sm font-semibold text-[#604a36] transition hover:-translate-y-0.5 hover:bg-[#fff8ec] sm:w-auto"
                     >
                       <Share2 className="h-4 w-4 text-[#b18a25]" />
 
@@ -1074,7 +1082,7 @@ export default function NearbyPlaces() {
                         }
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-full border border-[#d4af37]/25 bg-white px-5 py-3 text-sm font-semibold text-[#604a36] transition hover:-translate-y-0.5 hover:bg-[#fff8ec]"
+                        className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#d4af37]/25 bg-white px-5 py-3 text-sm font-semibold text-[#604a36] transition hover:-translate-y-0.5 hover:bg-[#fff8ec] sm:w-auto"
                       >
                         <Info className="h-4 w-4 text-[#b18a25]" />
 
@@ -1092,7 +1100,7 @@ export default function NearbyPlaces() {
                         }
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-full border border-[#d4af37]/25 bg-white px-5 py-3 text-sm font-semibold text-[#604a36] transition hover:-translate-y-0.5 hover:bg-[#fff8ec]"
+                        className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#d4af37]/25 bg-white px-5 py-3 text-sm font-semibold text-[#604a36] transition hover:-translate-y-0.5 hover:bg-[#fff8ec] sm:w-auto"
                       >
                         <ExternalLink className="h-4 w-4 text-[#b18a25]" />
 
@@ -1138,7 +1146,7 @@ function SectionTitle({
 }) {
   return (
     <h4 className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-[#72583f]">
-      <span className="text-[#b18a25]">
+      <span className="shrink-0 text-[#b18a25]">
         {icon}
       </span>
 

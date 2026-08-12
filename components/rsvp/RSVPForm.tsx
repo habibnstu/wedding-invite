@@ -36,12 +36,16 @@ export default function RSVPForm({
   });
 
   const attendance = watch("attendance");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
 
   // Avoids hydration mismatches caused by browser extensions
   // (password managers, Grammarly, etc.) that inject markup into
   // form fields before React hydrates.
   const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -49,6 +53,7 @@ export default function RSVPForm({
   const onSubmit = async (data: RSVPFormData) => {
     try {
       setStatus("loading");
+
       const formData = new FormData();
 
       formData.append("type", "rsvp");
@@ -58,10 +63,13 @@ export default function RSVPForm({
       formData.append("guests", data.guests.toString());
       formData.append("message", data.message);
 
-      const response = await fetch(weddingConfig.googleAppsScriptUrl, {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        weddingConfig.googleAppsScriptUrl,
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       const result = await response.text();
 
@@ -78,21 +86,32 @@ export default function RSVPForm({
   };
 
   return (
-    <section id="rsvp" className="py-10 px-4">
-      <h2 className="section-heading">Kindly Confirm Your Attendance</h2>
-      <div className="gold-divider mt-4 mb-12" />
+    <section
+      id="rsvp"
+      className="w-full overflow-hidden px-4 py-10 sm:px-5 md:px-6"
+    >
+      <h2 className="section-heading px-1 text-center">
+        Kindly Confirm Your Attendance
+      </h2>
 
-      <div className="max-w-lg mx-auto glass rounded-3xl p-6 md:p-10">
+      <div className="gold-divider mt-4 mb-10 sm:mb-12" />
+
+      <div className="mx-auto w-full max-w-lg glass rounded-3xl p-4 sm:p-6 md:p-10">
         {status === "success" ? (
-          <div className="text-center py-10">
-            <CheckCircle2 className="mx-auto h-16 w-16 text-green-500 mb-4" />
-            <h3 className="text-2xl font-semibold mb-2">Thank You!</h3>
-            <p className="mb-6">
+          <div className="py-8 text-center sm:py-10">
+            <CheckCircle2 className="mx-auto mb-4 h-14 w-14 text-green-500 sm:h-16 sm:w-16" />
+
+            <h3 className="mb-2 text-xl font-semibold sm:text-2xl">
+              Thank You!
+            </h3>
+
+            <p className="mb-6 px-2 text-sm leading-6 sm:text-base">
               Your Confirmation has been submitted successfully.
             </p>
+
             <button
               onClick={() => setStatus("idle")}
-              className="px-6 py-3 rounded-full bg-gold-gradient text-white"
+              className="w-full max-w-xs rounded-full bg-gold-gradient px-5 py-3 text-sm text-white sm:w-auto sm:px-6 sm:text-base"
             >
               Submit Another Response
             </button>
@@ -103,43 +122,81 @@ export default function RSVPForm({
             className="space-y-5"
             suppressHydrationWarning
           >
-            <div>
-              <label htmlFor="rsvp-name">Full Name</label>
+            {/* Full Name */}
+            <div className="w-full">
+              <label
+                htmlFor="rsvp-name"
+                className="block text-sm"
+              >
+                Full Name
+              </label>
+
               <input
                 id="rsvp-name"
+                type="text"
+                autoComplete="name"
                 suppressHydrationWarning
                 {...register("name", { required: true })}
-                className="w-full mt-1 rounded-xl border px-4 py-3"
+                className="mt-1 block w-full min-w-0 rounded-xl border px-4 py-3 text-base outline-none"
               />
+
               {errors.name && (
-                <p className="text-red-500 text-sm">Name is required</p>
+                <p className="mt-1 text-sm text-red-500">
+                  Name is required
+                </p>
               )}
             </div>
 
-            <div>
-              <label htmlFor="rsvp-phone">Phone</label>
+            {/* Phone */}
+            <div className="w-full">
+              <label
+                htmlFor="rsvp-phone"
+                className="block text-sm"
+              >
+                Phone
+              </label>
+
               <input
                 id="rsvp-phone"
+                type="tel"
+                autoComplete="tel"
+                inputMode="tel"
                 suppressHydrationWarning
                 {...register("phone", { required: true })}
-                className="w-full mt-1 rounded-xl border px-4 py-3"
+                className="mt-1 block w-full min-w-0 rounded-xl border px-4 py-3 text-base outline-none"
               />
+
               {errors.phone && (
-                <p className="text-red-500 text-sm">Phone is required</p>
+                <p className="mt-1 text-sm text-red-500">
+                  Phone is required
+                </p>
               )}
             </div>
 
+            {/* Attendance */}
             <div>
-              <label className="block mb-3 text-sm font-medium text-gold-800 dark:text-cream-100">
+              <label className="mb-3 block text-sm font-medium text-gold-800 dark:text-cream-100">
                 Attendance
               </label>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
                 {(
                   [
-                    { value: "Yes", label: "Joyfully Accept", icon: "💖" },
-                    { value: "No", label: "Regretfully Decline", icon: "🙏" },
-                    { value: "Maybe", label: "Maybe", icon: "🤔" },
+                    {
+                      value: "Yes",
+                      label: "Joyfully Accept",
+                      icon: "💖",
+                    },
+                    {
+                      value: "No",
+                      label: "Regretfully Decline",
+                      icon: "🙏",
+                    },
+                    {
+                      value: "Maybe",
+                      label: "Maybe",
+                      icon: "🤔",
+                    },
                   ] as const
                 ).map((option) => (
                   <button
@@ -151,65 +208,86 @@ export default function RSVPForm({
                         shouldDirty: true,
                       })
                     }
-                    className={`rounded-xl border-2 px-2 py-2 transition-all duration-300 font-medium ${
+                    className={`min-h-[88px] w-full rounded-xl border-2 px-2 py-2 text-sm font-medium transition-all duration-300 sm:min-h-0 ${
                       attendance === option.value
-                        ? "bg-gold-500 border-gold-500 text-white shadow-lg scale-105"
-                        : "bg-white dark:bg-white/5 border-gold-300 text-gold-700 dark:text-cream-100 hover:border-gold-500 hover:bg-gold-50 dark:hover:bg-white/10"
+                        ? "scale-105 border-gold-500 bg-gold-500 text-white shadow-lg"
+                        : "border-gold-300 bg-white text-gold-700 hover:border-gold-500 hover:bg-gold-50 dark:border-gold-300 dark:bg-white/5 dark:text-cream-100 dark:hover:bg-white/10"
                     }`}
                   >
-                    <div className="text-2xl mb-1">{option.icon}</div>
-                    <div>{option.label}</div>
+                    <div className="mb-1 text-2xl">
+                      {option.icon}
+                    </div>
+
+                    <div className="leading-5">
+                      {option.label}
+                    </div>
                   </button>
                 ))}
               </div>
             </div>
 
-            <div>
-              <label htmlFor="rsvp-guests">Number of Guests</label>
+            {/* Number of Guests */}
+            <div className="w-full">
+              <label
+                htmlFor="rsvp-guests"
+                className="block text-sm"
+              >
+                Number of Guests
+              </label>
+
               <input
                 id="rsvp-guests"
                 type="number"
                 min={1}
+                inputMode="numeric"
                 suppressHydrationWarning
                 {...register("guests", {
                   valueAsNumber: true,
                   min: 1,
                 })}
-                className="w-full mt-1 rounded-xl border px-4 py-3"
+                className="mt-1 block w-full min-w-0 rounded-xl border px-4 py-3 text-base outline-none"
               />
             </div>
 
-            <div>
-              <label htmlFor="rsvp-message">Message</label>
+            {/* Message */}
+            <div className="w-full">
+              <label
+                htmlFor="rsvp-message"
+                className="block text-sm"
+              >
+                Message
+              </label>
+
               <textarea
                 id="rsvp-message"
                 rows={4}
                 suppressHydrationWarning
                 {...register("message")}
-                className="w-full mt-1 rounded-xl border px-4 py-3"
+                className="mt-1 block w-full min-w-0 resize-y rounded-xl border px-4 py-3 text-base outline-none"
               />
             </div>
 
+            {/* Submit */}
             <button
               type="submit"
               disabled={status === "loading" || !mounted}
-              className="w-full rounded-full py-3 bg-gold-gradient text-white flex justify-center items-center gap-2"
+              className="flex w-full items-center justify-center gap-2 rounded-full bg-gold-gradient py-3 text-sm text-white transition-opacity disabled:cursor-not-allowed disabled:opacity-70 sm:text-base"
             >
               {status === "loading" ? (
                 <>
-                  <Loader2 className="animate-spin w-5 h-5" />
+                  <Loader2 className="h-5 w-5 animate-spin" />
                   <span>Submitting...</span>
                 </>
               ) : (
                 <>
-                  <Send className="w-5 h-5" />
+                  <Send className="h-5 w-5" />
                   <span>Confirm RSVP</span>
                 </>
               )}
             </button>
 
             {status === "error" && (
-              <p className="text-center text-red-500">
+              <p className="px-2 text-center text-sm text-red-500">
                 Something went wrong. Please try again.
               </p>
             )}

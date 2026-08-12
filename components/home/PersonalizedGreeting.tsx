@@ -3,26 +3,91 @@
 import { motion } from "framer-motion";
 import { weddingConfig } from "@/lib/config";
 
-export default function PersonalizedGreeting({ guestName }: { guestName: string }) {
+export default function PersonalizedGreeting({
+  guestName,
+}: {
+  guestName: string;
+}) {
   return (
-    <section className="py-10 px-4">
+    <section className="w-full py-8 sm:py-10 md:py-12 px-4 sm:px-6">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
-        className="max-w-xl mx-auto text-center glass rounded-3xl p-8 md:p-12"
+        className="
+          w-full
+          max-w-xl
+          mx-auto
+          text-center
+          glass
+          rounded-2xl
+          sm:rounded-3xl
+          p-5
+          sm:p-7
+          md:p-12
+        "
       >
-        <p className="font-script text-3xl text-blush-400 mb-4">Dear {guestName},</p>
-        <p className="text-gold-800 dark:text-cream-100 leading-relaxed">
-          With the blessings of Almighty Allah and our beloved families, we are delighted to invite you
-          to our Wedding Ceremony.
+        {/* Guest Name */}
+        <p
+          className="
+            font-script
+            text-2xl
+            sm:text-3xl
+            text-blush-400
+            mb-4
+            break-words
+          "
+        >
+          Dear {guestName},
         </p>
-        <p className="text-gold-800 dark:text-cream-100 leading-relaxed mt-3">
+
+        {/* Invitation Message */}
+        <p
+          className="
+            text-sm
+            sm:text-base
+            md:text-lg
+            text-gold-800
+            dark:text-cream-100
+            leading-relaxed
+          "
+        >
+          With the blessings of Almighty Allah and our beloved families, we
+          are delighted to invite you to our Wedding Ceremony.
+        </p>
+
+        {/* Second Message */}
+        <p
+          className="
+            text-sm
+            sm:text-base
+            md:text-lg
+            text-gold-800
+            dark:text-cream-100
+            leading-relaxed
+            mt-3
+          "
+        >
           Your presence will make our special day even more memorable.
         </p>
-        <p className="mt-6 font-display text-lg text-gold-600 dark:text-gold-300">
-          {weddingConfig.couple.groomName} &amp; {weddingConfig.couple.brideName}
+
+        {/* Couple Names */}
+        <p
+          className="
+            mt-5
+            sm:mt-6
+            font-display
+            text-base
+            sm:text-lg
+            md:text-xl
+            text-gold-600
+            dark:text-gold-300
+            break-words
+          "
+        >
+          {weddingConfig.couple.groomName} &amp;{" "}
+          {weddingConfig.couple.brideName}
         </p>
       </motion.div>
     </section>
