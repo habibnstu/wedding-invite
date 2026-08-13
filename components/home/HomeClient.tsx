@@ -37,13 +37,13 @@ export default function HomeClient({ guestName }: { guestName: string }) {
         <OurStory />
         <EventTimeline />
         <Venue />
-        <WeatherWidget />
-        <NearbyPlaces />
-        <Gallery />
-        <EmergencyContacts />
+        <WeatherWidget /> 
+        <Gallery />  
         <RSVPForm defaultName={guestName} />
         <Wishes />
         <DownloadInvitation guestName={guestName} />
+        <EmergencyContacts />
+        <NearbyPlaces />
         <SocialShare guestName={guestName} />
       </main>
       <footer className="text-center py-8 text-xs text-gold-500/70 dark:text-gold-300/50">
