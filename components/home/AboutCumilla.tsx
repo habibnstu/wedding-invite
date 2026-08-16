@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Landmark,
   MapPin,
@@ -10,56 +11,143 @@ import {
   ArrowRight,
   Building2,
   Users,
-  Clock,
-  Phone,
-  MapPinned,
-  Calendar,
-  Award,
-  BookOpen,
-  TreePine,
-  LandPlot,
-  Mountain,
-  Church,
-  Library,
-  School,
-  Store,
-  Utensils,
-  Camera,
-  Star,
   Sparkles,
+  X,
+  Calendar,
+  Clock,
+  Ticket,
+  Award,
+  Info,
+  Lightbulb,
+  Tag,
+  Star,
+  Compass,
+  Share2,
+  ExternalLink,
+  Navigation,
+  ChevronRight,
+  BookOpen,
 } from "lucide-react";
 import { weddingConfig } from "@/lib/config";
+import { useState } from "react";
 
 export default function AboutCumilla() {
   const about = weddingConfig.aboutCumilla;
+  const [selectedPlace, setSelectedPlace] = useState<any>(null);
 
   const administration = about.administration;
   const upazilas = administration.upazilas || [];
   const historicalPlaces = about.historicalPlaces || [];
+
+  const openModal = (place: any) => {
+    setSelectedPlace(place);
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeModal = () => {
+    setSelectedPlace(null);
+    document.body.style.overflow = "unset";
+  };
+
+  const getCategoryColor = (category?: string) => {
+    const colors: Record<string, string> = {
+      "প্রত্নতাত্ত্বিক স্থান": "bg-stone-100 text-stone-800 border-stone-200",
+      জাদুঘর: "bg-indigo-100 text-indigo-800 border-indigo-200",
+      মন্দির: "bg-amber-100 text-amber-800 border-amber-200",
+      "জলাধার/পার্ক": "bg-sky-100 text-sky-800 border-sky-200",
+      "যুদ্ধ সমাধিক্ষেত্র": "bg-rose-100 text-rose-800 border-rose-200",
+      "প্রাসাদ/জমিদার বাড়ি": "bg-rose-100 text-rose-800 border-rose-200",
+      "ঐতিহাসিক ভবন": "bg-stone-100 text-stone-800 border-stone-200",
+      "শিক্ষা ও গবেষণা প্রতিষ্ঠান": "bg-indigo-100 text-indigo-800 border-indigo-200",
+      "প্রাকৃতিক আকর্ষণ/উদ্ভিদ উদ্যান": "bg-emerald-100 text-emerald-800 border-emerald-200",
+      "ঐতিহাসিক মসজিদ": "bg-emerald-100 text-emerald-800 border-emerald-200",
+      "ঐতিহাসিক ও ধর্মীয় স্থান": "bg-purple-100 text-purple-800 border-purple-200",
+    };
+    return colors[category || ""] || "bg-[#d4af37]/10 text-[#8a6d1d] border-[#d4af37]/20";
+  };
+
+  const getCategoryIcon = (category?: string) => {
+    const icons: Record<string, any> = {
+      "প্রত্নতাত্ত্বিক স্থান": Landmark,
+      জাদুঘর: Building2,
+      মন্দির: Award,
+      "জলাধার/পার্ক": Compass,
+      "যুদ্ধ সমাধিক্ষেত্র": Heart,
+      "প্রাসাদ/জমিদার বাড়ি": Building2,
+      "ঐতিহাসিক ভবন": Building2,
+      "শিক্ষা ও গবেষণা প্রতিষ্ঠান": GraduationCap,
+      "প্রাকৃতিক আকর্ষণ/উদ্ভিদ উদ্যান": Compass,
+      "ঐতিহাসিক মসজিদ": Building2,
+      "ঐতিহাসিক ও ধর্মীয় স্থান": Star,
+    };
+    return icons[category || ""] || MapPin;
+  };
+
+  const getImageUrl = (place: any) => {
+    if (place.image && place.image !== "/placeholder.jpg") {
+      return place.image;
+    }
+    return "/placeholder.jpg";
+  };
+
+  const shouldUnoptimize = (url: string) => {
+    return (
+      url.includes("upload.wikimedia.org") ||
+      url.includes("commons.wikimedia.org") ||
+      url.includes("wikimedia") ||
+      url.includes("googleusercontent")
+    );
+  };
+
+  const getShortDescription = (description: string, maxLength: number = 120) => {
+    if (!description) return "";
+    const plain = description.replace(/### [^\n]*\n/g, "").replace(/\n/g, " ").trim();
+    return plain.length > maxLength ? plain.slice(0, maxLength) + "..." : plain;
+  };
+
+  const renderDescription = (text: string) => {
+    if (!text) return null;
+    const sections = text.split(/(?=### )/g);
+
+    return sections.map((section, idx) => {
+      if (section.startsWith("### ")) {
+        const lines = section.split("\n");
+        const title = lines[0].replace("### ", "").trim();
+        const content = lines.slice(1).join("\n").trim();
+        return (
+          <div key={`section-${idx}`} className="mb-4">
+            <h4 className="mb-2 text-sm font-bold text-[#5b4636]">{title}</h4>
+            <p className="whitespace-pre-wrap break-words text-sm leading-7 text-[#806d5d]">
+              {content}
+            </p>
+          </div>
+        );
+      }
+      if (section.trim()) {
+        return (
+          <p key={`text-${idx}`} className="mb-3 whitespace-pre-wrap break-words text-sm leading-7 text-[#806d5d]">
+            {section.trim()}
+          </p>
+        );
+      }
+      return null;
+    });
+  };
 
   return (
     <section
       id="about-cumilla"
       className="relative overflow-hidden bg-gradient-to-b from-[#fffaf5] via-[#fdf8f3] to-[#fffaf5] py-20 sm:py-24 lg:py-32"
     >
-      {/* =====================================================
-          BACKGROUND DECORATIONS
-      ====================================================== */}
-
+      {/* Background Decorations */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -left-32 top-20 h-72 w-72 rounded-full bg-[#f8d9df]/20 blur-3xl" />
         <div className="absolute -right-32 top-[35%] h-80 w-80 rounded-full bg-[#e7c98b]/15 blur-3xl" />
         <div className="absolute bottom-0 left-[35%] h-72 w-72 rounded-full bg-[#f6e5d6]/30 blur-3xl" />
-
-        {/* Decorative dots */}
         <div className="absolute left-[8%] top-[15%] h-2 w-2 rounded-full bg-[#d8b36a]/50" />
         <div className="absolute right-[12%] top-[22%] h-3 w-3 rounded-full bg-[#e8b6c3]/40" />
         <div className="absolute left-[18%] bottom-[20%] h-2 w-2 rounded-full bg-[#d8b36a]/40" />
         <div className="absolute right-[20%] bottom-[12%] h-2 w-2 rounded-full bg-[#e8b6c3]/50" />
-
-        {/* Decorative pattern */}
-        <div className="absolute left-[5%] top-[50%] h-[1px] w-20 rotate-45 bg-[#d8b36a]/10" />
-        <div className="absolute right-[5%] top-[30%] h-[1px] w-20 -rotate-45 bg-[#d8b36a]/10" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
@@ -87,9 +175,7 @@ export default function AboutCumilla() {
           </h2>
 
           {about.titleBn && (
-            <p className="mt-3 font-serif text-xl text-[#b18a46]">
-              {about.titleBn}
-            </p>
+            <p className="mt-3 font-serif text-xl text-[#b18a46]">{about.titleBn}</p>
           )}
 
           <div className="mx-auto mt-6 h-px w-20 bg-gradient-to-r from-transparent via-[#d8b36a] to-transparent" />
@@ -101,11 +187,9 @@ export default function AboutCumilla() {
           )}
         </motion.div>
 
-        {/* =====================================================
-            OVERVIEW
-        ====================================================== */}
+   
 
-      {/* =====================================================
+        {/* =====================================================
     OVERVIEW
 ====================================================== */}
 
@@ -182,7 +266,7 @@ export default function AboutCumilla() {
           className="mb-20 grid grid-cols-2 gap-3 rounded-2xl border border-[#eadbc5] bg-white/60 p-4 backdrop-blur-sm sm:grid-cols-4 md:gap-4 md:p-6"
         >
           <QuickStat
-            icon={<LandPlot size={18} />}
+            icon={<Landmark size={18} />}
             label="Area"
             value={`${administration.areaSqKm || 3146} km²`}
           />
@@ -209,7 +293,6 @@ export default function AboutCumilla() {
 
         <div className="mb-20 grid gap-6 md:grid-cols-2">
           {/* HISTORY */}
-
           <motion.div
             initial={{ opacity: 0, x: -35 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -250,27 +333,23 @@ export default function AboutCumilla() {
                   )}
             </div>
 
-            {/* Key Periods */}
-            {about.history?.keyPeriods &&
-              about.history.keyPeriods.length > 0 && (
-                <div className="mt-6">
-                  <p className="mb-3 text-sm font-medium text-[#5c4147]">
-                    Key Periods:
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {about.history.keyPeriods.map(
-                      (period: any, idx: number) => (
-                        <span
-                          key={idx}
-                          className="rounded-full bg-[#f8e8df] px-3 py-1 text-xs text-[#b18a46] transition hover:bg-[#f0dfd0]"
-                        >
-                          {period.period}
-                        </span>
-                      )
-                    )}
-                  </div>
+            {about.history?.keyPeriods && about.history.keyPeriods.length > 0 && (
+              <div className="mt-6">
+                <p className="mb-3 text-sm font-medium text-[#5c4147]">
+                  Key Periods:
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {about.history.keyPeriods.map((period: any, idx: number) => (
+                    <span
+                      key={idx}
+                      className="rounded-full bg-[#f8e8df] px-3 py-1 text-xs text-[#b18a46] transition hover:bg-[#f0dfd0]"
+                    >
+                      {period.period}
+                    </span>
+                  ))}
                 </div>
-              )}
+              </div>
+            )}
 
             <div className="mt-6 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-[#b18a46]">
               <span className="h-px w-8 bg-[#d8b36a]" />
@@ -279,7 +358,6 @@ export default function AboutCumilla() {
           </motion.div>
 
           {/* NAMING HISTORY */}
-
           <motion.div
             initial={{ opacity: 0, x: 35 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -320,7 +398,6 @@ export default function AboutCumilla() {
                   )}
             </div>
 
-            {/* Historical Names */}
             {about.namingHistory?.historicalNames &&
               about.namingHistory.historicalNames.length > 0 && (
                 <div className="mt-6">
@@ -381,8 +458,6 @@ export default function AboutCumilla() {
               </p>
             )}
           </div>
-
-          {/* MAIN ADMIN CARDS */}
 
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
             <InfoCard
@@ -550,7 +625,12 @@ export default function AboutCumilla() {
 
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {historicalPlaces.map((place: any, index: number) => (
-                <PlaceCard key={place.id ?? index} place={place} index={index} />
+                <PlaceCard
+                  key={place.id ?? index}
+                  place={place}
+                  index={index}
+                  onOpenModal={openModal}
+                />
               ))}
             </div>
           </section>
@@ -581,19 +661,227 @@ export default function AboutCumilla() {
             Cumilla is more than a place on a map. It is a land of memories,
             heritage, culture and stories that connect generations.
           </p>
-
-          {/* Wedding location connection */}
-          <div className="mt-8 flex items-center justify-center gap-3 text-sm text-[#806b6b]">
-            <MapPinned size={16} className="text-[#b18a46]" />
-            <span>
-              Wedding Venue:{" "}
-              <span className="text-[#5c4147]">
-                Debidwar, {administration.district}
-              </span>
-            </span>
-          </div>
         </motion.div>
       </div>
+
+      {/* =====================================================
+          MODAL
+      ====================================================== */}
+
+      <AnimatePresence>
+        {selectedPlace && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-2 backdrop-blur-md sm:p-3 md:p-6"
+            onClick={closeModal}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.94, y: 30 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.94, y: 30 }}
+              transition={{ type: "spring", duration: 0.5 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative flex max-h-[96vh] w-full max-w-5xl flex-col overflow-hidden rounded-[20px] bg-[#fffaf5] shadow-2xl sm:max-h-[94vh] sm:rounded-[28px] md:max-h-[92vh]"
+            >
+              {/* Modal Image */}
+              <div className="relative h-52 shrink-0 sm:h-60 md:h-80">
+                <Image
+                  src={getImageUrl(selectedPlace)}
+                  alt={selectedPlace.name}
+                  fill
+                  sizes="100vw"
+                  className="object-cover"
+                  unoptimized={shouldUnoptimize(getImageUrl(selectedPlace))}
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "/placeholder.jpg";
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+
+                <button
+                  onClick={closeModal}
+                  aria-label="Close"
+                  className="absolute right-3 top-3 rounded-full border border-white/20 bg-black/30 p-2.5 text-white backdrop-blur-md transition hover:bg-black/50 sm:right-4 sm:top-4"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+
+                <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-5 sm:right-5 md:left-8 md:right-8">
+                  <div className="mb-2 flex flex-wrap items-center gap-2 sm:mb-3">
+                    <span
+                      className={`rounded-full border px-2.5 py-1.5 text-[10px] font-semibold backdrop-blur-md sm:px-3 sm:text-xs ${getCategoryColor(
+                        selectedPlace.category
+                      )}`}
+                    >
+                      {selectedPlace.category || "Attraction"}
+                    </span>
+                  </div>
+                  <h3 className="font-display break-words text-2xl leading-tight text-white sm:text-3xl md:text-5xl">
+                    {selectedPlace.name}
+                  </h3>
+                </div>
+              </div>
+
+              {/* Modal Body */}
+              <div className="custom-scrollbar min-h-0 overflow-y-auto p-4 sm:p-5 md:p-8">
+                {/* Quick Info */}
+                <div className="mb-5 grid gap-3 sm:mb-7 sm:grid-cols-2 lg:grid-cols-4">
+                  {selectedPlace.distanceFromVenue && (
+                    <div className="rounded-2xl border border-[#d4af37]/10 bg-white p-4">
+                      <MapPin className="mb-2 h-4 w-4 text-[#b18a25]" />
+                      <p className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-[#9b806a]">
+                        Distance
+                      </p>
+                      <p className="break-words text-sm font-medium text-[#604a36]">
+                        {selectedPlace.distanceFromVenue}
+                      </p>
+                    </div>
+                  )}
+
+                  {selectedPlace.entryFee && (
+                    <div className="rounded-2xl border border-[#d4af37]/10 bg-white p-4">
+                      <Ticket className="mb-2 h-4 w-4 text-[#b18a25]" />
+                      <p className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-[#9b806a]">
+                        Entry Fee
+                      </p>
+                      <p className="break-words text-sm font-medium text-[#604a36]">
+                        {selectedPlace.entryFee}
+                      </p>
+                    </div>
+                  )}
+
+                  {selectedPlace.openingHours && (
+                    <div className="rounded-2xl border border-[#d4af37]/10 bg-white p-4">
+                      <Clock className="mb-2 h-4 w-4 text-[#b18a25]" />
+                      <p className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-[#9b806a]">
+                        Opening Hours
+                      </p>
+                      <p className="break-words text-sm font-medium text-[#604a36]">
+                        {selectedPlace.openingHours}
+                      </p>
+                    </div>
+                  )}
+
+                  {selectedPlace.bestTimeToVisit && (
+                    <div className="rounded-2xl border border-[#d4af37]/10 bg-white p-4">
+                      <Award className="mb-2 h-4 w-4 text-[#b18a25]" />
+                      <p className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-[#9b806a]">
+                        Best Time
+                      </p>
+                      <p className="break-words text-sm font-medium text-[#604a36]">
+                        {selectedPlace.bestTimeToVisit}
+                      </p>
+                    </div>
+                  )}
+                </div>
+
+                {/* Full Description */}
+                {selectedPlace.description && (
+                  <div className="mb-4 rounded-2xl border border-[#d4af37]/10 bg-white p-4 sm:p-5">
+                    <SectionTitle icon={<Info className="h-4 w-4" />} title="About This Place" />
+                    <div className="space-y-3">{renderDescription(selectedPlace.description)}</div>
+                  </div>
+                )}
+
+                {/* Wikipedia Link */}
+                {selectedPlace.wikipedia && (
+                  <div className="mb-4 rounded-2xl border border-[#d4af37]/10 bg-white p-4 sm:p-5">
+                    <SectionTitle icon={<BookOpen className="h-4 w-4" />} title="Learn More" />
+                    <a
+                      href={selectedPlace.wikipedia}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm text-[#b18a25] hover:underline"
+                    >
+                      Read on Wikipedia
+                      <ExternalLink className="h-3.5 w-3.5" />
+                    </a>
+                  </div>
+                )}
+
+                {/* Keywords / Tags */}
+                {selectedPlace.keywords && selectedPlace.keywords.length > 0 && (
+                  <div className="mb-4">
+                    <SectionTitle icon={<Tag className="h-4 w-4" />} title="Tags" />
+                    <div className="flex flex-wrap gap-2">
+                      {selectedPlace.keywords.map((keyword: string, index: number) => (
+                        <span
+                          key={index}
+                          className="break-all rounded-full border border-[#d4af37]/20 bg-[#d4af37]/5 px-3 py-1.5 text-xs text-[#806d5d]"
+                        >
+                          #{keyword}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Action Buttons */}
+                <div className="border-t border-[#d4af37]/15 pt-5 sm:pt-6">
+                  <div className="grid grid-cols-1 gap-2.5 sm:flex sm:flex-wrap sm:gap-3">
+                    {selectedPlace.googleMapsLink && (
+                      <a
+                        href={selectedPlace.googleMapsLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#b18a25] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#b18a25]/20 transition hover:-translate-y-0.5 hover:bg-[#96751d] sm:w-auto"
+                      >
+                        <MapPin className="h-4 w-4" />
+                        Google Maps
+                        <ExternalLink className="h-3.5 w-3.5" />
+                      </a>
+                    )}
+
+                    {selectedPlace.wikipedia && (
+                      <a
+                        href={selectedPlace.wikipedia}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#d4af37]/25 bg-white px-5 py-3 text-sm font-semibold text-[#604a36] transition hover:-translate-y-0.5 hover:bg-[#fff8ec] sm:w-auto"
+                      >
+                        <Info className="h-4 w-4 text-[#b18a25]" />
+                        Wikipedia
+                        <ExternalLink className="h-3.5 w-3.5" />
+                      </a>
+                    )}
+
+                    {selectedPlace.officialWebsite && (
+                      <a
+                        href={selectedPlace.officialWebsite}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#d4af37]/25 bg-white px-5 py-3 text-sm font-semibold text-[#604a36] transition hover:-translate-y-0.5 hover:bg-[#fff8ec] sm:w-auto"
+                      >
+                        <ExternalLink className="h-4 w-4 text-[#b18a25]" />
+                        Official Website
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <style jsx>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: rgba(180, 140, 45, 0.35);
+          border-radius: 999px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: rgba(180, 140, 45, 0.55);
+        }
+      `}</style>
     </section>
   );
 }
@@ -602,21 +890,11 @@ export default function AboutCumilla() {
    QUICK STAT
 ============================================================ */
 
-function QuickStat({
-  icon,
-  label,
-  value,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  value: string;
-}) {
+function QuickStat({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
   return (
     <div className="flex flex-col items-center justify-center rounded-xl bg-white/60 p-3 text-center transition hover:bg-white/80">
       <div className="mb-1 text-[#b18a46]">{icon}</div>
-      <p className="text-xs font-medium uppercase tracking-wider text-[#a38a82]">
-        {label}
-      </p>
+      <p className="text-xs font-medium uppercase tracking-wider text-[#a38a82]">{label}</p>
       <p className="font-serif text-base text-[#5c4147] sm:text-lg">{value}</p>
     </div>
   );
@@ -626,15 +904,7 @@ function QuickStat({
    INFO CARD
 ============================================================ */
 
-function InfoCard({
-  icon,
-  label,
-  value,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  value: string;
-}) {
+function InfoCard({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
   return (
     <motion.div
       whileHover={{ y: -4 }}
@@ -644,12 +914,8 @@ function InfoCard({
       <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-[#f8e8df] text-[#b18a46]">
         {icon}
       </div>
-      <p className="mt-4 text-[10px] uppercase tracking-[0.2em] text-[#a38a82]">
-        {label}
-      </p>
-      <p className="mt-1 font-serif text-base text-[#5c4147] sm:text-lg">
-        {value}
-      </p>
+      <p className="mt-4 text-[10px] uppercase tracking-[0.2em] text-[#a38a82]">{label}</p>
+      <p className="mt-1 font-serif text-base text-[#5c4147] sm:text-lg">{value}</p>
     </motion.div>
   );
 }
@@ -658,25 +924,28 @@ function InfoCard({
    SMALL STAT
 ============================================================ */
 
-function SmallStat({
-  icon,
-  label,
-  value,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  value: string;
-}) {
+function SmallStat({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
   return (
     <div className="rounded-xl border border-[#eee3d8] bg-[#fffaf5] p-3">
       <div className="flex items-center gap-1.5 text-[#b18a46]">
         {icon}
-        <span className="text-[9px] uppercase tracking-[0.12em]">
-          {label}
-        </span>
+        <span className="text-[9px] uppercase tracking-[0.12em]">{label}</span>
       </div>
       <p className="mt-1 font-serif text-sm text-[#5c4147]">{value}</p>
     </div>
+  );
+}
+
+/* ============================================================
+   SECTION TITLE
+============================================================ */
+
+function SectionTitle({ icon, title }: { icon: React.ReactNode; title: string }) {
+  return (
+    <h4 className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-[#72583f]">
+      <span className="shrink-0 text-[#b18a25]">{icon}</span>
+      {title}
+    </h4>
   );
 }
 
@@ -687,32 +956,58 @@ function SmallStat({
 function PlaceCard({
   place,
   index,
+  onOpenModal,
 }: {
   place: any;
   index: number;
+  onOpenModal: (place: any) => void;
 }) {
-  // Extract short description for card view
+  const imageUrl = place.image && place.image !== "/placeholder.jpg" ? place.image : "/placeholder.jpg";
   const shortDescription = place.description
-    ? place.description
-        .split("\n")
-        .filter((line: string) => line.trim() && !line.includes("###"))
-        .slice(0, 2)
-        .join(" ")
-        .substring(0, 120) + (place.description.length > 120 ? "..." : "")
+    ? place.description.replace(/### [^\n]*\n/g, "").replace(/\n/g, " ").trim().slice(0, 120) + "..."
     : "";
 
-  // Get category icon
-  const getCategoryIcon = (category: string) => {
-    const cat = category?.toLowerCase() || "";
-    if (cat.includes("temple") || cat.includes("মন্দির")) return <Church size={16} />;
-    if (cat.includes("mosque") || cat.includes("মসজিদ")) return <Building2 size={16} />;
-    if (cat.includes("museum") || cat.includes("জাদুঘর")) return <Library size={16} />;
-    if (cat.includes("archaeological") || cat.includes("প্রত্ন")) return <Landmark size={16} />;
-    if (cat.includes("war") || cat.includes("যুদ্ধ")) return <Award size={16} />;
-    if (cat.includes("garden") || cat.includes("উদ্ভিদ")) return <TreePine size={16} />;
-    if (cat.includes("water") || cat.includes("জল")) return <LandPlot size={16} />;
-    if (cat.includes("palace") || cat.includes("জমিদার")) return <Building2 size={16} />;
-    return <Star size={16} />;
+  const categoryColor = (() => {
+    const colors: Record<string, string> = {
+      "প্রত্নতাত্ত্বিক স্থান": "bg-stone-100 text-stone-800 border-stone-200",
+      জাদুঘর: "bg-indigo-100 text-indigo-800 border-indigo-200",
+      মন্দির: "bg-amber-100 text-amber-800 border-amber-200",
+      "জলাধার/পার্ক": "bg-sky-100 text-sky-800 border-sky-200",
+      "যুদ্ধ সমাধিক্ষেত্র": "bg-rose-100 text-rose-800 border-rose-200",
+      "প্রাসাদ/জমিদার বাড়ি": "bg-rose-100 text-rose-800 border-rose-200",
+      "ঐতিহাসিক ভবন": "bg-stone-100 text-stone-800 border-stone-200",
+      "শিক্ষা ও গবেষণা প্রতিষ্ঠান": "bg-indigo-100 text-indigo-800 border-indigo-200",
+      "প্রাকৃতিক আকর্ষণ/উদ্ভিদ উদ্যান": "bg-emerald-100 text-emerald-800 border-emerald-200",
+      "ঐতিহাসিক মসজিদ": "bg-emerald-100 text-emerald-800 border-emerald-200",
+      "ঐতিহাসিক ও ধর্মীয় স্থান": "bg-purple-100 text-purple-800 border-purple-200",
+    };
+    return colors[place.category || ""] || "bg-[#d4af37]/10 text-[#8a6d1d] border-[#d4af37]/20";
+  })();
+
+  const CategoryIcon = (() => {
+    const icons: Record<string, any> = {
+      "প্রত্নতাত্ত্বিক স্থান": Landmark,
+      জাদুঘর: Building2,
+      মন্দির: Award,
+      "জলাধার/পার্ক": Compass,
+      "যুদ্ধ সমাধিক্ষেত্র": Heart,
+      "প্রাসাদ/জমিদার বাড়ি": Building2,
+      "ঐতিহাসিক ভবন": Building2,
+      "শিক্ষা ও গবেষণা প্রতিষ্ঠান": GraduationCap,
+      "প্রাকৃতিক আকর্ষণ/উদ্ভিদ উদ্যান": Compass,
+      "ঐতিহাসিক মসজিদ": Building2,
+      "ঐতিহাসিক ও ধর্মীয় স্থান": Star,
+    };
+    return icons[place.category || ""] || MapPin;
+  })();
+
+  const shouldUnoptimize = (url: string) => {
+    return (
+      url.includes("upload.wikimedia.org") ||
+      url.includes("commons.wikimedia.org") ||
+      url.includes("wikimedia") ||
+      url.includes("googleusercontent")
+    );
   };
 
   return (
@@ -720,106 +1015,65 @@ function PlaceCard({
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{
-        duration: 0.55,
-        delay: Math.min(index * 0.08, 0.4),
-      }}
+      transition={{ duration: 0.55, delay: Math.min(index * 0.08, 0.4) }}
       whileHover={{ y: -6 }}
-      className="group overflow-hidden rounded-[1.5rem] border border-[#eadbc5] bg-white shadow-[0_12px_40px_rgba(120,80,60,0.06)] transition-all hover:shadow-[0_25px_60px_rgba(120,80,60,0.12)]"
+      className="group cursor-pointer overflow-hidden rounded-[1.5rem] border border-[#eadbc5] bg-white shadow-[0_12px_40px_rgba(120,80,60,0.06)] transition-all hover:shadow-[0_25px_60px_rgba(120,80,60,0.12)]"
+      onClick={() => onOpenModal(place)}
     >
-      {/* IMAGE */}
-
+      {/* Image */}
       <div className="relative h-52 overflow-hidden bg-[#f6ebe5]">
-        {place.image && place.image !== "/placeholder.jpg" ? (
-          <img
-            src={place.image}
-            alt={place.name}
-            className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-            loading="lazy"
-          />
-        ) : (
-          <div className="flex h-full items-center justify-center bg-gradient-to-br from-[#f8e8df] to-[#f6ebe5]">
-            <Landmark size={42} className="text-[#d8b36a]/50" />
-          </div>
-        )}
-
+        <Image
+          src={imageUrl}
+          alt={place.name}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover transition duration-700 group-hover:scale-105"
+          unoptimized={shouldUnoptimize(imageUrl)}
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = "/placeholder.jpg";
+          }}
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
         {place.category && (
           <span className="absolute bottom-4 left-4 flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-[10px] font-medium uppercase tracking-wider text-[#8b6b52] backdrop-blur-sm shadow-sm">
-            {getCategoryIcon(place.category)}
+            <CategoryIcon className="h-3.5 w-3.5" />
             {place.category}
           </span>
         )}
 
-        {place.district && (
+        {place.distanceFromVenue && (
           <span className="absolute top-4 right-4 rounded-full bg-black/40 px-3 py-1 text-[9px] font-medium uppercase tracking-wider text-white/90 backdrop-blur-sm">
-            {place.district}
+            {place.distanceFromVenue.replace(/^.{0,8}\s*/, "").slice(0, 30)}
           </span>
         )}
       </div>
 
-      {/* CONTENT */}
-
+      {/* Content */}
       <div className="p-6">
         <h4 className="font-serif text-xl leading-snug text-[#5c4147] group-hover:text-[#b18a46] transition-colors">
           {place.name}
         </h4>
 
-        {place.banglaName && (
-          <p className="mt-1 text-sm text-[#b18a46]">{place.banglaName}</p>
-        )}
-
         {shortDescription && (
-          <p className="mt-3 text-sm leading-7 text-[#756263] line-clamp-3">
-            {shortDescription}
-          </p>
+          <p className="mt-3 text-sm leading-7 text-[#756263] line-clamp-3">{shortDescription}</p>
         )}
-
-        <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-[#8b7777]">
-          {place.upazila && (
-            <span className="flex items-center gap-1">
-              <MapPin size={12} className="text-[#c79c58]" />
-              {place.upazila}
-            </span>
-          )}
-          {place.distanceFromCumillaCity && (
-            <span className="flex items-center gap-1">
-              <Clock size={12} className="text-[#c79c58]" />
-              {place.distanceFromCumillaCity}
-            </span>
-          )}
-        </div>
 
         <div className="mt-5 flex items-center justify-between border-t border-[#eee3d8] pt-4">
           <span className="text-[10px] uppercase tracking-[0.15em] text-[#b18a46]">
             Cumilla Heritage
           </span>
-
-          <div className="flex items-center gap-3">
-            {place.sourceUrl && (
-              <a
-                href={place.sourceUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 text-[10px] font-medium text-[#80656b] transition hover:text-[#b18a46]"
-              >
-                <BookOpen size={12} />
-                Source
-              </a>
-            )}
-            {place.latitude && place.longitude && (
-              <a
-                href={`https://maps.google.com/?q=${place.latitude},${place.longitude}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 text-[10px] font-medium text-[#80656b] transition hover:text-[#b18a46]"
-              >
-                <MapPinned size={12} />
-                Map
-              </a>
-            )}
-          </div>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onOpenModal(place);
+            }}
+            className="flex items-center gap-2 text-xs font-medium text-[#80656b] transition hover:text-[#b18a46]"
+          >
+            Read More
+            <ArrowRight size={12} />
+          </button>
         </div>
       </div>
     </motion.article>
