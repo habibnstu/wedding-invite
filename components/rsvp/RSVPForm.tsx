@@ -90,9 +90,18 @@ export default function RSVPForm({
       id="rsvp"
       className="w-full overflow-hidden px-4 py-10 sm:px-5 md:px-6"
     >
-      <h2 className="section-heading px-1 text-center">
-        Kindly Confirm Your Attendance
-      </h2>
+     <div className="text-center">
+        <h2 className="section-heading px-1">
+          We’d Love to Celebrate With You
+        </h2>
+
+        <p className="mt-3 px-4 text-sm text-[#7a6a58] md:text-base">
+          Please let us know if you’ll be joining us on our special day.
+        </p>
+        <p className="mt-3 px-4 text-sm text-[#7a6a58] md:text-base">
+         আপনার উপস্থিতিতে আমাদের বিশেষ দিনটি আরও আনন্দময় হয়ে উঠবে।
+        </p>
+      </div>
 
       <div className="gold-divider mt-4 mb-10 sm:mb-12" />
 
