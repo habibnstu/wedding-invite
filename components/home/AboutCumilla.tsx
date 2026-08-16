@@ -38,6 +38,7 @@ export default function AboutCumilla() {
   const administration = about.administration;
   const upazilas = administration.upazilas || [];
   const historicalPlaces = about.historicalPlaces || [];
+  const [showFullOverview, setShowFullOverview] = useState(false);
 
   const openModal = (place: any) => {
     setSelectedPlace(place);
@@ -193,66 +194,40 @@ export default function AboutCumilla() {
     OVERVIEW
 ====================================================== */}
 
-{about.overview && (
+<div className="flex-1">
   <motion.div
-    initial={{ opacity: 0, y: 35 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.8 }}
-    className="mx-auto mb-16 max-w-5xl"
+    animate={{
+      maxHeight: showFullOverview ? 2000 : 220,
+    }}
+    transition={{ duration: 0.5, ease: "easeInOut" }}
+    className="relative overflow-hidden"
   >
-    <div className="relative overflow-hidden rounded-[2rem] border border-[#eadbc5] bg-white/80 p-7 shadow-[0_20px_70px_rgba(120,80,60,0.07)] backdrop-blur-sm sm:p-10 lg:p-14">
-      {/* Decorative border gradient - left side */}
-      <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-[#d8b36a] via-[#efcfd5] to-[#d8b36a]" />
-      
-      {/* Decorative corner accents */}
-      <div className="absolute -right-2 -top-2 h-12 w-12 rounded-full bg-[#d8b36a]/5 blur-xl" />
-      <div className="absolute -bottom-2 -left-2 h-12 w-12 rounded-full bg-[#efcfd5]/5 blur-xl" />
+    <p className="whitespace-pre-line text-sm leading-7 text-[#725f60] sm:text-base sm:leading-8">
+      {about.overview.trim()}
+    </p>
 
-      <div className="relative flex flex-col items-start gap-6 md:flex-row md:items-center">
-        {/* Icon section - left aligned on mobile, left on desktop */}
-        <div className="flex items-center gap-4 md:shrink-0">
-          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#f8e8df] to-[#f0ddcf] text-[#b18a46] shadow-inner">
-            <Landmark size={24} strokeWidth={1.6} />
-          </div>
-          <div>
-            <p className="text-xs uppercase tracking-[0.25em] text-[#b18a46]">
-              Our Heritage
-            </p>
-            <h3 className="font-serif text-2xl text-[#5c4147]">
-              About Cumilla
-            </h3>
-          </div>
-        </div>
-
-        {/* Decorative divider - hidden on mobile, visible on desktop */}
-        <div className="hidden h-12 w-px bg-gradient-to-b from-[#d8b36a]/30 to-transparent md:block" />
-
-        {/* Description text - takes remaining space */}
-        <div className="flex-1 space-y-4">
-          {about.overview.split("\n").map(
-            (paragraph: string, index: number) =>
-              paragraph.trim() && (
-                <p
-                  key={index}
-                  className="text-sm leading-7 text-[#725f60] sm:text-base sm:leading-8"
-                >
-                  {paragraph.trim()}
-                </p>
-              )
-          )}
-        </div>
-      </div>
-
-      {/* Decorative bottom-right pattern */}
-      <div className="absolute -bottom-4 -right-4 flex items-center gap-1 opacity-10">
-        <span className="h-8 w-8 rounded-full border-2 border-[#d8b36a]" />
-        <span className="h-6 w-6 rounded-full border-2 border-[#d8b36a]" />
-        <span className="h-4 w-4 rounded-full border-2 border-[#d8b36a]" />
-      </div>
-    </div>
+    {/* Fade effect when collapsed */}
+    {!showFullOverview && (
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white/95 to-transparent" />
+    )}
   </motion.div>
-)}
+
+  {/* Read More / Read Less */}
+  <button
+    type="button"
+    onClick={() => setShowFullOverview((prev) => !prev)}
+    className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#b18a46] transition-colors duration-300 hover:text-[#8f6c32]"
+  >
+    {showFullOverview ? "Read Less" : "Read More"}
+
+    <motion.span
+      animate={{ rotate: showFullOverview ? 180 : 0 }}
+      transition={{ duration: 0.3 }}
+    >
+      ↓
+    </motion.span>
+  </button>
+</div>
 
         {/* =====================================================
             QUICK STATS BAR
