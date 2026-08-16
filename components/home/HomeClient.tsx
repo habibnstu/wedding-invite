@@ -9,7 +9,7 @@ import SaveTheDate from "@/components/home/SaveTheDate";
 import OurStory from "@/components/home/OurStory";
 import EventTimeline from "@/components/home/EventTimeline";
 import Venue from "@/components/home/Venue";
-import NearbyPlaces from "@/components/home/NearbyPlaces";
+
 import WeatherWidget from "@/components/home/WeatherWidget";
 import Gallery from "@/components/gallery/Gallery";
 import EmergencyContacts from "@/components/home/EmergencyContacts";
@@ -17,6 +17,7 @@ import RSVPForm from "@/components/rsvp/RSVPForm";
 import Wishes from "@/components/rsvp/Wishes";
 import DownloadInvitation from "@/components/home/DownloadInvitation";
 import SocialShare from "@/components/common/SocialShare";
+import AboutCumilla from "@/components/home/AboutCumilla";
 
 export default function HomeClient({ guestName }: { guestName: string }) {
   const [loading, setLoading] = useState(true);
@@ -43,7 +44,8 @@ export default function HomeClient({ guestName }: { guestName: string }) {
         <Wishes />
         <DownloadInvitation guestName={guestName} />
         <EmergencyContacts />
-        <NearbyPlaces />
+        <AboutCumilla />
+  
         <SocialShare guestName={guestName} />
       </main>
       <footer className="text-center py-8 text-xs text-gold-500/70 dark:text-gold-300/50">

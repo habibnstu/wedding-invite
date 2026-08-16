@@ -16,32 +16,30 @@ export const weddingConfig = {
     coupleHashtag: "#Habibur & Somiya",
   },
 
-wedding: {
-  title: "Habibur  &  Somiya",
-  dateISO: "2026-09-04T17:00:00+06:00",
-  dateDisplay: "Friday, 04 September 2026",
-  timeDisplay: "2:00 PM onwards",
-  venueLat: 23.611454, // Latitude of the wedding venue in Debidwar, Cumilla
-venueLng: 90.977287, // Longitude of the wedding venue in Debidwar, Cumilla
+  wedding: {
+    title: "Habibur  &  Somiya",
+    dateISO: "2026-09-04T17:00:00+06:00",
+    dateDisplay: "Friday, 04 September 2026",
+    timeDisplay: "2:00 PM onwards",
+    venueLat: 23.611454,
+    venueLng: 90.977287,
 
+    brideHouse: {
+      houseName: "Bhuiyan Bari",
+      village: "Hetipur",
+      postOffice: "Khalilpur",
+      upazila: "Debidwar",
+      district: "Cumilla",
+    },
 
-  brideHouse: {
-    houseName: "Bhuiyan Bari",
-    village: "Hetipur",
-    postOffice: "Khalilpur",
-    upazila: "Debidwar",
-    district: "Cumilla",
-
+    groomHouse: {
+      houseName: "Baram Bari",
+      village: "Baror",
+      postOffice: "Charbakor",
+      upazila: "Debidwar",
+      district: "Cumilla",
+    },
   },
-
-  groomHouse: {
-    houseName: "Baram Bari",
-    village: "Baror",
-    postOffice: "Charbakor",
-    upazila: "Debidwar",
-    district: "Cumilla",
-  },
-},
 
   ourStory: [
     {
@@ -74,38 +72,38 @@ venueLng: 90.977287, // Longitude of the wedding venue in Debidwar, Cumilla
     },
   ],
 
-eventTimeline: [
-  {
-    time: "1:30 PM",
-    title: "Guest Arrival",
-    description: "Guests arrive, welcome drinks & seating"
-  },
-  {
-    time: "2:00 PM",
-    title: "Jumu'ah Prayer",
-    description: "Congregational Friday prayer"
-  },
-  {
-    time: "2:45 PM",
-    title: "Wedding Lunch",
-    description: "Enjoy a delicious celebratory feast"
-  },
-  {
-    time: "3:30 PM",
-    title: "Nikah Ceremony",
-    description: "The sacred marriage contract and Khutbah"
-  },
-  {
-    time: "4:15 PM",
-    title: "Photography Session",
-    description: "Capture memorable moments with family and friends"
-  },
-  {
-    time: "5:00 PM",
-    title: "Dua & Farewell",
-    description: "Closing prayers, blessings, and heartfelt thanks"
-  }
-],
+  eventTimeline: [
+    {
+      time: "1:30 PM",
+      title: "Guest Arrival",
+      description: "Guests arrive, welcome drinks & seating"
+    },
+    {
+      time: "2:00 PM",
+      title: "Jumu'ah Prayer",
+      description: "Congregational Friday prayer"
+    },
+    {
+      time: "2:45 PM",
+      title: "Wedding Lunch",
+      description: "Enjoy a delicious celebratory feast"
+    },
+    {
+      time: "3:30 PM",
+      title: "Nikah Ceremony",
+      description: "The sacred marriage contract and Khutbah"
+    },
+    {
+      time: "4:15 PM",
+      title: "Photography Session",
+      description: "Capture memorable moments with family and friends"
+    },
+    {
+      time: "5:00 PM",
+      title: "Dua & Farewell",
+      description: "Closing prayers, blessings, and heartfelt thanks"
+    }
+  ],
 
   gallery: [
     "/images/gallery/1.jpg",
@@ -122,1040 +120,1445 @@ eventTimeline: [
     emergency: { name: "Emergency Contact", phone: "+8801768238762" },
   },
 
- nearbyPlaces : [
-  {
-    id: 1,
-    name: "শালবন বিহার",
-    category: "প্রত্নতাত্ত্বিক স্থান",
-    distanceFromVenue:
-      "কুমিল্লা শহর থেকে ৮ কিমি পশ্চিমে, কোটবাড়ি এলাকায়",
+  aboutCumilla: {
+    // ============================================================
+    // BASIC INFORMATION
+    // ============================================================
 
-    description: `
-### সংক্ষিপ্ত পরিচিতি
-সপ্তম শতাব্দীর বৌদ্ধ বিহার, ১১৫টি কক্ষ বিশিষ্ট প্রাচীন বৌদ্ধ মঠ। লালমাই-ময়নামতি পাহাড়ের মধ্যবর্তী অংশে অবস্থিত এই বিহার বাংলাদেশের অন্যতম গুরুত্বপূর্ণ প্রত্নস্থল।
+    title: "About Cumilla",
+    titleBn: "কুমিল্লা সম্পর্কে",
 
-### বিস্তারিত বিবরণ
-শালবন বিহার কুমিল্লার ময়নামতি এলাকায় অবস্থিত একটি প্রাচীন বৌদ্ধ বিহার। এটি সপ্তম শতাব্দীতে প্রতিষ্ঠিত হয় এবং দ্বাদশ শতাব্দী পর্যন্ত সক্রিয় ছিল। বিহারটি ১৬৮ বর্গমিটার জায়গা জুড়ে বিস্তৃত এবং ১১৫টি কক্ষ রয়েছে। এটি পাহাড়পুর শৈলীর বৌদ্ধ স্থাপত্যের একটি চমৎকার উদাহরণ। বিহারের কেন্দ্রে একটি ক্রুশাকৃতি মন্দির রয়েছে এবং চারপাশে মঠের কক্ষগুলো সাজানো।
+    description:
+      "কুমিল্লা বাংলাদেশের অন্যতম প্রাচীন, ঐতিহাসিক ও সাংস্কৃতিকভাবে সমৃদ্ধ জেলা। প্রাচীন সভ্যতা, প্রত্নতাত্ত্বিক নিদর্শন, ধর্মীয় স্থাপনা, শিক্ষা, সংস্কৃতি, নদী, প্রকৃতি এবং ঐতিহ্যবাহী স্থানের জন্য কুমিল্লা বিশেষভাবে পরিচিত।",
 
-### ইতিহাস
-শালবন বিহার অষ্টম শতাব্দীতে ভব দেব কর্তৃক প্রতিষ্ঠিত হয়, যিনি সামতটের দেব রাজবংশের চতুর্থ শাসক ছিলেন। এটি দেবপর্বত নামক প্রাচীন রাজধানীর নিকটে অবস্থিত ছিল। প্রত্নতাত্ত্বিক খননে টেরাকোটা সীল ও তাম্রলিপি পাওয়া যায় যা এটিকে বৌদ্ধ মঠ হিসেবে চিহ্নিত করে।
+    overview: `
+  কুমিল্লা বাংলাদেশের চট্টগ্রাম বিভাগের একটি ঐতিহাসিক জেলা। প্রাচীন সমতট
+  অঞ্চলের ইতিহাস, ময়নামতি-লালমাইয়ের প্রত্নতাত্ত্বিক নিদর্শন, ঐতিহাসিক
+  মসজিদ-মন্দির, জমিদার বাড়ি, যুদ্ধ সমাধিক্ষেত্র এবং বিভিন্ন সাংস্কৃতিক
+  ঐতিহ্যের কারণে কুমিল্লার রয়েছে একটি সমৃদ্ধ ঐতিহাসিক পরিচয়।
+  
+  কুমিল্লা শুধু ইতিহাসের জন্য নয়, শিক্ষা, কৃষি, ব্যবসা-বাণিজ্য, সংস্কৃতি,
+  প্রকৃতি এবং মানুষের বৈচিত্র্যময় জীবনযাত্রার জন্যও পরিচিত।
+  `,
 
-### নামকরণের ইতিহাস
-এই স্থানটি পূর্বে 'শালবন রাজার বাড়ি' নামে পরিচিত ছিল। প্রত্নতাত্ত্বিক খননকাজের পর যখন টেরাকোটা সীল ও তাম্রলিপিতে 'শালবন বিহার' নাম পাওয়া যায়, তখন এটি এই নামে পরিচিত হয়।
+    // ============================================================
+    // HISTORY OF CUMILLA
+    // ============================================================
 
-### নির্মাণকাল
-৭ম-৮ম শতাব্দী
+    history: {
+      title: "History of Cumilla",
+      titleBn: "কুমিল্লার ইতিহাস",
 
-### প্রতিষ্ঠাতা / নির্মাতা
-ভব দেব
+      description: `
+  কুমিল্লার ইতিহাস বহু প্রাচীন। বর্তমান কুমিল্লা অঞ্চল প্রাচীন সমতট
+  জনপদের গুরুত্বপূর্ণ অংশ ছিল। ময়নামতি-লালমাই অঞ্চলে পাওয়া প্রত্নতাত্ত্বিক
+  নিদর্শন থেকে এই অঞ্চলে প্রাচীন বৌদ্ধ সভ্যতা ও শিক্ষাকেন্দ্রের অস্তিত্বের
+  প্রমাণ পাওয়া যায়।
+  
+  শালবন বিহার, কুটিলা মুড়া এবং ময়নামতি অঞ্চলের অন্যান্য প্রত্নস্থল
+  কুমিল্লার প্রাচীন ইতিহাসের গুরুত্বপূর্ণ নিদর্শন।
+  
+  পরবর্তী সময়ে ত্রিপুরা রাজ্য, মুঘল ও ব্রিটিশ শাসনসহ বিভিন্ন ঐতিহাসিক
+  পর্যায় অতিক্রম করে কুমিল্লা বর্তমান প্রশাসনিক পরিচয় লাভ করে।
+  
+  মুক্তিযুদ্ধের ইতিহাসেও কুমিল্লার গুরুত্বপূর্ণ ভূমিকা রয়েছে।
+  কুমিল্লা ক্যান্টনমেন্ট, ময়নামতি যুদ্ধ সমাধিক্ষেত্র এবং বিভিন্ন
+  ঐতিহাসিক স্থাপনা জেলার দীর্ঘ ইতিহাসের সাক্ষ্য বহন করে।
+  `,
 
-### স্থাপত্যশৈলী
-পাহাড়পুর শৈলীর বৌদ্ধ বিহার, ক্রুশাকৃতি কেন্দ্রীয় মন্দির।
+      keyPeriods: [
+        {
+          period: "প্রাচীন সমতট",
+          description:
+            "কুমিল্লা প্রাচীন সমতট জনপদের গুরুত্বপূর্ণ অংশ ছিল।",
+        },
+        {
+          period: "দেব রাজবংশ",
+          description:
+            "ময়নামতি অঞ্চলে বৌদ্ধ শিক্ষা ও ধর্মীয় স্থাপনার বিকাশ ঘটে।",
+        },
+        {
+          period: "ত্রিপুরা রাজ্য",
+          description:
+            "কুমিল্লা ও পার্শ্ববর্তী অঞ্চল ত্রিপুরা রাজ্যের ইতিহাসের সঙ্গে যুক্ত ছিল।",
+        },
+        {
+          period: "মুঘল ও ঔপনিবেশিক সময়",
+          description:
+            "প্রশাসন, বাণিজ্য ও যোগাযোগ ব্যবস্থার বিকাশ ঘটে।",
+        },
+        {
+          period: "মুক্তিযুদ্ধ",
+          description:
+            "১৯৭১ সালের মুক্তিযুদ্ধে কুমিল্লা গুরুত্বপূর্ণ ভূমিকা পালন করে।",
+        },
+        {
+          period: "আধুনিক কুমিল্লা",
+          description:
+            "বর্তমানে কুমিল্লা শিক্ষা, ব্যবসা, কৃষি, সংস্কৃতি ও পর্যটনের গুরুত্বপূর্ণ কেন্দ্র।",
+        },
+      ],
+    },
 
-### ঐতিহাসিক গুরুত্ব
-বাংলাদেশের অন্যতম গুরুত্বপূর্ণ বৌদ্ধ প্রত্নস্থল।
+    // ============================================================
+    // NAMING HISTORY
+    // ============================================================
 
-### ভ্রমণের উপযুক্ত সময়
-নভেম্বর থেকে ফেব্রুয়ারি (শীতকাল)।
+    namingHistory: {
+      title: "Naming History of Cumilla",
+      titleBn: "কুমিল্লার নামকরণের ইতিহাস",
 
-### খোলার সময়
-সূর্যোদয় থেকে সূর্যাস্ত পর্যন্ত।
+      description: `
+  কুমিল্লা নামের উৎপত্তি নিয়ে বিভিন্ন ঐতিহাসিক মত ও ব্যাখ্যা প্রচলিত রয়েছে।
+  সময়ের পরিবর্তনের সঙ্গে সঙ্গে এই অঞ্চলের নাম ও প্রশাসনিক পরিচয়ও
+  বিভিন্ন পর্যায় অতিক্রম করেছে।
+  
+  ঐতিহাসিকভাবে অঞ্চলটি সমতট, ত্রিপুরা এবং টিপ্পেরা/তিপ্পেরা অঞ্চলের
+  সঙ্গে সম্পর্কিত ছিল। ব্রিটিশ আমলে Comilla নামটি প্রশাসনিকভাবে ব্যবহৃত
+  হতে থাকে।
+  
+  পরবর্তীতে সরকারি ব্যবহারে জেলার নাম Cumilla হিসেবে প্রতিষ্ঠিত হয়।
+  `,
 
-### প্রবেশমূল্য
-বাংলাদেশি নাগরিক: ৳৩০
-বিদেশি: ৳১০০
+      historicalNames: [
+        {
+          name: "সমতট",
+          description:
+            "প্রাচীনকালে বর্তমান কুমিল্লা অঞ্চল সমতট জনপদের গুরুত্বপূর্ণ অংশ ছিল।",
+        },
+        {
+          name: "ত্রিপুরা",
+          description:
+            "দীর্ঘ সময় এই অঞ্চল ত্রিপুরা রাজ্যের প্রশাসনিক ও রাজনৈতিক ইতিহাসের সঙ্গে যুক্ত ছিল।",
+        },
+        {
+          name: "টিপ্পেরা / Tippera",
+          description:
+            "ব্রিটিশ আমলে বৃহত্তর প্রশাসনিক অঞ্চলের ক্ষেত্রে Tippera নাম ব্যবহৃত হয়েছে।",
+        },
+        {
+          name: "Comilla",
+          description:
+            "ঔপনিবেশিক ও পরবর্তী প্রশাসনিক ব্যবহারে Comilla নামটি ব্যাপকভাবে ব্যবহৃত হয়।",
+        },
+        {
+          name: "Cumilla",
+          description:
+            "বর্তমান সরকারি ইংরেজি নাম Cumilla।",
+        },
+      ],
+    },
 
-### দর্শনার্থীদের জন্য পরামর্শ
-• ফটোগ্রাফি অনুমোদিত
-• আরামদায়ক জুতা পরুন
-• পানি ও খাবার সঙ্গে রাখুন
+    // ============================================================
+    // ADMINISTRATION
+    // ============================================================
 
-### আকর্ষণীয় তথ্য
-• ১১৫টি কক্ষ বিশিষ্ট প্রাচীন বৌদ্ধ বিহার
-• ৭ম থেকে ১২শ শতাব্দী পর্যন্ত সক্রিয় ছিল
-• পাহাড়পুর বিহারের সাথে স্থাপত্যগত মিল রয়েছে
-    `,
+    administration: {
+      title: "Administration of Cumilla",
+      titleBn: "কুমিল্লার প্রশাসনিক তথ্য",
 
-    googleMapsLink:
-      "https://maps.google.com/?q=Shalban+Vihara+Cumilla",
+      division: "Chattogram Division",
+      divisionBn: "চট্টগ্রাম বিভাগ",
 
-    officialWebsite:
-      "https://www.comilla.gov.bd",
+      district: "Cumilla",
+      districtBn: "কুমিল্লা",
 
-    wikipedia:
-      "https://en.wikipedia.org/wiki/Shalban_Vihara",
+      areaSqKm: 3146.30,
 
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Shalban_Vihara_%282%29.jpg/960px-Shalban_Vihara_%282%29.jpg",
+      population2022: 6212216,
 
-    keywords: [
-      "শালবন বিহার",
-      "ময়নামতি প্রত্নস্থল",
-      "বৌদ্ধ বিহার কুমিল্লা"
+      literacyRate2022: 76.68,
+
+      totalUpazilas: 17,
+
+      description:
+        "কুমিল্লা জেলা বর্তমানে ১৭টি উপজেলা নিয়ে গঠিত। প্রতিটি উপজেলার নিজস্ব ভৌগোলিক বৈশিষ্ট্য, জনসংখ্যা, শিক্ষা, কৃষি, সংস্কৃতি ও ঐতিহাসিক পরিচয় রয়েছে।",
+
+      upazilas: [
+        {
+          id: 1,
+          name: "Cumilla Adarsha Sadar",
+          nameBn: "কুমিল্লা আদর্শ সদর",
+          population2022: 388414,
+          literacyRate2022: 81.07,
+          unionCount: 7,
+
+          unions: [
+            "Amratoli",
+            "Uttar Durgapur",
+            "Dakshin Durgapur",
+            "Jagannathpur",
+            "Kalir Bazar",
+            "Panchthubi",
+            "Cumilla Cantonment",
+          ],
+
+          description:
+            "কুমিল্লা জেলার প্রশাসনিক ও নগরকেন্দ্রিক গুরুত্বপূর্ণ উপজেলা। কুমিল্লা শহর, শিক্ষা প্রতিষ্ঠান, ব্যবসা-বাণিজ্য ও বিভিন্ন সরকারি প্রতিষ্ঠান এই অঞ্চলের গুরুত্বপূর্ণ বৈশিষ্ট্য।",
+        },
+
+        {
+          id: 2,
+          name: "Barura",
+          nameBn: "বরুড়া",
+          population2022: 456328,
+          literacyRate2022: 74.83,
+          unionCount: 15,
+
+          unions: [
+            "Aganagar",
+            "Bhabanipur",
+            "Uttar Khoshbas",
+            "Dakshin Khoshbas",
+            "Chitodda",
+            "Jhalam",
+            "Uttar Shilmuri",
+            "Dakshin Shilmuri",
+            "Adda",
+            "Adra",
+            "Shakpur",
+            "Galimpur",
+            "Vauksar",
+            "Laxmipur",
+            "Payalgacha",
+          ],
+
+          description:
+            "বরুড়া কৃষি, গ্রামীণ জনপদ, ঐতিহাসিক স্থাপনা ও স্থানীয় সংস্কৃতির জন্য পরিচিত।",
+        },
+
+        {
+          id: 3,
+          name: "Brahmanpara",
+          nameBn: "ব্রাহ্মণপাড়া",
+          population2022: 232626,
+          literacyRate2022: 77.31,
+          unionCount: 8,
+
+          unions: [
+            "Brahmanpara",
+            "Chandla",
+            "Dulalpur",
+            "Madhabpur",
+            "Malapara",
+            "Shahebabad",
+            "Shashidal",
+            "Shidli",
+          ],
+
+          description:
+            "ব্রাহ্মণপাড়া কুমিল্লার একটি গুরুত্বপূর্ণ সীমান্তবর্তী ও কৃষিনির্ভর উপজেলা।",
+        },
+
+        {
+          id: 4,
+          name: "Burichang",
+          nameBn: "বুড়িচং",
+          population2022: 349628,
+          literacyRate2022: 79.63,
+          unionCount: 8,
+
+          unions: [
+            "Rajapur",
+            "Bakshimul",
+            "Sholonal",
+            "Pirjatrapur",
+            "Moynamoti",
+            "Mokam",
+            "Bharella North",
+            "Bharella South",
+          ],
+
+          description:
+            "বুড়িচং ময়নামতি অঞ্চল, প্রাকৃতিক পরিবেশ, কৃষি এবং ঐতিহাসিক নিদর্শনের সঙ্গে ঘনিষ্ঠভাবে সম্পর্কিত।",
+        },
+
+        {
+          id: 5,
+          name: "Chandina",
+          nameBn: "চান্দিনা",
+          population2022: 394860,
+          literacyRate2022: 74.24,
+          unionCount: 13,
+
+          unions: [
+            "Barera",
+            "Batagashi",
+            "Borkoroi",
+            "Barkait",
+            "Dollai Nawabpur",
+            "Etberpur",
+            "Gollai",
+            "Joag",
+            "Keronkhal",
+            "Madhaiya",
+            "Maijkhar",
+            "Mohichail",
+            "Shuhilpur",
+          ],
+
+          description:
+            "চান্দিনা ঢাকা-চট্টগ্রাম মহাসড়ক ও গুরুত্বপূর্ণ যোগাযোগ ব্যবস্থার কারণে বাণিজ্যিকভাবে গুরুত্বপূর্ণ।",
+        },
+
+        {
+          id: 6,
+          name: "Chauddagram",
+          nameBn: "চৌদ্দগ্রাম",
+          population2022: 501803,
+          literacyRate2022: 79.29,
+          unionCount: 13,
+
+          unions: [
+            "Alkara",
+            "Batisha",
+            "Cheora",
+            "Ghulpasha",
+            "Gunabati",
+            "Jagannathdighi",
+            "Kalikapur",
+            "Kankapait",
+            "Kashinagar",
+            "Moonshirhat",
+            "Shuvapur",
+            "Sreepur",
+            "Ujirpur",
+          ],
+
+          description:
+            "চৌদ্দগ্রাম কুমিল্লার দক্ষিণাঞ্চলের একটি বৃহৎ উপজেলা এবং ঢাকা-চট্টগ্রাম যোগাযোগ ব্যবস্থার গুরুত্বপূর্ণ অংশ।",
+        },
+
+        {
+          id: 7,
+          name: "Cumilla Sadar Dakshin",
+          nameBn: "কুমিল্লা সদর দক্ষিণ",
+          population2022: 184314,
+          literacyRate2022: 76.69,
+          unionCount: 6,
+
+          unions: [
+            "Barapara",
+            "Bijoypur",
+            "Chouara",
+            "Galiara",
+            "Paschim Jorekaran",
+            "Purba Jorekaran",
+          ],
+
+          description:
+            "কুমিল্লা শহরের দক্ষিণাঞ্চলকে ঘিরে গড়ে ওঠা গুরুত্বপূর্ণ উপজেলা।",
+        },
+
+        {
+          id: 8,
+          name: "Daudkandi",
+          nameBn: "দাউদকান্দি",
+          population2022: 406394,
+          literacyRate2022: 75.85,
+          unionCount: 16,
+
+          unions: [
+            "Baropara",
+            "Betessor",
+            "Dakshin Eliotgonj",
+            "Doulotpur",
+            "Goalmari",
+            "Gouripur",
+            "Maruka",
+            "Mohammadpur Paschim",
+            "Maligaon",
+            "Mohammadpur Purbo",
+            "Passgacia Pachim",
+            "Podua",
+            "Sundolpur",
+            "Uttar Daudkandi",
+            "Uttar Eliotgonj",
+            "Zinglatoli",
+          ],
+
+          description:
+            "দাউদকান্দি মেঘনা ও গোমতী নদী, মহাসড়ক এবং বাণিজ্যিক যোগাযোগের জন্য গুরুত্বপূর্ণ।",
+        },
+
+        {
+          id: 9,
+          name: "Debidwar",
+          nameBn: "দেবিদ্বার",
+          population2022: 471917,
+          literacyRate2022: 76.56,
+          unionCount: 15,
+
+          unions: [
+            "Barkamta",
+            "Boroshalghor",
+            "Dakshin Gunaighor",
+            "Dhamti",
+            "Elahabad",
+            "Fatehabad",
+            "Jafargonj",
+            "Mohanpur",
+            "Rajameher",
+            "Rasulpur",
+            "Subil",
+            "Sultanpur",
+            "Uttar Gunaighor",
+            "Vani",
+            "Yousufpur",
+          ],
+
+          description:
+            "দেবিদ্বার কুমিল্লার উত্তর-পূর্বাঞ্চলের একটি গুরুত্বপূর্ণ উপজেলা। ঐতিহাসিক মসজিদ, মাজার ও গ্রামীণ ঐতিহ্যের জন্য এই অঞ্চল পরিচিত।",
+        },
+
+        {
+          id: 10,
+          name: "Homna",
+          nameBn: "হোমনা",
+          population2022: 227529,
+          literacyRate2022: 68.82,
+          unionCount: 9,
+
+          unions: [
+            "Asadpur",
+            "Bhasania",
+            "Dulalpur",
+            "Joypur",
+            "Chander Char",
+            "Ghagutia",
+            "Garmora",
+            "Mathabanga",
+            "Nilakhi",
+          ],
+
+          description:
+            "হোমনা মেঘনা নদী ও নদীভিত্তিক জীবনযাত্রার জন্য পরিচিত।",
+        },
+
+        {
+          id: 11,
+          name: "Laksam",
+          nameBn: "লাকসাম",
+          population2022: 333706,
+          literacyRate2022: 77.34,
+          unionCount: 7,
+
+          unions: [
+            "Bakai",
+            "Gobindapur",
+            "Laksam",
+            "Mudafarganj",
+            "Kandirpar",
+            "Ajgara",
+            "Uttardah",
+          ],
+
+          description:
+            "লাকসাম কুমিল্লার অন্যতম গুরুত্বপূর্ণ রেল ও বাণিজ্যিক যোগাযোগ কেন্দ্র।",
+        },
+
+        {
+          id: 12,
+          name: "Lalmai",
+          nameBn: "লালমাই",
+          population2022: 214999,
+          literacyRate2022: 76.08,
+          unionCount: 9,
+
+          unions: [
+            "Bagmara North",
+            "Bagmara South",
+            "Bholain North",
+            "Bholain South",
+            "Perul North",
+            "Perul South",
+            "Belghar North",
+            "Belghar South",
+            "Bakai North",
+          ],
+
+          description:
+            "লালমাই কুমিল্লার নবগঠিত উপজেলা এবং লালমাই পাহাড়, প্রত্নতাত্ত্বিক স্থান ও প্রাকৃতিক পরিবেশের জন্য পরিচিত।",
+        },
+
+        {
+          id: 13,
+          name: "Manoharganj",
+          nameBn: "মনোহরগঞ্জ",
+          population2022: 275688,
+          literacyRate2022: 79.06,
+          unionCount: 11,
+
+          unions: [
+            "Baishgaon",
+            "Bipulasar",
+            "Hasnabad",
+            "Jhalam North",
+            "Jhalam South",
+            "Khila",
+            "Lakshmanpur",
+            "Maisatua",
+            "Nather Petua",
+            "Sarashpur",
+            "Hawla North",
+          ],
+
+          description:
+            "মনোহরগঞ্জ কুমিল্লার দক্ষিণাঞ্চলের একটি কৃষিনির্ভর উপজেলা।",
+        },
+
+        {
+          id: 14,
+          name: "Meghna",
+          nameBn: "মেঘনা",
+          population2022: 118801,
+          literacyRate2022: 69.16,
+          unionCount: 7,
+
+          unions: [
+            "Barakanda",
+            "Chandanpur",
+            "Chalibhanga",
+            "Gobindapur",
+            "Luter Char",
+            "Maniker Char",
+            "Radhanagar",
+          ],
+
+          description:
+            "মেঘনা উপজেলা নদী, চরাঞ্চল এবং নদীকেন্দ্রিক জীবনযাত্রার জন্য পরিচিত।",
+        },
+
+        {
+          id: 15,
+          name: "Muradnagar",
+          nameBn: "মুরাদনগর",
+          population2022: 582934,
+          literacyRate2022: 72.36,
+          unionCount: 22,
+
+          unions: [
+            "Akubpur",
+            "Andikot",
+            "Bangara East",
+            "Bangara West",
+            "Chapitala",
+            "Darora",
+            "Chhaliakandi",
+            "Dhamghar",
+            "Jahapur",
+            "Jatrapur",
+            "Kamalla",
+            "Muradnagar",
+            "Nabipur East",
+            "Nabipur West",
+            "Paharpur",
+            "Babuti Para",
+            "Purbadhair East",
+            "Purbadhair West",
+            "Ramchandrapur North",
+            "Ramchandrapur South",
+            "Tanki",
+            "Sreekail",
+          ],
+
+          description:
+            "মুরাদনগর কুমিল্লার বৃহৎ উপজেলা এবং এর বিস্তৃত গ্রামীণ জনপদ, কৃষি ও ঐতিহ্যবাহী স্থাপনার জন্য পরিচিত।",
+        },
+
+        {
+          id: 16,
+          name: "Nangalkot",
+          nameBn: "নাঙ্গলকোট",
+          population2022: 427876,
+          literacyRate2022: 76.47,
+          unionCount: 12,
+
+          unions: [
+            "Adra",
+            "Bangodda",
+            "Bakshaganj",
+            "Dhalua",
+            "Daulkhar",
+            "Hesakhal",
+            "Jodda",
+            "Mokara",
+            "Mokrabpur",
+            "Peria",
+            "Roykot",
+            "Satbaria",
+          ],
+
+          description:
+            "নাঙ্গলকোট কুমিল্লার দক্ষিণাঞ্চলের গুরুত্বপূর্ণ উপজেলা এবং কৃষি ও যোগাযোগের জন্য পরিচিত।",
+        },
+
+        {
+          id: 17,
+          name: "Titas",
+          nameBn: "তিতাস",
+          population2022: 203953,
+          literacyRate2022: 65.17,
+          unionCount: 9,
+
+          unions: [
+            "Balarampur",
+            "Jagatpur",
+            "Kalakandi",
+            "Karikandi",
+            "Majidpur",
+            "Narayandia",
+            "Satani",
+            "Vitikandi",
+            "Zearkandi",
+          ],
+
+          description:
+            "তিতাস উপজেলা গোমতী-তিতাস নদী ও নদীভিত্তিক জীবনযাত্রার সঙ্গে ঘনিষ্ঠভাবে সম্পর্কিত।",
+        },
+      ],
+    },
+
+    // ============================================================
+    // HISTORICAL & TOURIST PLACES
+    // ============================================================
+
+    historicalPlacesTitle: "Historical & Tourist Places of Cumilla",
+
+    historicalPlacesTitleBn:
+      "কুমিল্লার ঐতিহাসিক ও দর্শনীয় স্থান",
+
+    historicalPlacesDescription:
+      "কুমিল্লার বিভিন্ন প্রান্তে ছড়িয়ে থাকা প্রত্নতাত্ত্বিক স্থান, ঐতিহাসিক স্থাপনা, ধর্মীয় স্থান, প্রাকৃতিক আকর্ষণ এবং সাংস্কৃতিক ঐতিহ্যের সঙ্গে পরিচিত হোন।",
+
+    historicalPlaces: [
+      // ==========================================================
+      // 1. SHALBAN VIHARA
+      // ==========================================================
+
+      {
+        name: "Shalban Vihara",
+        banglaName: "শালবন বিহার",
+        category: "Archaeological Site",
+
+        description:
+          "সপ্তম শতাব্দীর বৌদ্ধ বিহার, ১১৫টি কক্ষ বিশিষ্ট প্রাচীন বৌদ্ধ মঠ। লালমাই-ময়নামতি পাহাড়ের মধ্যবর্তী অংশে অবস্থিত এই বিহার বাংলাদেশের অন্যতম গুরুত্বপূর্ণ প্রত্নস্থল।",
+
+        history:
+          "শালবন বিহার ময়নামতি এলাকায় অবস্থিত একটি প্রাচীন বৌদ্ধ বিহার। প্রদত্ত তথ্য অনুযায়ী এটি সপ্তম শতাব্দীতে প্রতিষ্ঠিত হয় এবং দ্বাদশ শতাব্দী পর্যন্ত সক্রিয় ছিল। প্রত্নতাত্ত্বিক খননে টেরাকোটা সীল ও তাম্রলিপি পাওয়া গেছে। ভব দেবের সঙ্গে এর প্রতিষ্ঠার সম্পর্ক উল্লেখ করা হয়েছে।",
+
+        location:
+          "কোটবাড়ি, ময়নামতি, কুমিল্লা",
+
+        upazila: "Burichang",
+
+        district: "Cumilla",
+        division: "Chattogram",
+
+        latitude: 23.426234,
+        longitude: 91.1372098,
+
+        distanceFromCumillaCity:
+          "কুমিল্লা শহর থেকে প্রায় ৮ কিমি পশ্চিমে",
+
+        bestTimeToVisit:
+          "নভেম্বর থেকে ফেব্রুয়ারি",
+
+        transportation:
+          "কুমিল্লা শহর থেকে কোটবাড়ি এলাকায় সড়কপথে যাওয়া যায়। নির্দিষ্ট গণপরিবহন তথ্য Not verified.",
+
+        entryFee:
+          "বাংলাদেশি নাগরিক: ৳৩০; বিদেশি: ৳১০০",
+
+        openingHours:
+          "সূর্যোদয় থেকে সূর্যাস্ত পর্যন্ত — প্রদত্ত তথ্য অনুযায়ী",
+
+        facilities: [
+          "Photography",
+          "Nearby food facilities",
+          "Visitor access"
+        ],
+
+        importance: [
+          "বাংলাদেশের গুরুত্বপূর্ণ বৌদ্ধ প্রত্নস্থল",
+          "ময়নামতি প্রত্নতাত্ত্বিক অঞ্চলের গুরুত্বপূর্ণ নিদর্শন",
+          "প্রাচীন বৌদ্ধ স্থাপত্যের নিদর্শন"
+        ],
+
+        source: "Wikipedia / Bangladesh National Portal information provided",
+
+        sourceUrl:
+          "https://en.wikipedia.org/wiki/Shalban_Vihara",
+
+        lastVerified: "Not verified",
+      },
+
+      // ==========================================================
+      // 2. MAINAMATI MUSEUM
+      // ==========================================================
+
+      {
+        name: "Mainamati Museum",
+        banglaName: "ময়নামতি জাদুঘর",
+        category: "Museum",
+
+        description:
+          "ময়নামতি-লালমাই অঞ্চলের প্রত্নবস্তু সমৃদ্ধ জাদুঘর। ১৯৬৫ সালে প্রতিষ্ঠিত এই জাদুঘরে ৭ম-১২শ শতাব্দীর বৌদ্ধ ও হিন্দু নিদর্শন সংরক্ষিত আছে।",
+
+        history:
+          "১৯৫০-এর দশকে ময়নামতি অঞ্চলে প্রত্নতাত্ত্বিক খনন শুরু হলে প্রচুর প্রত্নবস্তু পাওয়া যায়। এসব নিদর্শন সংরক্ষণ ও প্রদর্শনের জন্য ১৯৬৫ সালে শালবন বিহারের পাশে ময়নামতি জাদুঘর প্রতিষ্ঠিত হয়।",
+
+        location:
+          "শালবন বিহারের পাশে, কোটবাড়ি, ময়নামতি, কুমিল্লা",
+
+        upazila: "Burichang",
+
+        district: "Cumilla",
+        division: "Chattogram",
+
+        latitude: 23.458,
+        longitude: 91.1208,
+
+        distanceFromCumillaCity:
+          "কুমিল্লা শহর থেকে প্রায় ১৪ কিমি",
+
+        bestTimeToVisit:
+          "নভেম্বর থেকে ফেব্রুয়ারি",
+
+        transportation:
+          "কুমিল্লা শহর থেকে কোটবাড়ি এলাকায় সড়কপথে যাওয়া যায়।",
+
+        entryFee:
+          "বাংলাদেশি: ৳৩০; সার্ক দেশ: ৳১০০; অন্যান্য বিদেশি: ৳২০০",
+
+        openingHours:
+          "শীতকাল: মঙ্গল-শনি সকাল ৯টা-৫টা; সোমবার দুপুর ২টা-৫টা; রবিবার বন্ধ",
+
+        facilities: [
+          "Museum galleries",
+          "Guide service",
+          "Photography without flash"
+        ],
+
+        importance: [
+          "ময়নামতি-লালমাই অঞ্চলের প্রত্নবস্তু সংরক্ষণ কেন্দ্র",
+          "প্রাচীন বৌদ্ধ ও হিন্দু নিদর্শনের সংগ্রহশালা",
+          "কুমিল্লার গুরুত্বপূর্ণ জাদুঘর"
+        ],
+
+        source: "Wikipedia / information provided",
+
+        sourceUrl:
+          "https://en.wikipedia.org/wiki/Mainamati",
+
+        lastVerified: "Not verified",
+      },
+
+      // ==========================================================
+      // 3. COMILLA JAGANNATH TEMPLE
+      // ==========================================================
+
+      {
+        name: "Comilla Jagannath Temple",
+        banglaName: "কুমিল্লা জগন্নাথ মন্দির",
+        category: "Temple",
+
+        description:
+          "১৭৬১ সালে নির্মিত সতেরো রত্নের মন্দির, বাংলাদেশের অন্যতম উঁচু ও প্রাচীন হিন্দু মন্দির।",
+
+        history:
+          "প্রদত্ত তথ্য অনুযায়ী মন্দিরটি ত্রিপুরার রাজা রত্ন মাণিক্য দ্বিতীয় দ্বারা শুরু করা হয় এবং কৃষ্ণ কিশোর মাণিক্য দ্বারা ১৭৬১ সালে সম্পন্ন করা হয়।",
+
+        location:
+          "কুমিল্লা শহরের দক্ষিণ-পূর্বাঞ্চল",
+
+        upazila: "Cumilla Adarsha Sadar",
+
+        district: "Cumilla",
+        division: "Chattogram",
+
+        latitude: 23.4623,
+        longitude: 91.21095,
+
+        distanceFromCumillaCity:
+          "কুমিল্লা শহর থেকে প্রায় ২ কিমি দক্ষিণ-পূর্বে",
+
+        bestTimeToVisit:
+          "অক্টোবর থেকে মার্চ; রথযাত্রার সময় বিশেষ আকর্ষণীয়",
+
+        transportation:
+          "কুমিল্লা শহর থেকে স্থানীয় সড়কপথে যাওয়া যায়। নির্দিষ্ট পরিবহন তথ্য Not verified.",
+
+        entryFee: "বিনামূল্যে",
+
+        openingHours:
+          "সকাল ৬টা থেকে রাত ৮টা — প্রদত্ত তথ্য অনুযায়ী",
+
+        facilities: [
+          "Religious visitor access",
+          "Photography subject to local rules"
+        ],
+
+        importance: [
+          "বাংলাদেশের প্রাচীন হিন্দু মন্দিরগুলোর একটি",
+          "সতেরো রত্ন মন্দির হিসেবে পরিচিত",
+          "কুমিল্লার ঐতিহাসিক ধর্মীয় স্থাপনা"
+        ],
+
+        source: "Wikipedia / information provided",
+
+        sourceUrl:
+          "https://en.wikipedia.org/wiki/Comilla_Jagannath_Temple",
+
+        lastVerified: "Not verified",
+      },
+
+      // ==========================================================
+      // 4. KUTILA MURA
+      // ==========================================================
+
+      {
+        name: "Kutila Mura",
+        banglaName: "কুটিলা মুড়া",
+        category: "Archaeological Site",
+
+        description:
+          "৭ম শতাব্দীর বৌদ্ধ প্রত্নস্থল, তিনটি স্তূপ বিশিষ্ট অনন্য বৌদ্ধ স্থাপনা।",
+
+        history:
+          "প্রদত্ত তথ্য অনুযায়ী কুটিলা মুড়া ৭ম শতাব্দীতে নির্মিত হয় এবং ১৩শ শতাব্দী পর্যন্ত ব্যবহৃত হয়। এটি ময়নামতি এলাকার লালমাই পাহাড়ের একটি গুরুত্বপূর্ণ প্রত্নস্থল।",
+
+        location:
+          "ময়নামতি, লালমাই পাহাড়",
+
+        upazila: "Burichang",
+
+        district: "Cumilla",
+        division: "Chattogram",
+
+        latitude: 23.4580222,
+        longitude: 91.1208778,
+
+        distanceFromCumillaCity:
+          "কুমিল্লা শহর থেকে প্রায় ১১ কিমি উত্তর-পশ্চিমে",
+
+        bestTimeToVisit:
+          "নভেম্বর থেকে ফেব্রুয়ারি",
+
+        transportation:
+          "ময়নামতি-কোটবাড়ি এলাকায় সড়কপথে পৌঁছে স্থানীয়ভাবে যাওয়া যায়।",
+
+        entryFee: "বিনামূল্যে",
+
+        openingHours:
+          "সূর্যোদয় থেকে সূর্যাস্ত পর্যন্ত — প্রদত্ত তথ্য অনুযায়ী",
+
+        facilities: [
+          "Photography",
+          "Visitor access"
+        ],
+
+        importance: [
+          "প্রাচীন বৌদ্ধ প্রত্নস্থল",
+          "তিনটি স্তূপের জন্য পরিচিত",
+          "ময়নামতি প্রত্নতাত্ত্বিক অঞ্চলের অংশ"
+        ],
+
+        source: "Wikipedia / information provided",
+
+        sourceUrl:
+          "https://en.wikipedia.org/wiki/Kutila_Mura",
+
+        lastVerified: "Not verified",
+      },
+
+      // ==========================================================
+      // 5. DHARMASAGAR
+      // ==========================================================
+
+      {
+        name: "Dharmasagar",
+        banglaName: "ধর্মসাগর",
+        category: "Historic Waterbody / Park",
+
+        description:
+          "১৪৫৮ সালে ত্রিপুরা রাজা ধর্ম মাণিক্য প্রথম কর্তৃক খননকৃত প্রাচীন কৃত্রিম জলাধার।",
+
+        history:
+          "প্রদত্ত তথ্য অনুযায়ী ১৪৫৮ সালে ত্রিপুরার রাজা ধর্ম মাণিক্য প্রথম স্থানীয় মানুষের পানির চাহিদা মেটাতে এই দীঘি খনন করেন।",
+
+        location:
+          "কান্দিরপাড়, কুমিল্লা শহর",
+
+        upazila: "Cumilla Adarsha Sadar",
+
+        district: "Cumilla",
+        division: "Chattogram",
+
+        latitude: 23.46444,
+        longitude: 91.17944,
+
+        distanceFromCumillaCity:
+          "কুমিল্লা শহরের কেন্দ্রে",
+
+        bestTimeToVisit:
+          "শীতকাল, বিশেষ করে সকাল ও সন্ধ্যা",
+
+        transportation:
+          "কুমিল্লা শহরের কেন্দ্রে হওয়ায় স্থানীয় সড়কপথে যাওয়া যায়।",
+
+        entryFee: "বিনামূল্যে",
+
+        openingHours: "২৪ ঘণ্টা — প্রদত্ত তথ্য অনুযায়ী",
+
+        facilities: [
+          "Parking",
+          "Nearby food shops",
+          "Possible boat facility"
+        ],
+
+        importance: [
+          "কুমিল্লা শহরের ঐতিহাসিক জলাধার",
+          "রাজা ধর্ম মাণিক্যের ঐতিহাসিক নিদর্শন",
+          "কুমিল্লার পরিচিত দর্শনীয় স্থান"
+        ],
+
+        source: "Wikipedia / information provided",
+
+        sourceUrl:
+          "https://en.wikipedia.org/wiki/Dharmasagar_(pond)",
+
+        lastVerified: "Not verified",
+      },
+
+      // ==========================================================
+      // 6. MAINAMATI WAR CEMETERY
+      // ==========================================================
+
+      {
+        name: "Mainamati War Cemetery",
+        banglaName: "ময়নামতি যুদ্ধ সমাধিক্ষেত্র",
+        category: "War Cemetery",
+
+        description:
+          "দ্বিতীয় বিশ্বযুদ্ধের শহীদ স্মারক, ৭৩৬টি কমনওয়েলথ সমাধি।",
+
+        history:
+          "ময়নামতি যুদ্ধ সমাধিক্ষেত্র দ্বিতীয় বিশ্বযুদ্ধের সঙ্গে সম্পর্কিত। প্রদত্ত তথ্য অনুযায়ী ১৯৪৭ সালে Commonwealth War Graves Commission সমাধিক্ষেত্রটি প্রতিষ্ঠা করে।",
+
+        location:
+          "কুমিল্লা ক্যান্টনমেন্ট, ময়নামতি, কুমিল্লা",
+
+        upazila: "Cumilla Adarsha Sadar",
+
+        district: "Cumilla",
+        division: "Chattogram",
+
+        latitude: 23.48703,
+        longitude: 91.11293,
+
+        distanceFromCumillaCity:
+          "কুমিল্লা শহর থেকে প্রায় ৯ কিমি",
+
+        bestTimeToVisit:
+          "নভেম্বর মাসে বার্ষিক প্রার্থনা সভার সময় বিশেষভাবে গুরুত্বপূর্ণ",
+
+        transportation:
+          "কুমিল্লা শহর থেকে সড়কপথে কুমিল্লা ক্যান্টনমেন্ট এলাকায় যাওয়া যায়।",
+
+        entryFee: "বিনামূল্যে",
+
+        openingHours:
+          "প্রতিদিন সকাল ৮টা-১২টা এবং বিকেল ২টা-৫টা — প্রদত্ত তথ্য অনুযায়ী",
+
+        facilities: [
+          "Visitor access",
+          "Memorial grounds"
+        ],
+
+        importance: [
+          "দ্বিতীয় বিশ্বযুদ্ধের গুরুত্বপূর্ণ স্মারক",
+          "কমনওয়েলথ যুদ্ধ সমাধিক্ষেত্র",
+          "৭৩৬টি কমনওয়েলথ সমাধির স্থান — প্রদত্ত তথ্য অনুযায়ী"
+        ],
+
+        source: "Commonwealth War Graves Commission",
+
+        sourceUrl: "https://www.cwgc.org",
+
+        lastVerified: "Not verified",
+      },
+
+      // ==========================================================
+      // 7. NAWAB FAIZUNNESA ZAMINDAR BARI
+      // ==========================================================
+
+      {
+        name: "Nawab Faizunnesa Zamindar Bari",
+        banglaName: "নবাব ফয়জুন্নেসা জমিদার বাড়ি",
+        category: "Palace / Zamindar House",
+
+        description:
+          "উপমহাদেশের উল্লেখযোগ্য নারী নবাব ফয়জুন্নেসা চৌধুরানির ঐতিহাসিক জমিদার বাড়ি।",
+
+        history:
+          "প্রদত্ত তথ্য অনুযায়ী নবাব ফয়জুন্নেসা চৌধুরানি ১৮৭১ সালে লাকসামের পশ্চিমগাঁওয়ে এই জমিদার বাড়ি প্রতিষ্ঠা করেন। তিনি নারী শিক্ষা ও সমাজসংস্কারের জন্য পরিচিত ছিলেন।",
+
+        location:
+          "পশ্চিমগাঁও, লাকসাম, কুমিল্লা",
+
+        upazila: "Laksam",
+
+        district: "Cumilla",
+        division: "Chattogram",
+
+        latitude: 23.35,
+        longitude: 91.1,
+
+        distanceFromCumillaCity:
+          "কুমিল্লা শহর থেকে প্রায় ৩৫ কিমি",
+
+        bestTimeToVisit:
+          "নভেম্বর থেকে ফেব্রুয়ারি",
+
+        transportation:
+          "লাকসাম থেকে CNG/অটোরিকশায় যাওয়া যায় — প্রদত্ত তথ্য অনুযায়ী",
+
+        entryFee: "বিনামূল্যে",
+
+        openingHours:
+          "সকাল ১০টা-বিকাল ৫টা — প্রদত্ত তথ্য অনুযায়ী",
+
+        facilities: [
+          "Photography",
+          "Possible guide service"
+        ],
+
+        importance: [
+          "নবাব ফয়জুন্নেসা চৌধুরানির ঐতিহাসিক স্থাপনা",
+          "নারী শিক্ষা ও সমাজসংস্কারের ইতিহাসের সঙ্গে সম্পর্কিত",
+          "লাকসামের গুরুত্বপূর্ণ ঐতিহ্যবাহী স্থান"
+        ],
+
+        source: "Wikipedia / information provided",
+
+        sourceUrl:
+          "https://en.wikipedia.org/wiki/Nawab_Faizunnesa",
+
+        lastVerified: "Not verified",
+      },
+
+      // ==========================================================
+      // 8. CUMILLA TOWN HALL
+      // ==========================================================
+
+      {
+        name: "Cumilla Town Hall",
+        banglaName: "কুমিল্লা টাউন হল",
+        category: "Historic Building",
+
+        description:
+          "১৮৫৫ সালে প্রতিষ্ঠিত ঐতিহাসিক পাবলিক লাইব্রেরি ও সিটি অডিটোরিয়াম।",
+
+        history:
+          "প্রদত্ত তথ্য অনুযায়ী ১৮৫৫ সালের ৬ মে কুমিল্লা টাউন হল প্রতিষ্ঠিত হয়। তৎকালীন ডেপুটি কমিশনার এফ.এইচ. স্ক্রিন ত্রিপুরার জমিদারদের কাছে লাইব্রেরি নির্মাণের জন্য জমি চান।",
+
+        location:
+          "কান্দিরপাড়, কুমিল্লা শহর",
+
+        upazila: "Cumilla Adarsha Sadar",
+
+        district: "Cumilla",
+        division: "Chattogram",
+
+        latitude: 23.461,
+        longitude: 91.18,
+
+        distanceFromCumillaCity:
+          "কুমিল্লা শহরের কেন্দ্রে",
+
+        bestTimeToVisit:
+          "সকাল ১০টা-বিকাল ৫টা — প্রদত্ত তথ্য অনুযায়ী",
+
+        transportation:
+          "কুমিল্লা শহরের কেন্দ্রে অবস্থিত হওয়ায় স্থানীয় সড়কপথে সহজে যাওয়া যায়।",
+
+        entryFee: "বিনামূল্যে",
+
+        openingHours:
+          "সোমবার বন্ধ — অন্যান্য সময় Not verified",
+
+        facilities: [
+          "Public library",
+          "Auditorium"
+        ],
+
+        importance: [
+          "কুমিল্লার ঐতিহাসিক ও সাংস্কৃতিক কেন্দ্র",
+          "ঐতিহাসিক পাবলিক লাইব্রেরির সঙ্গে সম্পর্কিত",
+          "কান্দিরপাড়ের গুরুত্বপূর্ণ স্থাপনা"
+        ],
+
+        source: "Information provided",
+
+        sourceUrl: null,
+
+        lastVerified: "Not verified",
+      },
+
+      // ==========================================================
+      // 9. BARD
+      // ==========================================================
+
+      {
+        name: "Bangladesh Academy for Rural Development (BARD)",
+        banglaName: "বাংলাদেশ পল্লী উন্নয়ন একাডেমি (BARD)",
+        category: "Education and Research Institution",
+
+        description:
+          "১৯৫৫ সালে প্রতিষ্ঠিত পল্লী উন্নয়ন গবেষণা ও প্রশিক্ষণ প্রতিষ্ঠান।",
+
+        history:
+          "প্রদত্ত তথ্য অনুযায়ী ১৯৫৫ সালে ড. আখতার হামিদ খানের নেতৃত্বে প্রতিষ্ঠানটি প্রতিষ্ঠিত হয়। ১৯৬০-এর দশকে 'কুমিল্লা মডেল' এখানে বাস্তবায়িত হয়।",
+
+        location:
+          "কোটবাড়ি, কুমিল্লা",
+
+        upazila: "Cumilla Adarsha Sadar",
+
+        district: "Cumilla",
+        division: "Chattogram",
+
+        latitude: 23.455,
+        longitude: 91.115,
+
+        distanceFromCumillaCity:
+          "কুমিল্লা শহর থেকে প্রায় ১০ কিমি",
+
+        bestTimeToVisit:
+          "নভেম্বর থেকে ফেব্রুয়ারি",
+
+        transportation:
+          "কুমিল্লা শহর থেকে কোটবাড়ি এলাকায় সড়কপথে যাওয়া যায়।",
+
+        entryFee:
+          "অনুমতি প্রয়োজন — প্রদত্ত তথ্য অনুযায়ী",
+
+        openingHours:
+          "সকাল ৯টা-বিকাল ৫টা — প্রদত্ত তথ্য অনুযায়ী",
+
+        facilities: [
+          "Research facilities",
+          "Educational facilities",
+          "Campus"
+        ],
+
+        importance: [
+          "পল্লী উন্নয়ন গবেষণার গুরুত্বপূর্ণ প্রতিষ্ঠান",
+          "কুমিল্লা মডেলের সঙ্গে সম্পর্কিত",
+          "আন্তর্জাতিকভাবে পরিচিত পল্লী উন্নয়ন গবেষণা প্রতিষ্ঠান"
+        ],
+
+        source: "Bangladesh Academy for Rural Development",
+
+        sourceUrl: "https://www.bard.gov.bd",
+
+        lastVerified: "Not verified",
+      },
+
+      // ==========================================================
+      // 10. LALMAI BOTANICAL GARDEN
+      // ==========================================================
+
+      {
+        name: "Lalmai Botanical Garden",
+        banglaName: "লালমাই উদ্ভিদ উদ্যান",
+        category: "Natural Attraction / Botanical Garden",
+
+        description:
+          "১৭ একর জায়গা জুড়ে বিস্তৃত উদ্ভিদ উদ্যান, যেখানে বিভিন্ন বিরল ও বিপন্ন প্রজাতির উদ্ভিদ সংরক্ষণ করা হয়।",
+
+        history:
+          "প্রদত্ত তথ্য অনুযায়ী ২০১৫ সালে কুমিল্লা সামাজিক বন বিভাগের তত্ত্বাবধানে উদ্যান প্রতিষ্ঠার কাজ শুরু হয় এবং ২০২০ সালের ৭ নভেম্বর এটি সাধারণের জন্য উন্মুক্ত করা হয়।",
+
+        location:
+          "লালমাই পাহাড়, কোটবাড়ি, কুমিল্লা",
+
+        upazila: "Lalmai",
+
+        district: "Cumilla",
+        division: "Chattogram",
+
+        latitude: 23.456,
+        longitude: 91.116,
+
+        distanceFromCumillaCity:
+          "কুমিল্লা শহর থেকে প্রায় ১০ কিমি",
+
+        bestTimeToVisit:
+          "নভেম্বর থেকে ফেব্রুয়ারি",
+
+        transportation:
+          "কুমিল্লা শহর থেকে কোটবাড়ি ও লালমাই এলাকায় সড়কপথে যাওয়া যায়।",
+
+        entryFee:
+          "সাধারণ: ৳২০; শিক্ষার্থী: ৳৫; বিদেশি: ৳৪০০",
+
+        openingHours:
+          "প্রতিদিন সকাল ৯টা-বিকাল ৫টা — প্রদত্ত তথ্য অনুযায়ী",
+
+        facilities: [
+          "Botanical collection",
+          "Cactus section",
+          "Orchid section"
+        ],
+
+        importance: [
+          "বিরল ও বিপন্ন উদ্ভিদ সংরক্ষণ",
+          "লালমাই পাহাড়ের প্রাকৃতিক পরিবেশের অংশ",
+          "কুমিল্লার উল্লেখযোগ্য উদ্ভিদ উদ্যান"
+        ],
+
+        source: "Information provided",
+
+        sourceUrl: null,
+
+        lastVerified: "Not verified",
+      },
+
+      // ==========================================================
+      // 11. CHANDIMURA TEMPLE
+      // ==========================================================
+
+      {
+        name: "Chandimura Temple",
+        banglaName: "চণ্ডীমুড়া মন্দির",
+        category: "Temple",
+
+        description:
+          "লালমাই পাহাড়ের চূড়ায় অবস্থিত প্রাচীন শিব-দুর্গা মন্দির।",
+
+        history:
+          "প্রদত্ত তথ্য অনুযায়ী সপ্তম শতাব্দীতে বৌদ্ধ রাজা দেব খড়গ তার হিন্দু রাণী প্রভাবতী দেবীর অনুরোধে এই মন্দির নির্মাণ করেন।",
+
+        location:
+          "লালমাই পাহাড়ের চূড়া, কুমিল্লা",
+
+        upazila: "Lalmai",
+
+        district: "Cumilla",
+        division: "Chattogram",
+
+        latitude: 23.44,
+        longitude: 91.11,
+
+        distanceFromCumillaCity:
+          "কুমিল্লা শহর থেকে প্রায় ১২ কিমি",
+
+        bestTimeToVisit:
+          "চৈত্র সংক্রান্তি, শিবরাত্রি এবং শীতকাল",
+
+        transportation:
+          "লালমাই পাহাড় এলাকায় সড়কপথে পৌঁছে পাহাড়ে উঠতে হয়।",
+
+        entryFee: "বিনামূল্যে",
+
+        openingHours:
+          "সকাল ৬টা-রাত ৮টা — প্রদত্ত তথ্য অনুযায়ী",
+
+        facilities: [
+          "Religious visitor access"
+        ],
+
+        importance: [
+          "প্রাচীন ধর্মীয় স্থাপনা",
+          "লালমাই পাহাড়ের গুরুত্বপূর্ণ ধর্মীয় স্থান",
+          "শিব-দুর্গা মন্দির"
+        ],
+
+        source: "Information provided",
+
+        sourceUrl: null,
+
+        lastVerified: "Not verified",
+      },
+
+      // ==========================================================
+      // 12. UTKHARA MAZAR
+      // ==========================================================
+
+      {
+        name: "Utkhara Mazar",
+        banglaName: "উটখাড়া মাজার",
+        category: "Historical and Religious Site",
+
+        description:
+          "উটখাড়া মাজার দেবিদ্বার উপজেলার এলাহাবাদ গ্রামে অবস্থিত একটি ঐতিহাসিক ধর্মীয় স্থান।",
+
+        history:
+          "স্থানীয় ঐতিহ্য ও প্রচলিত বর্ণনা অনুযায়ী, এলাহাবাদ গ্রামের যে স্থানে বালিতে উটের পা গেঁথে গিয়ে উট থেমে গিয়েছিল বলে লোককথা প্রচলিত আছে, সেই স্থানটি পরবর্তীতে উটখাড়া নামে পরিচিত হয়। স্থানীয় ঐতিহ্য অনুযায়ী মাজারটি ইসলাম প্রচার ও সুফি-সাধকদের আগমনের ইতিহাসের সঙ্গে সম্পর্কিত।",
+
+        location:
+          "এলাহাবাদ গ্রাম, দেবিদ্বার, কুমিল্লা",
+
+        upazila: "Debidwar",
+
+        district: "Cumilla",
+        division: "Chattogram",
+
+        latitude: 23.557,
+        longitude: 90.999,
+
+        distanceFromCumillaCity:
+          "কুমিল্লা শহর থেকে প্রায় ২৯ কিমি উত্তর-পশ্চিমে",
+
+        bestTimeToVisit:
+          "শীতকাল ও শুকনো মৌসুম",
+
+        transportation:
+          "দেবিদ্বার হয়ে এলাহাবাদ এলাকায় সড়কপথে যাওয়া যায়। নির্দিষ্ট গণপরিবহন তথ্য Not verified.",
+
+        entryFee: "সাধারণত বিনামূল্যে — প্রদত্ত তথ্য অনুযায়ী",
+
+        openingHours:
+          "Not verified",
+
+        facilities: [
+          "Religious visitor access",
+          "Historic graves"
+        ],
+
+        importance: [
+          "দেবিদ্বারের পরিচিত ধর্মীয় ও ঐতিহ্যবাহী স্থান",
+          "স্থানীয় লোককথার সঙ্গে সম্পর্কিত",
+          "এলাহাবাদ গ্রামের ঐতিহ্যের সঙ্গে যুক্ত"
+        ],
+
+        source: "Debidwar Upazila official tourism page",
+
+        sourceUrl:
+          "https://debidwar.comilla.gov.bd/pages/tourist-spot/%E0%A6%89%E0%A6%9F%E0%A6%96%E0%A6%BE%E0%A6%A1%E0%A6%BC%E0%A6%BE-%E0%A6%AE%E0%A6%BE%E0%A6%9C%E0%A6%BE%E0%A6%B0-4f930d-6990be2535ce18e1c070794e",
+
+        lastVerified: "Not verified",
+      },
+
+      // ==========================================================
+      // 13. NOOR MANIKCHAR JAME MOSQUE
+      // ==========================================================
+
+      {
+        name: "Noor Manikchar Jame Mosque",
+        banglaName: "নূর মানিকচর জামে মসজিদ",
+        category: "Historic Mosque",
+
+        description:
+          "নূর মানিকচর জামে মসজিদ দেবিদ্বারের একটি প্রাচীন ঐতিহাসিক মসজিদ। প্রদত্ত সরকারি পর্যটন তথ্য অনুযায়ী মসজিদটির বয়স প্রায় ৫০০ বছর বলে উল্লেখ করা হয়েছে।",
+
+        history:
+          "প্রদত্ত তথ্য অনুযায়ী মসজিদটি প্রায় পাঁচশত বছরের পুরনো। প্রচলিত তথ্য অনুযায়ী সৈয়দ নূর আহমেদ কাদেরী পীর সাহেব মসজিদটি নির্মাণ করেন।",
+
+        location:
+          "নুরমানিকচর গ্রাম, দেবিদ্বার, কুমিল্লা",
+
+        upazila: "Debidwar",
+
+        district: "Cumilla",
+        division: "Chattogram",
+
+        latitude: 23.604,
+        longitude: 90.953,
+
+        distanceFromCumillaCity:
+          "নূরমানিকচর বাসস্টেশন থেকে প্রায় আধা কিমি উত্তরে; কুমিল্লা শহর থেকে নির্দিষ্ট দূরত্ব Not verified",
+
+        bestTimeToVisit:
+          "শীতকাল ও শুকনো মৌসুম",
+
+        transportation:
+          "ঢাকা-চট্টগ্রাম মহাসড়কের নূরমানিকচর বাসস্টেশন থেকে স্থানীয়ভাবে যাওয়া যায়।",
+
+        entryFee: "বিনামূল্যে",
+
+        openingHours:
+          "Not verified",
+
+        facilities: [
+          "Religious visitor access"
+        ],
+
+        importance: [
+          "দেবিদ্বারের প্রাচীন মসজিদগুলোর একটি",
+          "প্রায় ৫০০ বছরের পুরনো বলে সরকারি পর্যটন তথ্যে উল্লেখ",
+          "নুরমানিকচর গ্রামের ঐতিহাসিক পরিচয়ের সঙ্গে যুক্ত"
+        ],
+
+        source: "Debidwar Upazila official tourism page",
+
+        sourceUrl:
+          "https://debidwar.comilla.gov.bd/pages/tourist-spot/%E0%A6%A8%E0%A7%82%E0%A6%B0-%E0%A6%AE%E0%A6%BE%E0%A6%A8%E0%A6%BF%E0%A6%95%E0%A6%9A%E0%A6%B0-%E0%A6%9C%E0%A6%BE%E0%A6%AE%E0%A7%87-%E0%A6%AE%E0%A6%B8%E0%A6%9C%E0%A6%BF%E0%A6%A6-5e6b03-6990be2735ce18e1c0707aac",
+
+        lastVerified: "Not verified",
+      },
+
+      // ==========================================================
+      // 14. BAITUL AZGAR SAT GOMBUJ JAME MOSQUE
+      // ==========================================================
+
+      {
+        name: "Baitul Azgar Sat Gombuj Jame Mosque",
+        banglaName: "বায়তুল আজগর সাত গম্বুজ জামে মসজিদ",
+        category: "Historic Mosque",
+
+        description:
+          "গুনাইঘর বায়তুল আজগর সাত গম্বুজ জামে মসজিদ দেবিদ্বারের অন্যতম পরিচিত ঐতিহাসিক ও স্থাপত্যিক নিদর্শন।",
+
+        history:
+          "মসজিদটি দেবিদ্বার উপজেলার গুনাইঘর গ্রামে অবস্থিত। সাতটি গম্বুজের নকশা এবং বৈশিষ্ট্যপূর্ণ নির্মাণশৈলীর কারণে এটি স্থানীয়ভাবে বিশেষ পরিচিত।",
+
+        location:
+          "গুনাইঘর গ্রাম, দেবিদ্বার, কুমিল্লা",
+
+        upazila: "Debidwar",
+
+        district: "Cumilla",
+        division: "Chattogram",
+
+        latitude: 23.6015,
+        longitude: 90.9685,
+
+        distanceFromCumillaCity:
+          "দেবিদ্বার সদর থেকে প্রায় ২ কিমি পশ্চিম-দক্ষিণে; কুমিল্লা শহর থেকে নির্দিষ্ট দূরত্ব Not verified",
+
+        bestTimeToVisit:
+          "শীতকাল ও শুকনো মৌসুম",
+
+        transportation:
+          "দেবিদ্বার সদর থেকে স্থানীয় সড়কপথে যাওয়া যায়।",
+
+        entryFee: "বিনামূল্যে",
+
+        openingHours:
+          "নামাজের সময় ও স্থানীয় ব্যবস্থাপনা অনুযায়ী — নির্দিষ্ট সময় Not verified",
+
+        facilities: [
+          "Religious visitor access"
+        ],
+
+        importance: [
+          "সাত গম্বুজের ঐতিহাসিক মসজিদ",
+          "দেবিদ্বারের গুরুত্বপূর্ণ ধর্মীয় ও স্থাপত্যিক নিদর্শন",
+          "গুনাইঘর গ্রামের ঐতিহ্যের অংশ"
+        ],
+
+        source: "Debidwar Upazila official tourism page",
+
+        sourceUrl:
+          "https://debidwar.comilla.gov.bd/pages/tourist-spot/%E0%A6%AC%E0%A6%BE%E0%A6%AF%E0%A6%BC%E0%A6%A4%E0%A7%81%E0%A6%B2-%E0%A6%86%E0%A6%9C%E0%A6%97%E0%A6%B0-%E0%A6%9C%E0%A6%BE%E0%A6%AE%E0%A7%87-%E0%A6%AE%E0%A6%B8%E0%A6%9C%E0%A6%BF%E0%A6%A6-11f3c6-6990be1b35ce18e1c07073cc",
+
+        lastVerified: "Not verified",
+      },
     ],
-
-    latitude: "23.426234",
-    longitude: "91.1372098"
   },
-
-  {
-    id: 2,
-    name: "ময়নামতি জাদুঘর",
-    category: "জাদুঘর",
-    distanceFromVenue:
-      "কুমিল্লা শহর থেকে ১৪ কিমি, কোটবাড়ি এলাকায়",
-
-    description: `
-### সংক্ষিপ্ত পরিচিতি
-ময়নামতি-লালমাই অঞ্চলের প্রত্নবস্তু সমৃদ্ধ জাদুঘর। ১৯৬৫ সালে প্রতিষ্ঠিত এই জাদুঘরে ৭ম-১২শ শতাব্দীর বৌদ্ধ ও হিন্দু নিদর্শন সংরক্ষিত আছে।
-
-### বিস্তারিত বিবরণ
-ময়নামতি জাদুঘর কুমিল্লার কোটবাড়ি এলাকায় শালবন বিহারের পাশে অবস্থিত। ১৯৬৫ সালে প্রতিষ্ঠিত এই জাদুঘরে ময়নামতি-লালমাই অঞ্চল থেকে উদ্ধারকৃত প্রত্নবস্তু সংরক্ষিত আছে। এখানে পাথর, ব্রোঞ্জ, টেরাকোটা, মুদ্রা ও অন্যান্য প্রত্নবস্তু দেখা যায়।
-
-### ইতিহাস
-১৯৫০-এর দশকে ময়নামতি অঞ্চলে প্রত্নতাত্ত্বিক খনন শুরু হলে প্রচুর প্রত্নবস্তু পাওয়া যায়। এই নিদর্শনগুলো সংরক্ষণ ও প্রদর্শনের জন্য ১৯৬৫ সালে শালবন বিহারের পাশে ময়নামতি জাদুঘর প্রতিষ্ঠিত হয়।
-
-### নামকরণের ইতিহাস
-ময়নামতি নামটি স্থানীয় 'ময়না' নামক একটি পাহাড় থেকে এসেছে। কিংবদন্তি অনুযায়ী, ময়না নামক একজন রাজকন্যার নামে এই পাহাড়ের নামকরণ হয়।
-
-### প্রতিষ্ঠার বছর
-১৯৬৫
-
-### প্রতিষ্ঠাতা / পরিচালনাকারী
-বাংলাদেশ প্রত্নতত্ত্ব বিভাগ
-
-### স্থাপত্যশৈলী
-আধুনিক জাদুঘর স্থাপত্য।
-
-### ঐতিহাসিক গুরুত্ব
-বাংলাদেশের অন্যতম গুরুত্বপূর্ণ প্রত্নতাত্ত্বিক জাদুঘর।
-
-### ভ্রমণের উপযুক্ত সময়
-নভেম্বর থেকে ফেব্রুয়ারি (শীতকাল)।
-
-### খোলার সময়
-শীতকাল: মঙ্গল-শনি সকাল ৯টা-৫টা
-সোমবার: দুপুর ২টা-৫টা
-রবিবার: বন্ধ
-
-### প্রবেশমূল্য
-বাংলাদেশি: ৳৩০
-সার্ক দেশ: ৳১০০
-অন্যান্য বিদেশি: ৳২০০
-
-### দর্শনার্থীদের জন্য পরামর্শ
-• রবিবার বন্ধ থাকে
-• ফটোগ্রাফি অনুমোদিত (ফ্ল্যাশ ছাড়া)
-• গাইডের সেবা পাওয়া যায়
-
-### আকর্ষণীয় তথ্য
-• বিভিন্ন গ্যালারিতে প্রত্নবস্তু প্রদর্শিত হয়
-• ৭ম থেকে ১২শ শতাব্দীর নিদর্শন সংরক্ষিত
-• পাথরের বুদ্ধমূর্তি অন্যতম আকর্ষণ
-    `,
-
-    googleMapsLink:
-      "https://maps.google.com/?q=Mainamati+Museum+Cumilla",
-
-    officialWebsite:
-      "https://www.comilla.gov.bd",
-
-    wikipedia:
-      "https://en.wikipedia.org/wiki/Mainamati",
-
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Front_view_of_Chondimura_temple%2C_Comilla_district%2C_Bangladesh.jpg/960px-Front_view_of_Chondimura_temple%2C_Comilla_district%2C_Bangladesh.jpg",
-
-    keywords: [
-      "ময়নামতি জাদুঘর",
-      "কুমিল্লা প্রত্নবস্তু",
-      "বৌদ্ধ শিল্প বাংলাদেশ"
-    ],
-
-    latitude: "23.4580",
-    longitude: "91.1208"
-  },
-
-  {
-    id: 3,
-    name: "কুমিল্লা জগন্নাথ মন্দির",
-    category: "মন্দির",
-    distanceFromVenue:
-      "কুমিল্লা শহর থেকে ২ কিমি দক্ষিণ-পূর্বে",
-
-    description: `
-### সংক্ষিপ্ত পরিচিতি
-১৭৬১ সালে নির্মিত সতেরো রত্নের মন্দির, বাংলাদেশের অন্যতম উঁচু ও প্রাচীন হিন্দু মন্দির।
-
-### বিস্তারিত বিবরণ
-কুমিল্লা জগন্নাথ মন্দির, যা সতেরো রত্ন মন্দির নামেও পরিচিত, ১৭৬১ সালে নির্মিত হয়। এটি ত্রিপুরার রাজা রত্ন মাণিক্য দ্বিতীয় দ্বারা শুরু করা হয় এবং কৃষ্ণ কিশোর মাণিক্য দ্বারা সম্পন্ন করা হয়।
-
-### ইতিহাস
-মন্দিরটি ত্রিপুরার রাজা রত্ন মাণিক্য দ্বিতীয় দ্বারা শুরু করা হয় এবং ১৭৬১ সালে কৃষ্ণ কিশোর মাণিক্য দ্বারা সম্পন্ন করা হয়।
-
-### নামকরণের ইতিহাস
-জগন্নাথ মন্দির নামটি ভগবান জগন্নাথের নামে রাখা হয়। 'সতেরো রত্ন মন্দির' নামটি এর ১৭টি শিখর বা রত্নের জন্য।
-
-### নির্মাণকাল
-১৭৬১
-
-### প্রতিষ্ঠাতা / নির্মাতা
-ত্রিপুরা রাজা রত্ন মাণিক্য দ্বিতীয়
-
-### স্থাপত্যশৈলী
-বাংলা দেশীয় মন্দির স্থাপত্য, ১৭ রত্ন বিশিষ্ট।
-
-### ঐতিহাসিক গুরুত্ব
-বাংলাদেশের অন্যতম প্রাচীন ও উঁচু হিন্দু মন্দির।
-
-### ভ্রমণের উপযুক্ত সময়
-অক্টোবর থেকে মার্চ। রথযাত্রার সময় বিশেষ আকর্ষণীয়।
-
-### খোলার সময়
-সকাল ৬টা থেকে রাত ৮টা পর্যন্ত।
-
-### প্রবেশমূল্য
-বিনামূল্যে।
-
-### দর্শনার্থীদের জন্য পরামর্শ
-• মন্দিরে প্রবেশের জন্য উপযুক্ত পোশাক পরুন
-• জুতা খুলে প্রবেশ করতে হয়
-• ফটোগ্রাফির ক্ষেত্রে স্থানীয় নিয়ম মেনে চলুন
-
-### আকর্ষণীয় তথ্য
-• বাংলাদেশের অন্যতম উঁচু হিন্দু মন্দির
-• মন্দিরে ১৭টি রত্ন বা শিখর ছিল
-    `,
-
-    googleMapsLink:
-      "https://maps.google.com/?q=Comilla+Jagannath+Temple",
-
-    officialWebsite: null,
-
-    wikipedia:
-      "https://en.wikipedia.org/wiki/Comilla_Jagannath_Temple",
-
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Shalban_Vihara.jpg/960px-Shalban_Vihara.jpg",
-
-    keywords: [
-      "জগন্নাথ মন্দির কুমিল্লা",
-      "সতেরো রত্ন মন্দির",
-      "হিন্দু মন্দির বাংলাদেশ"
-    ],
-
-    latitude: "23.46230",
-    longitude: "91.21095"
-  },
-
-  {
-    id: 4,
-    name: "কুটিলা মুড়া",
-    category: "প্রত্নতাত্ত্বিক স্থান",
-    distanceFromVenue:
-      "কুমিল্লা শহর থেকে ১১ কিমি উত্তর-পশ্চিমে, ময়নামতি এলাকায়",
-
-    description: `
-### সংক্ষিপ্ত পরিচিতি
-৭ম শতাব্দীর বৌদ্ধ প্রত্নস্থল, তিনটি স্তূপ বিশিষ্ট অনন্য বৌদ্ধ স্থাপনা।
-
-### বিস্তারিত বিবরণ
-কুটিলা মুড়া ময়নামতি এলাকায় লালমাই পাহাড়ের সর্বোচ্চ চূড়ায় অবস্থিত একটি প্রাচীন বৌদ্ধ প্রত্নস্থল। এটি ৭ম শতাব্দীতে নির্মিত হয় এবং ১৩শ শতাব্দী পর্যন্ত সক্রিয় ছিল।
-
-### ইতিহাস
-কুটিলা মুড়া ৭ম শতাব্দীতে নির্মিত হয় এবং ১৩শ শতাব্দী পর্যন্ত ব্যবহৃত হয়।
-
-### নামকরণের ইতিহাস
-'কুটিলা' নামটি সম্ভবত 'কুটিল' (বাঁকা) শব্দ থেকে এসেছে।
-
-### নির্মাণকাল
-৭ম শতাব্দী
-
-### প্রতিষ্ঠাতা / নির্মাতা
-অজ্ঞাত
-
-### স্থাপত্যশৈলী
-ঐতিহ্যবাহী বৌদ্ধ স্তূপ স্থাপত্য।
-
-### ঐতিহাসিক গুরুত্ব
-বাংলাদেশের অন্যতম গুরুত্বপূর্ণ বৌদ্ধ প্রত্নস্থল।
-
-### ভ্রমণের উপযুক্ত সময়
-নভেম্বর থেকে ফেব্রুয়ারি।
-
-### খোলার সময়
-সূর্যোদয় থেকে সূর্যাস্ত পর্যন্ত।
-
-### প্রবেশমূল্য
-বিনামূল্যে।
-
-### দর্শনার্থীদের জন্য পরামর্শ
-• পাহাড়ে উঠতে হয়, তাই আরামদায়ক জুতা পরুন
-• পানি নিয়ে আসুন
-• ফটোগ্রাফি অনুমোদিত
-
-### আকর্ষণীয় তথ্য
-• তিনটি স্তূপ বৌদ্ধ ত্রিরত্নের প্রতীক
-• লালমাই পাহাড়ের সর্বোচ্চ চূড়ায় অবস্থিত
-    `,
-
-    googleMapsLink:
-      "https://maps.google.com/?q=Kutila+Mura+Cumilla",
-
-    officialWebsite: null,
-
-    wikipedia:
-      "https://en.wikipedia.org/wiki/Kutila_Mura",
-
-    image:
-      "https://www.touristplaces.com.bd/images/pp/6/p123674.jpg",
-
-    keywords: [
-      "কুটিলা মুড়া",
-      "বৌদ্ধ স্তূপ বাংলাদেশ",
-      "ময়নামতি প্রত্নস্থল"
-    ],
-
-    latitude: "23.4580222",
-    longitude: "91.1208778"
-  },
-
-  {
-    id: 5,
-    name: "ধর্মসাগর",
-    category: "জলাধার/পার্ক",
-    distanceFromVenue:
-      "কুমিল্লা শহরের কেন্দ্রে, কান্দিরপাড় এলাকায়",
-
-    description: `
-### সংক্ষিপ্ত পরিচিতি
-১৪৫৮ সালে ত্রিপুরা রাজা ধর্ম মাণিক্য প্রথম কর্তৃক খননকৃত প্রাচীন কৃত্রিম জলাধার।
-
-### বিস্তারিত বিবরণ
-ধর্মসাগর কুমিল্লা শহরের কেন্দ্রে অবস্থিত একটি প্রাচীন কৃত্রিম জলাধার। ১৪৫৮ সালে ত্রিপুরার রাজা ধর্ম মাণিক্য প্রথম এটি খনন করেন।
-
-### ইতিহাস
-১৪৫৮ সালে ত্রিপুরার রাজা ধর্ম মাণিক্য প্রথম স্থানীয় মানুষের পানির চাহিদা মেটাতে এই দীঘি খনন করেন।
-
-### নামকরণের ইতিহাস
-ধর্মসাগর নামটি ত্রিপুরা রাজা ধর্ম মাণিক্যের নামে রাখা হয়।
-
-### নির্মাণকাল
-১৪৫৮
-
-### প্রতিষ্ঠাতা / নির্মাতা
-ত্রিপুরা রাজা ধর্ম মাণিক্য প্রথম
-
-### স্থাপত্যশৈলী
-প্রাচীন কৃত্রিম জলাধার।
-
-### ঐতিহাসিক গুরুত্ব
-কুমিল্লা শহরের ঐতিহাসিক কেন্দ্রবিন্দু।
-
-### ভ্রমণের উপযুক্ত সময়
-শীতকাল, বিশেষ করে সকাল ও সন্ধ্যা।
-
-### খোলার সময়
-২৪ ঘণ্টা খোলা।
-
-### প্রবেশমূল্য
-বিনামূল্যে।
-
-### দর্শনার্থীদের জন্য পরামর্শ
-• পার্কিংয়ের ব্যবস্থা আছে
-• নৌকা ভ্রমণের সুবিধা থাকতে পারে
-• আশেপাশে খাবারের দোকান রয়েছে
-
-### আকর্ষণীয় তথ্য
-• প্রায় ৫৬০ বছরের প্রাচীন জলাধার
-• কুমিল্লা শহরের অন্যতম পরিচিত দর্শনীয় স্থান
-    `,
-
-    googleMapsLink:
-      "https://maps.google.com/?q=Dharmasagar+Cumilla",
-
-    officialWebsite: null,
-
-    wikipedia:
-      "https://en.wikipedia.org/wiki/Dharmasagar_(pond)",
-
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Dharmasagar_in_2022.03.jpg/960px-Dharmasagar_in_2022.03.jpg",
-
-    keywords: [
-      "ধর্মসাগর কুমিল্লা",
-      "প্রাচীন দীঘি বাংলাদেশ",
-      "কুমিল্লা শহর কেন্দ্র"
-    ],
-
-    latitude: "23.46444",
-    longitude: "91.17944"
-  },
-
-  {
-    id: 6,
-    name: "ময়নামতি যুদ্ধ সমাধিক্ষেত্র",
-    category: "যুদ্ধ সমাধিক্ষেত্র",
-    distanceFromVenue:
-      "কুমিল্লা শহর থেকে ৯ কিমি, কুমিল্লা ক্যান্টনমেন্ট এলাকায়",
-
-    description: `
-### সংক্ষিপ্ত পরিচিতি
-দ্বিতীয় বিশ্বযুদ্ধের শহীদ স্মারক, ৭৩৬টি কমনওয়েলথ সমাধি।
-
-### বিস্তারিত বিবরণ
-ময়নামতি যুদ্ধ সমাধিক্ষেত্র কুমিল্লা ক্যান্টনমেন্ট এলাকায় অবস্থিত। এটি দ্বিতীয় বিশ্বযুদ্ধের শহীদ সৈন্যদের স্মারক। এখানে ৭৩৬টি কমনওয়েলথ সমাধি রয়েছে।
-
-### ইতিহাস
-দ্বিতীয় বিশ্বযুদ্ধের সময় আহত সৈন্যদের চিকিৎসা ও মৃত সৈন্যদের সমাধানের ব্যবস্থা ছিল। ১৯৪৭ সালে কমনওয়েলথ ওয়ার গ্রেভস কমিশন এই সমাধিক্ষেত্র প্রতিষ্ঠা করে।
-
-### নামকরণের ইতিহাস
-'ময়নামতি' নামটি স্থানীয় ময়নামতি পাহাড় থেকে এসেছে।
-
-### প্রতিষ্ঠার বছর
-১৯৪৭
-
-### প্রতিষ্ঠাতা / পরিচালনাকারী
-কমনওয়েলথ ওয়ার গ্রেভস কমিশন (CWGC)
-
-### স্থাপত্যশৈলী
-কমনওয়েলথ যুদ্ধ সমাধি স্থাপত্য।
-
-### ঐতিহাসিক গুরুত্ব
-দ্বিতীয় বিশ্বযুদ্ধের গুরুত্বপূর্ণ স্মারক।
-
-### ভ্রমণের উপযুক্ত সময়
-নভেম্বর মাসে বার্ষিক প্রার্থনা সভার সময় বিশেষভাবে গুরুত্বপূর্ণ।
-
-### খোলার সময়
-প্রতিদিন সকাল ৮টা-১২টা এবং বিকেল ২টা-৫টা।
-
-### প্রবেশমূল্য
-বিনামূল্যে।
-
-### দর্শনার্থীদের জন্য পরামর্শ
-• সম্মানজনক পোশাক পরুন
-• নীরবতা বজায় রাখুন
-• ফটোগ্রাফির ক্ষেত্রে নিয়ম মেনে চলুন
-
-### আকর্ষণীয় তথ্য
-• ১৩টি দেশের ৭৩৬টি কমনওয়েলথ সমাধি রয়েছে
-• কমনওয়েলথ ওয়ার গ্রেভস কমিশন পরিচালিত
-    `,
-
-    googleMapsLink:
-      "https://maps.google.com/?q=Mainamati+War+Cemetery+Cumilla",
-
-    officialWebsite:
-      "https://www.cwgc.org",
-
-    wikipedia:
-      "https://en.wikipedia.org/wiki/Mainamati_War_Cemetery",
-
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Mainamati_War_Cemetery.jpg/960px-Mainamati_War_Cemetery.jpg",
-
-    keywords: [
-      "ময়নামতি যুদ্ধ সমাধিক্ষেত্র",
-      "দ্বিতীয় বিশ্বযুদ্ধ স্মারক",
-      "Mainamati War Cemetery"
-    ],
-
-    latitude: "23.48703",
-    longitude: "91.11293"
-  },
-
-  {
-    id: 7,
-    name: "নবাব ফয়জুন্নেসা জমিদার বাড়ি",
-    category: "প্রাসাদ/জমিদার বাড়ি",
-    distanceFromVenue:
-      "কুমিল্লা শহর থেকে প্রায় ৩৫ কিমি, লাকসাম উপজেলার পশ্চিমগাঁও",
-
-    description: `
-### সংক্ষিপ্ত পরিচিতি
-উপমহাদেশের একমাত্র নারী নবাব ফয়জুন্নেসা চৌধুরানির ঐতিহাসিক জমিদার বাড়ি।
-
-### বিস্তারিত বিবরণ
-নবাব ফয়জুন্নেসা জমিদার বাড়ি কুমিল্লার লাকসাম উপজেলার পশ্চিমগাঁও গ্রামে ডাকাতিয়া নদীর তীরে অবস্থিত। ১৮৭১ সালে নবাব ফয়জুন্নেসা চৌধুরানি এই জমিদার বাড়ি প্রতিষ্ঠা করেন।
-
-### ইতিহাস
-নবাব ফয়জুন্নেসা চৌধুরানি (১৮৩৪–১৯০৩) লাকসাম-পশ্চিমগাঁও জমিদারির জমিদার ছিলেন এবং নারী শিক্ষা ও সমাজসংস্কারের জন্য বিখ্যাত ছিলেন।
-
-### নামকরণের ইতিহাস
-নবাব ফয়জুন্নেসা চৌধুরানির নামে এই জমিদার বাড়ির নামকরণ হয়।
-
-### নির্মাণকাল
-১৮৭১
-
-### প্রতিষ্ঠাতা / নির্মাতা
-নবাব ফয়জুন্নেসা চৌধুরানি
-
-### স্থাপত্যশৈলী
-মুঘল ও ঔপনিবেশিক স্থাপত্যের সমন্বয়।
-
-### ঐতিহাসিক গুরুত্ব
-নারী শিক্ষা ও সমাজসংস্কারের প্রতীক।
-
-### ভ্রমণের উপযুক্ত সময়
-নভেম্বর থেকে ফেব্রুয়ারি।
-
-### খোলার সময়
-সকাল ১০টা-বিকাল ৫টা।
-
-### প্রবেশমূল্য
-বিনামূল্যে।
-
-### দর্শনার্থীদের জন্য পরামর্শ
-• ফটোগ্রাফি অনুমোদিত
-• গাইডের সাহায্য নিতে পারেন
-• লাকসাম থেকে CNG/অটোরিকশায় যাওয়া যায়
-
-### আকর্ষণীয় তথ্য
-• উপমহাদেশের অন্যতম উল্লেখযোগ্য নারী নবাব
-• ১৮৮৯ সালে 'নবাব' উপাধি পান
-    `,
-
-    googleMapsLink:
-      "https://maps.google.com/?q=Nawab+Faizunnesa+Zamindar+Bari+Laksam",
-
-    officialWebsite: null,
-
-    wikipedia:
-      "https://en.wikipedia.org/wiki/Nawab_Faizunnesa",
-
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nawab_Faizunnesa_House.jpg/960px-Nawab_Faizunnesa_House.jpg",
-
-    keywords: [
-      "নবাব ফয়জুন্নেসা",
-      "জমিদার বাড়ি লাকসাম",
-      "নারী নবাব বাংলাদেশ"
-    ],
-
-    latitude: "23.3500",
-    longitude: "91.1000"
-  },
-
-  {
-    id: 8,
-    name: "কুমিল্লা টাউন হল",
-    category: "ঐতিহাসিক ভবন",
-    distanceFromVenue:
-      "কুমিল্লা শহরের কেন্দ্রে, কান্দিরপাড়",
-
-    description: `
-### সংক্ষিপ্ত পরিচিতি
-১৮৫৫ সালে প্রতিষ্ঠিত পাবলিক লাইব্রেরি ও সিটি অডিটোরিয়াম।
-
-### বিস্তারিত বিবরণ
-কুমিল্লা টাউন হল কুমিল্লা শহরের কান্দিরপাড় এলাকায় অবস্থিত। ১৮৫৫ সালের ৬ মে এটি প্রতিষ্ঠিত হয়। এটি কুমিল্লার পাবলিক লাইব্রেরি ও সিটি অডিটোরিয়াম হিসেবে ব্যবহৃত হয়।
-
-### ইতিহাস
-১৮৫৫ সালে তৎকালীন ডেপুটি কমিশনার এফ.এইচ. স্ক্রিন ত্রিপুরার জমিদারদের কাছে লাইব্রেরি নির্মাণের জন্য জমি চান।
-
-### নামকরণের ইতিহাস
-'টাউন হল' নামটি ইংরেজি 'Town Hall' থেকে এসেছে।
-
-### প্রতিষ্ঠার বছর
-১৮৫৫
-
-### প্রতিষ্ঠাতা / নির্মাতা
-ত্রিপুরা রাজা বীরচন্দ্র মাণিক্য বাহাদুর
-
-### স্থাপত্যশৈলী
-ঔপনিবেশিক স্থাপত্য।
-
-### ঐতিহাসিক গুরুত্ব
-কুমিল্লার ঐতিহাসিক ও সাংস্কৃতিক কেন্দ্র।
-
-### ভ্রমণের উপযুক্ত সময়
-সকাল ১০টা-বিকাল ৫টা।
-
-### খোলার সময়
-সোমবার বন্ধ।
-
-### প্রবেশমূল্য
-বিনামূল্যে।
-
-### দর্শনার্থীদের জন্য পরামর্শ
-• শহরের কেন্দ্রে অবস্থিত
-• সোমবার বন্ধ
-• কাছেই ধর্মসাগর অবস্থিত
-
-### আকর্ষণীয় তথ্য
-• ১৮৫৫ সালে প্রতিষ্ঠিত
-• কুমিল্লার প্রথম দিকের পাবলিক লাইব্রেরিগুলোর একটি
-    `,
-
-    googleMapsLink:
-      "https://maps.google.com/?q=Comilla+Town+Hall",
-
-    officialWebsite: null,
-
-    wikipedia: null,
-
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Comilla_Town_Hall.jpg/960px-Comilla_Town_Hall.jpg",
-
-    keywords: [
-      "কুমিল্লা টাউন হল",
-      "কান্দিরপাড়",
-      "ত্রিপুরা রাজবংশ"
-    ],
-
-    latitude: "23.4610",
-    longitude: "91.1800"
-  },
-
-  {
-    id: 9,
-    name: "বাংলাদেশ পল্লী উন্নয়ন একাডেমি (BARD)",
-    category: "শিক্ষা ও গবেষণা প্রতিষ্ঠান",
-    distanceFromVenue:
-      "কুমিল্লা শহর থেকে ১০ কিমি, কোটবাড়ি এলাকায়",
-
-    description: `
-### সংক্ষিপ্ত পরিচিতি
-১৯৫৫ সালে প্রতিষ্ঠিত পল্লী উন্নয়ন গবেষণা প্রতিষ্ঠান।
-
-### বিস্তারিত বিবরণ
-বাংলাদেশ পল্লী উন্নয়ন একাডেমি (BARD) কুমিল্লার কোটবাড়ি এলাকায় অবস্থিত। ১৯৫৫ সালে পাকিস্তান আমলে 'পাকিস্তান একাডেমি ফর রুরাল ডেভেলপমেন্ট' হিসেবে প্রতিষ্ঠিত হয়, যা পরে BARD নামে পরিচিত হয়।
-
-### ইতিহাস
-১৯৫৫ সালে ড. আখতার হামিদ খানের নেতৃত্বে এটি প্রতিষ্ঠিত হয়। ১৯৬০-এর দশকে 'কুমিল্লা মডেল' এখানে বাস্তবায়িত হয়।
-
-### নামকরণের ইতিহাস
-BARD অর্থ Bangladesh Academy for Rural Development।
-
-### প্রতিষ্ঠার বছর
-১৯৫৫
-
-### প্রতিষ্ঠাতা / নির্মাতা
-ড. আখতার হামিদ খান
-
-### স্থাপত্যশৈলী
-আধুনিক শিক্ষা প্রতিষ্ঠান।
-
-### ঐতিহাসিক গুরুত্ব
-আন্তর্জাতিকভাবে স্বীকৃত পল্লী উন্নয়ন গবেষণা প্রতিষ্ঠান।
-
-### ভ্রমণের উপযুক্ত সময়
-নভেম্বর থেকে ফেব্রুয়ারি।
-
-### খোলার সময়
-সকাল ৯টা-বিকাল ৫টা।
-
-### প্রবেশমূল্য
-অনুমতি প্রয়োজন।
-
-### দর্শনার্থীদের জন্য পরামর্শ
-• অনুমতি নিয়ে প্রবেশ করুন
-• ক্যাম্পাস বড়
-• ফটোগ্রাফির জন্য অনুমতি নিন
-
-### আকর্ষণীয় তথ্য
-• ১৯৫৫ সালে প্রতিষ্ঠিত
-• 'কুমিল্লা মডেল' এখানেই বিকশিত হয়
-    `,
-
-    googleMapsLink:
-      "https://maps.google.com/?q=BARD+Cumilla",
-
-    officialWebsite:
-      "https://www.bard.gov.bd",
-
-    wikipedia: null,
-
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/BARD_Cumilla.jpg/960px-BARD_Cumilla.jpg",
-
-    keywords: [
-      "বার্ড কুমিল্লা",
-      "পল্লী উন্নয়ন একাডেমি",
-      "কুমিল্লা মডেল"
-    ],
-
-    latitude: "23.4550",
-    longitude: "91.1150"
-  },
-
-  {
-    id: 10,
-    name: "লালমাই উদ্ভিদ উদ্যান",
-    category: "প্রাকৃতিক আকর্ষণ/উদ্ভিদ উদ্যান",
-    distanceFromVenue:
-      "কুমিল্লা শহর থেকে ১০ কিমি, কোটবাড়ি এলাকায়, লালমাই পাহাড়ে",
-
-    description: `
-### সংক্ষিপ্ত পরিচিতি
-১৭ একর জায়গা জুড়ে বিস্তৃত উদ্ভিদ উদ্যান, যেখানে বিভিন্ন বিরল ও বিপন্ন প্রজাতির উদ্ভিদ সংরক্ষণ করা হয়।
-
-### বিস্তারিত বিবরণ
-লালমাই উদ্ভিদ উদ্যান কুমিল্লার কোটবাড়ি এলাকায় লালমাই পাহাড়ে অবস্থিত। ১৭ একর জায়গা জুড়ে বিস্তৃত এই উদ্যানে বিভিন্ন প্রজাতির উদ্ভিদ সংরক্ষিত আছে।
-
-### ইতিহাস
-২০১৫ সালে কুমিল্লা সামাজিক বন বিভাগের তত্ত্বাবধানে এই উদ্যান প্রতিষ্ঠার কাজ শুরু হয়। ২০২০ সালের ৭ নভেম্বর এটি সাধারণের জন্য উন্মুক্ত করা হয়।
-
-### নামকরণের ইতিহাস
-উদ্যানটি লালমাই পাহাড়ের নামে নামকরণ করা হয়েছে।
-
-### প্রতিষ্ঠার বছর
-২০২০
-
-### প্রতিষ্ঠাতা / পরিচালনাকারী
-কুমিল্লা সামাজিক বন বিভাগ
-
-### স্থাপত্যশৈলী
-প্রাকৃতিক উদ্ভিদ উদ্যান।
-
-### ঐতিহাসিক গুরুত্ব
-কুমিল্লা অঞ্চলের অন্যতম উল্লেখযোগ্য উদ্ভিদ সংরক্ষণ কেন্দ্র।
-
-### ভ্রমণের উপযুক্ত সময়
-নভেম্বর থেকে ফেব্রুয়ারি।
-
-### খোলার সময়
-প্রতিদিন সকাল ৯টা-বিকাল ৫টা।
-
-### প্রবেশমূল্য
-সাধারণ: ৳২০
-শিক্ষার্থী: ৳৫
-বিদেশি: ৳৪০০
-
-### দর্শনার্থীদের জন্য পরামর্শ
-• আরামদায়ক জুতা পরুন
-• পানি নিয়ে আসুন
-• ক্যাকটাস ও অর্কিড সেকশন দেখতে পারেন
-
-### আকর্ষণীয় তথ্য
-• বিভিন্ন বিরল ও বিপন্ন প্রজাতির উদ্ভিদ সংরক্ষিত
-• লালমাই পাহাড়ের প্রাকৃতিক পরিবেশের মধ্যে অবস্থিত
-    `,
-
-    googleMapsLink:
-      "https://maps.google.com/?q=Lalmai+Botanical+Garden+Cumilla",
-
-    officialWebsite: null,
-
-    wikipedia: null,
-
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Lalmai_Botanical_Garden.jpg/960px-Lalmai_Botanical_Garden.jpg",
-
-    keywords: [
-      "লালমাই উদ্ভিদ উদ্যান",
-      "বিরল উদ্ভিদ বাংলাদেশ",
-      "বটানিক্যাল গার্ডেন কুমিল্লা"
-    ],
-
-    latitude: "23.4560",
-    longitude: "91.1160"
-  },
-
-  {
-    id: 11,
-    name: "চণ্ডীমুড়া মন্দির",
-    category: "মন্দির",
-    distanceFromVenue:
-      "কুমিল্লা শহর থেকে ১২ কিমি, লালমাই পাহাড়ের চূড়ায়",
-
-    description: `
-### সংক্ষিপ্ত পরিচিতি
-লালমাই পাহাড়ের চূড়ায় অবস্থিত প্রাচীন শিব-দুর্গা মন্দির।
-
-### বিস্তারিত বিবরণ
-চণ্ডীমুড়া মন্দির কুমিল্লার লালমাই পাহাড়ের সর্বোচ্চ চূড়ায় অবস্থিত। এটি একটি প্রাচীন শিব-দুর্গা মন্দির।
-
-### ইতিহাস
-সপ্তম শতাব্দীতে বৌদ্ধ রাজা দেব খড়গ তার হিন্দু রাণী প্রভাবতী দেবীর অনুরোধে এই মন্দির নির্মাণ করেন।
-
-### নামকরণের ইতিহাস
-'চণ্ডীমুড়া' নামটি চণ্ডী দেবীর নামে রাখা হয়েছে।
-
-### নির্মাণকাল
-সপ্তম শতাব্দী
-
-### প্রতিষ্ঠাতা / নির্মাতা
-বৌদ্ধ রাজা দেব খড়গ
-
-### স্থাপত্যশৈলী
-প্রাচীন হিন্দু মন্দির স্থাপত্য।
-
-### ঐতিহাসিক গুরুত্ব
-লালমাই পাহাড়ের অন্যতম গুরুত্বপূর্ণ ধর্মীয় স্থান।
-
-### ভ্রমণের উপযুক্ত সময়
-চৈত্র সংক্রান্তি, শিবরাত্রি এবং শীতকাল।
-
-### খোলার সময়
-সকাল ৬টা-রাত ৮টা।
-
-### প্রবেশমূল্য
-বিনামূল্যে।
-
-### দর্শনার্থীদের জন্য পরামর্শ
-• পাহাড়ে উঠতে আরামদায়ক জুতা পরুন
-• পানি ও খাবার সঙ্গে রাখুন
-• ধর্মীয় স্থানের নিয়ম মেনে চলুন
-
-### আকর্ষণীয় তথ্য
-• প্রাচীন ধর্মীয় স্থাপনার ঐতিহ্য বহন করে
-• লালমাই পাহাড়ের চূড়ায় অবস্থিত
-    `,
-
-    googleMapsLink:
-      "https://maps.google.com/?q=Chandimura+Temple+Cumilla",
-
-    officialWebsite: null,
-
-    wikipedia: null,
-
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Front_view_of_Chondimura_temple%2C_Comilla_district%2C_Bangladesh.jpg/960px-Front_view_of_Chondimura_temple%2C_Comilla_district%2C_Bangladesh.jpg",
-
-    keywords: [
-      "চণ্ডীমুড়া মন্দির",
-      "শিব মন্দির কুমিল্লা",
-      "লালমাই পাহাড়"
-    ],
-
-    latitude: "23.4400",
-    longitude: "91.1100"
-  },
-  {
-  id: 12,
-  name: "উটখাড়া মাজার",
-  category: "ঐতিহাসিক ও ধর্মীয় স্থান",
-  distanceFromVenue:
-    "দেবিদ্বার সদর থেকে প্রায় ৭ কিমি পূর্ব-দক্ষিণে, কুমিল্লা শহর থেকে প্রায় ২৯ কিমি উত্তর-পশ্চিমে",
-
-  description: `
-### সংক্ষিপ্ত পরিচিতি
-
-উটখাড়া মাজার দেবিদ্বার উপজেলার এলাহাবাদ গ্রামে অবস্থিত একটি ঐতিহাসিক ধর্মীয় স্থান।
-
-### বিস্তারিত বিবরণ
-
-এলাহাবাদ গ্রামের যে স্থানে বালিতে উটের পা গেঁথে গিয়ে উট থেমে গিয়েছিল বলে লোককথা প্রচলিত আছে, সেই স্থানটি পরবর্তীতে উটখাড়া নামে পরিচিত হয়। বর্তমানে এখানে উটখাড়া মাজার অবস্থিত।
-
-### ইতিহাস
-
-স্থানীয় ঐতিহ্য ও প্রচলিত বর্ণনা অনুযায়ী, এই অঞ্চলে ইসলাম প্রচারের সঙ্গে বিভিন্ন সুফি-সাধক ও আউলিয়াদের আগমনের ইতিহাস জড়িত। সরকারি পর্যটন তথ্য অনুযায়ী মাজারটি এলাহাবাদ গ্রামের উটখাড়া এলাকায় অবস্থিত।
-
-### অবস্থান
-
-এলাহাবাদ গ্রাম, দেবিদ্বার, কুমিল্লা।
-
-### ঐতিহাসিক গুরুত্ব
-
-দেবিদ্বার অঞ্চলের অন্যতম পরিচিত ধর্মীয় ও ঐতিহ্যবাহী স্থান। মাজারকে ঘিরে স্থানীয় ইতিহাস, লোককথা ও ধর্মীয় ঐতিহ্য রয়েছে।
-
-### ভ্রমণের উপযুক্ত সময়
-
-শীতকাল ও শুকনো মৌসুমে ভ্রমণ আরামদায়ক।
-
-### প্রবেশমূল্য
-
-সাধারণত বিনামূল্যে।
-
-### দর্শনার্থীদের জন্য পরামর্শ
-
-• ধর্মীয় স্থানের পরিবেশ ও নিয়ম মেনে চলুন
-• পরিষ্কার-পরিচ্ছন্নতা বজায় রাখুন
-• স্থানীয় মানুষের ধর্মীয় অনুভূতির প্রতি সম্মান দেখান
-• দিনের বেলা ভ্রমণ করা সুবিধাজনক
-
-### আকর্ষণীয় তথ্য
-
-• উটখাড়া নামটির সঙ্গে একটি প্রচলিত ঐতিহাসিক লোককথা জড়িত
-• এলাহাবাদ গ্রামের সঙ্গে মাজারটির ঐতিহাসিক সম্পর্ক রয়েছে
-• মাজার এলাকায় একাধিক পুরনো কবর রয়েছে
-`,
-
-  googleMapsLink:
-    "https://maps.google.com/?q=Utkhara+Mazar+Debidwar+Cumilla",
-
-  officialWebsite:
-    "https://debidwar.comilla.gov.bd/pages/tourist-spot/%E0%A6%89%E0%A6%9F%E0%A6%96%E0%A6%BE%E0%A6%A1%E0%A6%BC%E0%A6%BE-%E0%A6%AE%E0%A6%BE%E0%A6%9C%E0%A6%BE%E0%A6%B0-4f930d-6990be2535ce18e1c070794e",
-
-  wikipedia: null,
-
-  image: "/placeholder.jpg",
-
-  keywords: [
-    "উটখাড়া মাজার",
-    "এলাহাবাদ",
-    "দেবিদ্বার",
-    "ঐতিহাসিক স্থান",
-    "ধর্মীয় স্থান"
-  ],
-
-  latitude: "23.5570",
-  longitude: "90.9990"
-},
-
-{
-  id: 13,
-  name: "নূর মানিকচর জামে মসজিদ",
-  category: "ঐতিহাসিক মসজিদ",
-  distanceFromVenue:
-    "নূরমানিকচর বাসস্টেশন থেকে প্রায় আধা কিমি উত্তরে",
-
-  description: `
-### সংক্ষিপ্ত পরিচিতি
-
-নূর মানিকচর জামে মসজিদ দেবিদ্বারের একটি প্রাচীন ঐতিহাসিক মসজিদ। সরকারি তথ্য অনুযায়ী মসজিদটির বয়স প্রায় ৫০০ বছর বলে উল্লেখ করা হয়েছে।
-
-### বিস্তারিত বিবরণ
-
-নূর মানিকচর জামে মসজিদ নুরমানিকচর গ্রামে অবস্থিত। এটি ঢাকা-চট্টগ্রাম মহাসড়কের নূরমানিকচর বাসস্টেশন থেকে প্রায় আধা কিলোমিটার উত্তরে অবস্থিত।
-
-### ইতিহাস
-
-সরকারি পর্যটন তথ্য অনুযায়ী, মসজিদটি প্রায় পাঁচশত বছরের পুরনো। প্রচলিত তথ্য অনুযায়ী পঞ্চদশ শতাব্দীর আগে সৈয়দ নূর আহমেদ কাদেরী পীর সাহেব মসজিদটি নির্মাণ করেন।
-
-### নামকরণের ইতিহাস
-
-প্রচলিত তথ্য অনুযায়ী সৈয়দ নূর আহমেদ কাদেরী পীর সাহেবের নামের সঙ্গে নূরমানিকচর গ্রামের নামের সম্পর্ক রয়েছে।
-
-### নির্মাণকাল
-
-প্রায় ৫০০ বছর পূর্বে বলে উল্লেখ করা হয়।
-
-### প্রতিষ্ঠাতা / নির্মাতা
-
-সৈয়দ নূর আহমেদ কাদেরী পীর সাহেব — প্রচলিত তথ্য অনুযায়ী।
-
-### স্থাপত্যশৈলী
-
-প্রাচীন বাংলা-মুসলিম মসজিদ স্থাপত্যের ঐতিহ্য বহনকারী ধর্মীয় স্থাপনা।
-
-### ঐতিহাসিক গুরুত্ব
-
-দেবিদ্বার উপজেলার অন্যতম প্রাচীন মসজিদ হিসেবে স্থানীয় ঐতিহ্য ও ইতিহাসে গুরুত্বপূর্ণ।
-
-### ভ্রমণের উপযুক্ত সময়
-
-শীতকাল ও শুকনো মৌসুম।
-
-### প্রবেশমূল্য
-
-বিনামূল্যে।
-
-### দর্শনার্থীদের জন্য পরামর্শ
-
-• মসজিদে প্রবেশের সময় ধর্মীয় নিয়ম মেনে চলুন
-• নামাজের সময় দর্শন করতে হলে মুসল্লিদের অসুবিধা করবেন না
-• পরিষ্কার-পরিচ্ছন্নতা বজায় রাখুন
-• স্থানীয় মানুষের প্রতি সম্মান প্রদর্শন করুন
-
-### আকর্ষণীয় তথ্য
-
-• মসজিদটি প্রায় ৫০০ বছরের পুরনো বলে সরকারি পর্যটন তথ্যে উল্লেখ আছে
-• এটি নুরমানিকচর গ্রামের ঐতিহাসিক পরিচয়ের সঙ্গে জড়িত
-• ঢাকা-চট্টগ্রাম মহাসড়ক থেকে সহজে যাওয়া যায়
-`,
-
-  googleMapsLink:
-    "https://maps.google.com/?q=Noor+Manikchar+Jame+Mosque+Debidwar+Cumilla",
-
-  officialWebsite:
-    "https://debidwar.comilla.gov.bd/pages/tourist-spot/%E0%A6%A8%E0%A7%82%E0%A6%B0-%E0%A6%AE%E0%A6%BE%E0%A6%A8%E0%A6%BF%E0%A6%95%E0%A6%9A%E0%A6%B0-%E0%A6%9C%E0%A6%BE%E0%A6%AE%E0%A7%87-%E0%A6%AE%E0%A6%B8%E0%A6%9C%E0%A6%BF%E0%A6%A6-5e6b03-6990be2735ce18e1c0707aac",
-
-  wikipedia: null,
-
-  image: "/placeholder.jpg",
-
-  keywords: [
-    "নূর মানিকচর জামে মসজিদ",
-    "নূরমানিকচর",
-    "দেবিদ্বার",
-    "প্রাচীন মসজিদ",
-    "ঐতিহাসিক মসজিদ"
-  ],
-
-  latitude: "23.6040",
-  longitude: "90.9530"
-},
-
-{
-  id: 14,
-  name: "বায়তুল আজগর সাত গম্বুজ জামে মসজিদ",
-  category: "ঐতিহাসিক মসজিদ",
-  distanceFromVenue:
-    "দেবিদ্বার সদর থেকে প্রায় ২ কিমি পশ্চিম-দক্ষিণে, গুনাইঘর গ্রামে",
-
-  description: `
-### সংক্ষিপ্ত পরিচিতি
-
-গুনাইঘর বায়তুল আজগর সাত গম্বুজ জামে মসজিদ দেবিদ্বারের অন্যতম পরিচিত ঐতিহাসিক ও স্থাপত্যিক নিদর্শন।
-
-### বিস্তারিত বিবরণ
-
-মসজিদটি দেবিদ্বার উপজেলার গুনাইঘর গ্রামে অবস্থিত। এটি দেবিদ্বার সদর থেকে প্রায় ২ কিলোমিটার পশ্চিম-দক্ষিণে অবস্থিত।
-
-### অবস্থান
-
-গুনাইঘর (উত্তর) ইউনিয়ন, গুনাইঘর গ্রাম, দেবিদ্বার, কুমিল্লা।
-
-### স্থাপত্যশৈলী
-
-সাত গম্বুজের নকশা এবং বৈশিষ্ট্যপূর্ণ নির্মাণশৈলীর কারণে মসজিদটি স্থানীয়ভাবে বিশেষ পরিচিত। সরকারি পর্যটন তথ্য অনুযায়ী নির্মাণশৈলির দিক থেকে এটি দেশের বিখ্যাত মসজিদগুলোর অন্যতম হিসেবে উল্লেখ করা হয়।
-
-### ঐতিহাসিক গুরুত্ব
-
-বায়তুল আজগর সাত গম্বুজ জামে মসজিদ দেবিদ্বারের ঐতিহ্যবাহী স্থাপনাগুলোর মধ্যে অন্যতম এবং স্থানীয় ধর্মীয় ও স্থাপত্য ঐতিহ্যের গুরুত্বপূর্ণ অংশ।
-
-### ভ্রমণের উপযুক্ত সময়
-
-শীতকাল ও শুকনো মৌসুমে ভ্রমণ আরামদায়ক।
-
-### খোলার সময়
-
-মসজিদ হওয়ায় নামাজের সময় ও স্থানীয় ব্যবস্থাপনা অনুযায়ী দর্শনের সুযোগ ভিন্ন হতে পারে।
-
-### প্রবেশমূল্য
-
-বিনামূল্যে।
-
-### দর্শনার্থীদের জন্য পরামর্শ
-
-• মসজিদে প্রবেশের সময় উপযুক্ত পোশাক পরুন
-• নামাজের সময় নীরবতা বজায় রাখুন
-• ধর্মীয় পরিবেশের প্রতি সম্মান প্রদর্শন করুন
-• ছবি তোলার আগে স্থানীয় কর্তৃপক্ষের অনুমতি নেওয়া ভালো
-
-### আকর্ষণীয় তথ্য
-
-• মসজিদটি সাত গম্বুজের জন্য পরিচিত
-• গুনাইঘর গ্রামের ঐতিহ্যের সঙ্গে মসজিদটি ঘনিষ্ঠভাবে যুক্ত
-• দেবিদ্বার সদর থেকে প্রায় ২ কিলোমিটার দূরে
-• নির্মাণশৈলির কারণে এটি দেবিদ্বারের অন্যতম দর্শনীয় স্থান
-`,
-
-  googleMapsLink:
-    "https://maps.google.com/?q=Gunaighar+Baitul+Azgar+Sat+Gomboj+Jame+Masjid+Debidwar",
-
-  officialWebsite:
-    "https://debidwar.comilla.gov.bd/pages/tourist-spot/%E0%A6%AC%E0%A6%BE%E0%A6%AF%E0%A6%BC%E0%A6%A4%E0%A7%81%E0%A6%B2-%E0%A6%86%E0%A6%9C%E0%A6%97%E0%A6%B0-%E0%A6%9C%E0%A6%BE%E0%A6%AE%E0%A7%87-%E0%A6%AE%E0%A6%B8%E0%A6%9C%E0%A6%BF%E0%A6%A6-11f3c6-6990be1b35ce18e1c07073cc",
-
-  wikipedia: null,
-
-  image: "/placeholder.jpg",
-
-  keywords: [
-    "বায়তুল আজগর",
-    "সাত গম্বুজ মসজিদ",
-    "গুনাইঘর",
-    "দেবিদ্বার",
-    "ঐতিহাসিক মসজিদ"
-  ],
-
-  latitude: "23.6015",
-  longitude: "90.9685"
-}
-],
 
   // Google Apps Script Web App URL used for RSVP + Wishes (see README for setup)
   googleAppsScriptUrl: process.env.NEXT_PUBLIC_GAS_URL || "",
