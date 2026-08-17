@@ -6,13 +6,16 @@ import ThemeToggle from "./ThemeToggle";
 import { weddingConfig } from "@/lib/config";
 
 const links = [
-  { href: "#our-story", label: "Story" },
-  { href: "#schedule", label: "Schedule" },
-  { href: "#venue", label: "Venue" },
-  { href: "#gallery", label: "Gallery" },
-  { href: "#rsvp", label: "RSVP" },
-  { href: "#wishes", label: "Wishes" },
-    { href: "/historical-places", label: "Historical Places" },
+  { href: "/#our-story", label: "Story" },
+  { href: "/#schedule", label: "Schedule" },
+  { href: "/#venue", label: "Venue" },
+  // { href: "/#gallery", label: "Gallery" },
+  { href: "/#rsvp", label: "RSVP" },
+  { href: "/#wishes", label: "Wishes" },
+  {
+    href: "/historical-places",
+    label: "Historical Places",
+  },
 ];
 
 export default function Navbar() {
@@ -74,7 +77,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between gap-3">
           {/* Logo */}
           <a
-            href="#home"
+            href="/#home"
             className="
               min-w-0
               font-script
