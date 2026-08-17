@@ -74,32 +74,32 @@ export const weddingConfig = {
 
   eventTimeline: [
     {
-      time: "1:30 PM",
+      time: "12:00 PM",
       title: "Guest Arrival",
       description: "Guests arrive, welcome drinks & seating"
     },
     {
-      time: "2:00 PM",
+      time: "1:00 PM",
       title: "Jumu'ah Prayer",
       description: "Congregational Friday prayer"
     },
     {
-      time: "2:45 PM",
+      time: "2:00 PM",
       title: "Wedding Lunch",
       description: "Enjoy a delicious celebratory feast"
     },
     {
-      time: "3:30 PM",
+      time: "2:45 PM",
       title: "Nikah Ceremony",
       description: "The sacred marriage contract and Khutbah"
     },
     {
-      time: "4:15 PM",
+      time: "3:30 PM",
       title: "Photography Session",
       description: "Capture memorable moments with family and friends"
     },
     {
-      time: "5:00 PM",
+      time: "4:00 PM",
       title: "Dua & Farewell",
       description: "Closing prayers, blessings, and heartfelt thanks"
     }

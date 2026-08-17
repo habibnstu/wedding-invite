@@ -9,11 +9,11 @@ export default function OurStory() {
       id="our-story"
       className="
         w-full
-        py-8
-        sm:py-10
-        md:py-14
-        px-4
-        sm:px-6
+        py-2
+        sm:py-3
+        md:py-4
+        px-2
+        sm:px-3
         bg-blush-50/40
         dark:bg-white/[0.02]
       "
@@ -23,7 +23,7 @@ export default function OurStory() {
         Our Story
       </h2>
 
-      <div className="gold-divider mt-3 sm:mt-4 mb-10 sm:mb-12 md:mb-16" />
+      <div className="gold-divider mt-1 sm:mt-2 mb-3 sm:mb-4 md:mb-5" />
 
       {/* Timeline Container */}
       <div className="relative w-full max-w-3xl mx-auto">

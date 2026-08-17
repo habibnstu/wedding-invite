@@ -196,18 +196,18 @@ export default function Wishes() {
   return (
     <section
       id="wishes"
-      className="w-full overflow-hidden bg-blush-50/40 px-4 py-10 dark:bg-white/[0.02] sm:px-5 md:px-6"
+      className="w-full overflow-hidden bg-blush-50/40 px-1 py-2 dark:bg-white/[0.02] sm:px-2 md:px-3"
     >
       <h2 className="section-heading px-1 text-center">
         Guest Wishes
       </h2>
 
-      <div className="gold-divider mt-4 mb-10 sm:mb-12" />
+      <div className="gold-divider mt-2 mb-2 sm:mb-3" />
 
       {/* Wish Form */}
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="mx-auto mb-10 flex w-full max-w-lg flex-col gap-3 rounded-2xl glass p-4 sm:p-5"
+        className="mx-auto mb-2 flex w-full max-w-lg flex-col gap-3 rounded-2xl glass p-2 sm:p-3"
       >
         <input
           {...register("name", {
@@ -265,36 +265,65 @@ export default function Wishes() {
       </form>
 
       {/* Wishes */}
-      <div className="mx-auto w-full max-w-4xl columns-1 gap-4 space-y-4 sm:columns-2 md:columns-3">
-        {wishes.map((w, i) => (
-          <motion.div
-            key={`${w.name}-${i}`}
-            initial={{
-              opacity: 0,
-              y: 15,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              delay: i * 0.04,
-            }}
-            className="break-inside-avoid rounded-2xl glass p-4 sm:p-5"
-          >
-            <p className="break-words text-sm leading-6 italic text-gold-800 dark:text-cream-100 sm:text-base">
-              &ldquo;{w.message}&rdquo;
-            </p>
+     <div className="mx-auto grid w-full max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+  {wishes.map((w, i) => (
+    <motion.div
+      key={`${w.name}-${i}`}
+      initial={{
+        opacity: 0,
+        y: 15,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{
+        once: true,
+      }}
+      transition={{
+        delay: i * 0.04,
+      }}
+      className="
+        flex
+        h-full
+        min-h-[150px]
+        flex-col
+        rounded-2xl
+        glass
+        p-4
+        sm:p-5
+      "
+    >
+      <p
+        className="
+          flex-1
+          break-words
+          text-sm
+          leading-6
+          italic
+          text-gold-800
+          dark:text-cream-100
+          sm:text-base
+        "
+      >
+        &ldquo;{w.message}&rdquo;
+      </p>
 
-            <p className="mt-3 break-words text-sm font-semibold text-gold-600 dark:text-gold-300">
-              — {w.name}
-            </p>
-          </motion.div>
-        ))}
-      </div>
+      <p
+        className="
+          mt-3
+          break-words
+          text-sm
+          font-semibold
+          text-gold-600
+          dark:text-gold-300
+        "
+      >
+        — {w.name}
+      </p>
+    </motion.div>
+  ))}
+</div>
 
       {loadingWishes && (
         <p className="mt-4 px-4 text-center text-sm text-gold-500">

@@ -38,15 +38,15 @@ export default function HomeClient({ guestName }: { guestName: string }) {
         <OurStory />
         <EventTimeline />
         <Venue />
-        <WeatherWidget /> 
-        <Gallery />  
+        {/* <WeatherWidget />  */}
+        {/* <Gallery />   */}
         <RSVPForm defaultName={guestName} />
         <Wishes />
         <DownloadInvitation guestName={guestName} />
         <EmergencyContacts />
-        <AboutCumilla />
+        {/* <AboutCumilla /> */}
   
-        <SocialShare guestName={guestName} />
+        {/* <SocialShare guestName={guestName} /> */}
       </main>
       <footer className="text-center py-8 text-xs text-gold-500/70 dark:text-gold-300/50">
         Made with 💛 for {guestName === "Guest" ? "our guests" : guestName}

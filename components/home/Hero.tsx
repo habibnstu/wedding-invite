@@ -10,7 +10,7 @@ export default function Hero({ guestName }: { guestName: string }) {
   const { couple, wedding } = weddingConfig;
 
   return (
-    <section className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden px-4 sm:px-6">
+    <section className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden px-1 sm:px-2">
       {/* Animated background */}
       <FlowerPetals />
 
@@ -58,7 +58,7 @@ export default function Hero({ guestName }: { guestName: string }) {
           md:text-sm
           text-gold-600
           dark:text-gold-300
-          mb-4
+          mb-2
           text-center
         "
       >
@@ -66,7 +66,7 @@ export default function Hero({ guestName }: { guestName: string }) {
       </motion.p>
 
       {/* Couple Portraits */}
-      <div className="flex items-center justify-center gap-3 sm:gap-5 md:gap-10 mb-5 sm:mb-6">
+      <div className="flex items-center justify-center gap-3 sm:gap-5 md:gap-10 mb-2 sm:mb-3">
         <PortraitPhoto
           src={couple.groomPhoto}
           alt={couple.groomFullName}
@@ -96,10 +96,10 @@ export default function Hero({ guestName }: { guestName: string }) {
         transition={{ duration: 0.9, delay: 0.4 }}
         className="
           w-full
-          max-w-5xl
+          max-w-4xl
           px-2
           font-display
-          text-3xl
+          text-2xl
           xs:text-4xl
           sm:text-5xl
           md:text-7xl
@@ -124,9 +124,9 @@ export default function Hero({ guestName }: { guestName: string }) {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.9 }}
         className="
-          mt-4
-          sm:mt-6
-          px-2
+          mt-1
+          sm:mt-2
+          px-1
           text-center
           font-body
           text-base
@@ -165,19 +165,21 @@ export default function Hero({ guestName }: { guestName: string }) {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.3 }}
         className="
-          mt-6
-          sm:mt-8
-          md:mt-10
+          mt-1
+          sm:mt-2
+          md:mt-3
+          lg:mt-4
+          md:mt-5
           w-full
           max-w-2xl
           glass
           rounded-2xl
           sm:rounded-3xl
           md:rounded-full
-          px-4
-          sm:px-6
-          py-3
-          sm:py-4
+          px-2
+          sm:px-3
+          py-2
+          sm:py-2
         "
       >
         <p
@@ -207,7 +209,7 @@ export default function Hero({ guestName }: { guestName: string }) {
         transition={{ duration: 1.8, repeat: Infinity }}
         className="
           absolute
-          bottom-4
+          bottom-10
           sm:bottom-6
           md:bottom-8
           text-gold-500

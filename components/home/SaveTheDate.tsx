@@ -33,7 +33,7 @@ export default function SaveTheDate() {
   return (
     <section
       id="save-the-date"
-      className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-6"
+      className="relative w-full py-1 sm:py-2 md:py-3 px-4 sm:px-6"
     >
       {/* Heading */}
       <motion.h2
@@ -45,7 +45,7 @@ export default function SaveTheDate() {
         Save The Date
       </motion.h2>
 
-      <div className="gold-divider mt-3 sm:mt-4 mb-8 sm:mb-10 md:mb-12" />
+      <div className="gold-divider mt-1 sm:mt-2 mb-2 sm:mb-3 md:mb-4" />
 
       {/* Main Card */}
       <motion.div
@@ -60,9 +60,9 @@ export default function SaveTheDate() {
           glass
           rounded-2xl
           sm:rounded-3xl
-          p-5
-          sm:p-7
-          md:p-12
+          p-1
+          sm:p-2
+          md:p-3
           text-center
         "
       >
@@ -120,7 +120,7 @@ export default function SaveTheDate() {
             leading-relaxed
           "
         >
-          <MapPin className="w-4 h-4 shrink-0 mt-0.5" />
+          <MapPin className="w-4 h-2 shrink-0 mt-0.5" />
 
           <span className="max-w-md">
             {weddingConfig.wedding.brideHouse.houseName}
@@ -131,9 +131,9 @@ export default function SaveTheDate() {
         {!time.isPast ? (
           <div
             className="
-              mt-7
-              sm:mt-8
-              md:mt-10
+              mt-2
+              sm:mt-4
+              md:mt-5
               grid
               grid-cols-4
               gap-2
@@ -184,7 +184,7 @@ export default function SaveTheDate() {
                     sm:tracking-widest
                     text-gold-500
                     dark:text-gold-400
-                    mt-2
+                    mt-1
                   "
                 >
                   {u.label}
@@ -195,8 +195,8 @@ export default function SaveTheDate() {
         ) : (
           <p
             className="
-              mt-8
-              sm:mt-10
+              mt-1
+              sm:mt-2
               font-script
               text-2xl
               sm:text-3xl

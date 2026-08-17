@@ -18,16 +18,16 @@ export default function EmergencyContacts() {
       id="contacts"
       className="
         bg-blush-50/40
-        px-3
-        py-8
+        px-1
+        py-2
         dark:bg-white/[0.02]
-        sm:px-4
-        sm:py-10
+        sm:px-2
+        sm:py-3
       "
     >
       <h2 className="section-heading">Need Help?</h2>
 
-      <div className="gold-divider mb-8 mt-4 sm:mb-12" />
+      <div className="gold-divider mb-2 mt-3 sm:mb-4" />
 
       <div
         className="
@@ -65,39 +65,53 @@ export default function EmergencyContacts() {
               justify-between
               gap-3
               rounded-2xl
-              p-4
+              p-2
               sm:p-5
             "
           >
             {/* Contact Information */}
             <div className="min-w-0 flex-1">
-              <p
-                className="
-                  truncate
-                  text-[10px]
-                  uppercase
-                  tracking-[0.15em]
-                  text-gold-500
-                  sm:text-xs
-                  sm:tracking-widest
-                "
-              >
-                {c.label}
-              </p>
+  <p
+    className="
+      truncate
+      text-[10px]
+      uppercase
+      tracking-[0.15em]
+      text-gold-500
+      sm:text-xs
+      sm:tracking-widest
+    "
+  >
+    {c.label}
+  </p>
 
-              <p
-                className="
-                  truncate
-                  font-display
-                  text-base
-                  text-gold-900
-                  dark:text-cream-100
-                  sm:text-lg
-                "
-              >
-                {c.name}
-              </p>
-            </div>
+  <p
+    className="
+      truncate
+      font-display
+      text-base
+      text-gold-900
+      dark:text-cream-100
+      sm:text-lg
+    "
+  >
+    {c.name}
+  </p>
+
+  {/* Phone Number */}
+  <p
+    className="
+      mt-1
+      truncate
+      text-xs
+      text-gold-600
+      dark:text-cream-100/70
+      sm:text-sm
+    "
+  >
+    {c.phone}
+  </p>
+</div>
 
             {/* Action Buttons */}
             <div className="flex shrink-0 gap-2">

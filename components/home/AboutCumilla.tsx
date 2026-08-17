@@ -138,7 +138,7 @@ export default function AboutCumilla() {
   return (
     <section
       id="about-cumilla"
-      className="relative overflow-hidden bg-gradient-to-b from-[#fffaf5] via-[#fdf8f3] to-[#fffaf5] py-20 sm:py-24 lg:py-32"
+      className="relative overflow-hidden bg-gradient-to-b from-[#fffaf5] via-[#fdf8f3] to-[#fffaf5] py-20 sm:py-2 lg:py-2"
     >
       {/* Background Decorations */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -238,7 +238,7 @@ export default function AboutCumilla() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-20 grid grid-cols-2 gap-3 rounded-2xl border border-[#eadbc5] bg-white/60 p-4 backdrop-blur-sm sm:grid-cols-4 md:gap-4 md:p-6"
+          className="mb-2 grid grid-cols-2 gap-3 rounded-2xl border border-[#eadbc5] bg-white/60 p-4 backdrop-blur-sm sm:grid-cols-4 md:gap-4 md:p-6"
         >
           <QuickStat
             icon={<Landmark size={18} />}

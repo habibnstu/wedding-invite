@@ -78,7 +78,7 @@ export default function DownloadInvitation({
   };
 
   return (
-    <section className="w-full overflow-hidden bg-[#f7f3ec] px-4 py-16 sm:py-20">
+    <section className="w-full overflow-hidden bg-[#f7f3ec] px-1 py-2 sm:py-3">
       <div className="mx-auto w-full max-w-xl">
 
         {/* Invitation Preview */}

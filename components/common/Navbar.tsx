@@ -12,6 +12,7 @@ const links = [
   { href: "#gallery", label: "Gallery" },
   { href: "#rsvp", label: "RSVP" },
   { href: "#wishes", label: "Wishes" },
+    { href: "/historical-places", label: "Historical Places" },
 ];
 
 export default function Navbar() {

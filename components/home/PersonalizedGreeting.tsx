@@ -9,7 +9,7 @@ export default function PersonalizedGreeting({
   guestName: string;
 }) {
   return (
-    <section className="w-full py-8 sm:py-10 md:py-12 px-4 sm:px-6">
+    <section className="w-full py-2 sm:py-3 md:py-4 px-4 sm:px-6">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -23,9 +23,9 @@ export default function PersonalizedGreeting({
           glass
           rounded-2xl
           sm:rounded-3xl
-          p-5
-          sm:p-7
-          md:p-12
+          p-1
+          sm:p-2
+          md:p-3
         "
       >
         {/* Guest Name */}
